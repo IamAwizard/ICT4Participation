@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Client
+    class Client : User
     {
+
     }
 }
