@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AdminHandler.cs" />
     <Compile Include="Chat.cs" />
+    <Compile Include="ChatHandler.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="Appointment.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="User.cs" />
     <Compile Include="UserHandler.cs" />
     <Compile Include="Volunteer.cs" />
+    <Compile Include="VolunteerHandler.cs" />
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

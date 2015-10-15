@@ -20,25 +20,46 @@ namespace ICT4Participation
 
         //here are the properties of the abstract class User
         public string Name
-        { get; set; }
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
         public DateTime DateOfBirth
-        { get; set; }
+        {
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
+        }
 
         public string Gender
-        { get; set; }
+        {
+            get { return gender; }
+            set { gender = value; }
+        }
 
         public string City
-        { get; set; }
+        {
+            get { return city; }
+            set { city = value; }
+        }
 
         public string Adress
-        { get; set; }
+        {
+            get { return adress; }
+            set { adress = value; }
+        }
 
         public string Email
-        { get; set; }
+        {
+            get { return email; }
+            set { email = value; }
+        }
 
         public string Password
-        { get; set; }
+        {
+            get { return password; }
+            set { password = value; }
+        }
 
         //constructor
         public User(string name, DateTime dateOfBirth, string gender, string city, string adress, string email, string password)
@@ -52,10 +73,10 @@ namespace ICT4Participation
             this.Password = password;
         }
 
-        public override string  ToString()
+        public override string ToString()
         {
             return "Name " + Name + " Date of birth " + DateOfBirth.ToString() + " Gender " + Gender + " City " + Adress + " Adress " + Email + " email "
-                + Password + " password"; 
+                + Password + " password";
         }
 
 

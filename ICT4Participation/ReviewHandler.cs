@@ -13,15 +13,33 @@ namespace ICT4Participation
         // TODO NEEDS DATABASE HANDLER
 
         // Constructor
+        public ReviewHandler()
+        {
 
+        }
         // Properties
-
+        public List<Review> ReviewList
+        {
+            get
+            {
+                return Reviews;
+            }
+            set
+            {
+                Reviews = value;
+            }
+        }
         // Methodes
         public bool AddReview(Client reviewer, Volunteer reviewed, int rating, string content)
         {
             Review newReview = new Review(DateTime.Now, reviewer, reviewed, rating, content);
             Reviews.Add(newReview);
             return false;
+        }
+
+        public void Synchronize()
+        {
+
         }
     }
 }

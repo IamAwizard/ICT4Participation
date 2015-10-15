@@ -8,13 +8,14 @@ namespace ICT4Participation
 {
     class Review
     {
-        //fields
+        // Fields
         private DateTime date;
         private Client client;
         private Volunteer targetuser;
         private int rating;
         private string content;
-        //properties
+
+        // Properties
         public DateTime Date
         {
             get { return date; }
@@ -40,7 +41,8 @@ namespace ICT4Participation
             get { return content; }
             set { content = value; }
         }
-        //constructor
+
+        // Constructor
         public Review(DateTime date, Client client,Volunteer targetuser,int rating, string content)
         {
             this.Rating = rating;
@@ -49,7 +51,8 @@ namespace ICT4Participation
             this.Content = this.content;
             this.Date = this.date;
         }
-        //override string
+
+        // Methods
         public override string ToString()
         {
             return "Datum:" + Date + "Client:" + Client + "Volunteer" + Targetuser + "Inhoud" + Content + "rating" + Rating;
