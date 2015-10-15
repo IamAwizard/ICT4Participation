@@ -8,6 +8,8 @@ namespace ICT4Participation.Forms
 {
     class Appointment
     {
+
+        //fields 
         private DateTime Date;
         private string Location;
     }
