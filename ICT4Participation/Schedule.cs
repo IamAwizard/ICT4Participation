@@ -39,7 +39,7 @@ namespace ICT4Participation
         public string Friday
         {
             get { return friday; }
-            set { friday= value; }
+            set { friday = value; }
         }
         public string Saturday
         {
@@ -52,6 +52,15 @@ namespace ICT4Participation
             get { return sunday; }
             set { sunday = value; }
         }
-
+        public Schedule(string monday, string tuesday, string wednesday, string thursday, string friday, string saturday, string sunday)
+        {
+            this.monday = monday;
+            this.tuesday = tuesday;
+            this.wednesday = wednesday;
+            this.thursday = thursday;
+            this.friday = friday;
+            this.saturday = saturday;
+            this.sunday = sunday;
+        }
     }
 }
