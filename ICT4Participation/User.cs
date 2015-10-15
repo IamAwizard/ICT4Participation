@@ -6,14 +6,42 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class User
+    public abstract class User
     {
-        private string Name;
-        private DateTime DateofBirth;
-        private string Gender;
-        private string City;
-        private string Adress;
-        private string Email;
-        private string Password;
+
+        //here are the fields of the abstract class User
+        private string name;
+        private DateTime dateOfBirth;
+        private string gender;
+        private string city;
+        private string adress;
+        private string email;
+        private string password;
+
+        //here are the properties of the abstract class User
+        public string Name
+        { get; set; }
+
+        public DateTime DateOfBirth
+        { get; set; }
+
+        public string Gender
+        { get; set; }
+
+        public string City
+        { get; set; }
+
+        public string Adress
+        { get; set; }
+
+        public string Email
+        { get; set; }
+
+        public string Password
+        { get; set; }
+
+        public 
+
+
     }
 }
