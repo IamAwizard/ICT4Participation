@@ -54,7 +54,7 @@ namespace ICT4Participation
 
         public override string  ToString()
         {
-            return "Name " + Name + " Date of birth " + DateOfBirth + " Gender " + Gender + " City " + Adress + " Adress " + Email + " email "
+            return "Name " + Name + " Date of birth " + DateOfBirth.ToString() + " Gender " + Gender + " City " + Adress + " Adress " + Email + " email "
                 + Password + " password"; 
         }
 
