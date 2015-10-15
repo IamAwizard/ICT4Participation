@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ICT4Participation.Forms
+namespace ICT4Participation
 {
     class Appointment
     {
