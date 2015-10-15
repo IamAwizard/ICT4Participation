@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Volunteer
+    class Volunteer : User
     {
+
         private bool DrivingLicense;
         private string Biography;
         private string PathToVOG;
         private string PathToPhoto;
+
+        public Schedule GetSchedule()
+        {
+            Schedule schedule = new Schedule();
+            
+        }
+
         
     }
 }
