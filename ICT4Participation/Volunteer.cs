@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Volunteer : User
+   public class Volunteer : User
     {
 
         private bool DrivingLicense;
