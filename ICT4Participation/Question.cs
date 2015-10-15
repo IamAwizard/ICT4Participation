@@ -62,9 +62,9 @@ namespace ICT4Participation
             set { solved = value; }
         }
         //constructor
-        public Question(Volunteer volunteer, string name, string location,string transport,int distance,string Discrepancy,string content,DateTime date,bool solved)
+        public Question( string name, string location,string transport,int distance,string Discrepancy,string content,DateTime date,bool solved)
         {
-            this.volunteer = volunteer;
+           
             this.Name = this.name;
             this.Location = this.location;
             this.Transport = this.transport;
