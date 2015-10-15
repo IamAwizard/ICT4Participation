@@ -10,7 +10,22 @@ namespace ICT4Participation
     {
 
         //fields 
-        private DateTime Date;
-        private string Location;
+        Client client;
+        Volunteer volunteer;
+        private DateTime date;
+        private string location;
+
+        public DateTime Date
+        { get; set; }
+        public string Location
+        { get; set; }
+
+        public Appointment(Client client, Volunteer volunteer,DateTime date, string location)
+        {
+            this.client = client;
+            this.volunteer = volunteer;
+            this.date = date;
+            this.location = location;
+        }
     }
 }
