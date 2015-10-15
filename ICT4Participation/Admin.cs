@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation.Forms
 {
-    class Admin : User
+    public class Admin : User
     {
-    }
+        public Admin(string name, DateTime dateOfBirth, string gender, string city, string adress, string email, string password)
+        : base(name, dateOfBirth, gender, city, adress, email, password)
+        {
+            
+        }
+
+        public override 
+     }
 }
