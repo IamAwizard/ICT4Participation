@@ -14,6 +14,9 @@ namespace ICT4Participation.Forms
             
         }
 
-        public override 
-     }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+    }
 }
