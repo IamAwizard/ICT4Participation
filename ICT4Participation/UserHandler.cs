@@ -11,14 +11,23 @@ namespace ICT4Participation
         // Fields
         private List<User> users;
 
-        // Constructor
+        // properties
+        public List<User>Users
+        { get { return users; }
+        set { users = value; } }
 
-        // Properties
+        // constructor
 
         // Methods
         public User FindUser(string name)
         {
             return users.Find(x => x.Name == name);
+        }
+
+        public bool AddUser(User user)
+        {
+            users.Add(user);
+            return true;
         }
 
     }
