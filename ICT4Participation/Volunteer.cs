@@ -39,7 +39,10 @@ namespace ICT4Participation
             this.PathToPhoto = pathToPhoto;
         }
 
-
+        public override string ToString()
+        {
+            return base.ToString() + " drivinglicense " + DrivingLicense.ToString() + " biography " + Biogragphy + " path to VOG" + PathToVOG + " path to photo " + PathToPhoto;
+        }
 
         public Schedule GetSchedule()
         {
