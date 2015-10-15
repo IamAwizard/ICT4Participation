@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Schedule
+   public class Schedule
     {
         private string monday;
         private string tuesday;
