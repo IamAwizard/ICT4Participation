@@ -8,10 +8,12 @@ namespace ICT4Participation
 {
     class Chat
     {
+        //fields
         private User author;
         private DateTime date;
         private string content;
 
+        //properties
         public User Author
             {
             get { return author; }
@@ -32,6 +34,7 @@ namespace ICT4Participation
 
         }
 
+        //constructor
         public Chat(User author, DateTime date,string content)
         {
             this.Author = this.author;
