@@ -40,7 +40,23 @@ namespace ICT4Participation
         public string Password
         { get; set; }
 
-        public 
+        //constructor
+        public User(string name, DateTime dateOfBirth, string gender, string city, string adress, string email, string password)
+        {
+            this.Name = name;
+            this.DateOfBirth = dateOfBirth;
+            this.Gender = gender;
+            this.City = city;
+            this.Adress = adress;
+            this.Email = email;
+            this.Password = password;
+        }
+
+        public override string  ToString()
+        {
+            return "Name " + Name + " Date of birth " + DateOfBirth + " Gender " + Gender + " City " + Adress + " Adress " + Email + " email "
+                + Password + " password"; 
+        }
 
 
     }
