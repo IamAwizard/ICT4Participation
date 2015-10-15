@@ -51,6 +51,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Appointment.cs" />
     <Compile Include="Chats.cs" />
+    <Compile Include="DatabaseHandler.cs" />
     <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
