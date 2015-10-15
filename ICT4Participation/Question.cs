@@ -9,6 +9,7 @@ namespace ICT4Participation
    public class Question
     {
         //fields
+        Client client;
         Volunteer volunteer;
         private string name;
         private DateTime date;
@@ -66,9 +67,9 @@ namespace ICT4Participation
             set { solved = value; }
         }
         //constructor
-        public Question( string name, string location,string transport,int distance,string Discrepancy,string content,DateTime date,bool solved)
+        public Question(Client client, string name, string location,string transport,int distance,string Discrepancy,string content,DateTime date,bool solved)
         {
-           
+            this.client = client;
             this.Name = this.name;
             this.Location = this.location;
             this.Transport = this.transport;

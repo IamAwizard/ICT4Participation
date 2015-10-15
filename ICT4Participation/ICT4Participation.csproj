@@ -47,11 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminHandler.cs" />
     <Compile Include="Chat.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="Appointment.cs" />
     <Compile Include="Chats.cs" />
+    <Compile Include="ClientHandler.cs" />
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>

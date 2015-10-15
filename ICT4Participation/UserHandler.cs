@@ -8,7 +8,18 @@ namespace ICT4Participation
 {
     class UserHandler
     {
-       private List<User> user;
+        // Fields
+        private List<User> users;
+
+        // Constructor
+
+        // Properties
+
+        // Methods
+        public User FindUser(string name)
+        {
+            return users.Find(x => x.Name == name);
+        }
 
     }
 }
