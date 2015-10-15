@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-   public class Volunteer : User
+    public class Volunteer : User
     {
         //fields
+         Schedule schedule;
         private bool drivingLicense;
         private string biography;
         private string pathToVOG;
         private string pathToPhoto;
-        
+
 
         //properties
+
+        public Schedule Schedule
+        { get; set; }
         public bool DrivingLicense
         { get; set; }
 
@@ -29,9 +33,9 @@ namespace ICT4Participation
         { get; set; }
 
 
-        public Volunteer(string name, DateTime dateOfBirth, string gender, string city, string adress, string email, string password, 
+        public Volunteer(string name, DateTime dateOfBirth, string gender, string city, string adress, string email, string password,
             bool drivingLicense, string biography, string pathToVOG, string pathToPhoto)
-            : base( name , dateOfBirth , gender, city , adress , email , password)
+            : base(name, dateOfBirth, gender, city, adress, email, password)
         {
             this.DrivingLicense = drivingLicense;
             this.Biogragphy = biography;
@@ -46,10 +50,10 @@ namespace ICT4Participation
 
         public Schedule GetSchedule()
         {
-            Schedule schedule = new Schedule();
+
             return schedule;
         }
 
-        
+
     }
 }
