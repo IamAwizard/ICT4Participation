@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Question
+   public class Question
     {
         //fields
         Volunteer volunteer;
@@ -19,6 +19,10 @@ namespace ICT4Participation
         private string transport;
         private bool solved;
         //properties
+
+        public Volunteer Volunteer
+        { get; set; }
+
         public string Name
         {
             get { return name; }
