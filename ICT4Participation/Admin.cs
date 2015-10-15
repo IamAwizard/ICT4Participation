@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation.Forms
 {
-    class Admin
+    class Admin : User
     {
     }
 }
