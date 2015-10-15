@@ -13,5 +13,10 @@ namespace ICT4Participation
         {
 
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
