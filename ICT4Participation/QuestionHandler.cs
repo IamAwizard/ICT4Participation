@@ -8,5 +8,6 @@ namespace ICT4Participation
 {
     class QuestionHandler
     {
+        private List<Question> Questions;
     }
 }

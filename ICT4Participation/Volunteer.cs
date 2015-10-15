@@ -8,5 +8,10 @@ namespace ICT4Participation
 {
     class Volunteer
     {
+        private bool DrivingLicense;
+        private string Biography;
+        private string PathToVOG;
+        private string PathToPhoto;
+        
     }
 }

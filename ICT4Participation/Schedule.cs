@@ -8,5 +8,12 @@ namespace ICT4Participation
 {
     class Schedule
     {
+        private string Monday;
+        private string Tuesday;
+        private string Wednesday;
+        private string Thursday;
+        private string Friday;
+        private string Saturday;
+        private string Sunday;
     }
 }

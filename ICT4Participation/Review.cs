@@ -8,5 +8,10 @@ namespace ICT4Participation
 {
     class Review
     {
+        private DateTime Date;
+        private Client client;
+        private Volunteer Targetuser;
+        private int Rating;
+        private string Content;
     }
 }

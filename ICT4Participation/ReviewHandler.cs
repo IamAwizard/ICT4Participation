@@ -8,5 +8,6 @@ namespace ICT4Participation
 {
     class ReviewHandler
     {
+       private List<Review> Reviews;
     }
 }

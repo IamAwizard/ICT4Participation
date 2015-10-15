@@ -8,5 +8,6 @@ namespace ICT4Participation.Forms
 {
     class Chats
     {
+        private List<Chat> chats;
     }
 }

@@ -8,5 +8,8 @@ namespace ICT4Participation
 {
     class Chat
     {
+        private User Author;
+        private DateTime Date;
+        private string Content;
     }
 }

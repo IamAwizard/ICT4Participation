@@ -8,5 +8,7 @@ namespace ICT4Participation
 {
     class UserHandler
     {
+       private List<User> user;
+
     }
 }
