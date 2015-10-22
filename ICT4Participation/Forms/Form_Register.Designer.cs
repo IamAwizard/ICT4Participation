@@ -42,10 +42,10 @@
             this.lbl_City = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.pnl_VOGInfo = new System.Windows.Forms.Panel();
+            this.lbl_VOGPath = new System.Windows.Forms.Label();
             this.tbox_VolunteerInfoDoNotUse = new System.Windows.Forms.TextBox();
             this.btn_VOGUpload = new System.Windows.Forms.Button();
             this.lbl_VOG = new System.Windows.Forms.Label();
-            this.lbl_VOGPath = new System.Windows.Forms.Label();
             this.tbox_Email = new System.Windows.Forms.TextBox();
             this.tbox_Password = new System.Windows.Forms.TextBox();
             this.tbox_Name = new System.Windows.Forms.TextBox();
@@ -123,6 +123,7 @@
             this.btn_OK.TabIndex = 9;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = false;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // btn_Cancel
             // 
@@ -138,6 +139,7 @@
             this.btn_Cancel.TabIndex = 10;
             this.btn_Cancel.Text = "Annuleer";
             this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // lbl_Email
             // 
@@ -228,6 +230,18 @@
             this.pnl_VOGInfo.TabIndex = 18;
             this.pnl_VOGInfo.Visible = false;
             // 
+            // lbl_VOGPath
+            // 
+            this.lbl_VOGPath.AutoSize = true;
+            this.lbl_VOGPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_VOGPath.ForeColor = System.Drawing.Color.White;
+            this.lbl_VOGPath.Location = new System.Drawing.Point(66, 11);
+            this.lbl_VOGPath.MaximumSize = new System.Drawing.Size(78, 18);
+            this.lbl_VOGPath.Name = "lbl_VOGPath";
+            this.lbl_VOGPath.Size = new System.Drawing.Size(78, 18);
+            this.lbl_VOGPath.TabIndex = 18;
+            this.lbl_VOGPath.Text = "<bestand>";
+            // 
             // tbox_VolunteerInfoDoNotUse
             // 
             this.tbox_VolunteerInfoDoNotUse.BackColor = System.Drawing.SystemColors.Highlight;
@@ -270,18 +284,6 @@
             this.lbl_VOG.TabIndex = 12;
             this.lbl_VOG.Text = "V.O.G.";
             // 
-            // lbl_VOGPath
-            // 
-            this.lbl_VOGPath.AutoSize = true;
-            this.lbl_VOGPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_VOGPath.ForeColor = System.Drawing.Color.White;
-            this.lbl_VOGPath.Location = new System.Drawing.Point(66, 11);
-            this.lbl_VOGPath.MaximumSize = new System.Drawing.Size(78, 18);
-            this.lbl_VOGPath.Name = "lbl_VOGPath";
-            this.lbl_VOGPath.Size = new System.Drawing.Size(78, 18);
-            this.lbl_VOGPath.TabIndex = 18;
-            this.lbl_VOGPath.Text = "<bestand>";
-            // 
             // tbox_Email
             // 
             this.tbox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,6 +297,7 @@
             this.tbox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbox_Password.Location = new System.Drawing.Point(158, 73);
             this.tbox_Password.Name = "tbox_Password";
+            this.tbox_Password.PasswordChar = '■';
             this.tbox_Password.Size = new System.Drawing.Size(201, 24);
             this.tbox_Password.TabIndex = 20;
             // 
