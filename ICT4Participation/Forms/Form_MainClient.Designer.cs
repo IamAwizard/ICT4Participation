@@ -75,11 +75,11 @@
             // lbl_stelvraag
             // 
             this.lbl_stelvraag.AutoSize = true;
-            this.lbl_stelvraag.BackColor = System.Drawing.Color.SteelBlue;
+            this.lbl_stelvraag.BackColor = System.Drawing.Color.Teal;
             this.lbl_stelvraag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_stelvraag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_stelvraag.ForeColor = System.Drawing.Color.White;
-            this.lbl_stelvraag.Location = new System.Drawing.Point(50, 326);
+            this.lbl_stelvraag.Location = new System.Drawing.Point(50, 340);
             this.lbl_stelvraag.Name = "lbl_stelvraag";
             this.lbl_stelvraag.Size = new System.Drawing.Size(161, 26);
             this.lbl_stelvraag.TabIndex = 3;
