@@ -31,12 +31,12 @@
             this.lbl_locatie = new System.Windows.Forms.Label();
             this.lbl_bijzonderheid = new System.Windows.Forms.Label();
             this.lbl_zoekhulp = new System.Windows.Forms.Label();
-            this.lbl_stelvraag = new System.Windows.Forms.Label();
             this.btn_stelvraag = new System.Windows.Forms.Button();
             this.lb_vragen = new System.Windows.Forms.ListBox();
             this.tb_bijzonderheid = new System.Windows.Forms.TextBox();
             this.tb_vraag = new System.Windows.Forms.TextBox();
             this.tb_locatie = new System.Windows.Forms.TextBox();
+            this.lbl_stelvraag = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_locatie
@@ -71,19 +71,6 @@
             this.lbl_zoekhulp.Size = new System.Drawing.Size(95, 24);
             this.lbl_zoekhulp.TabIndex = 2;
             this.lbl_zoekhulp.Text = "Zoek hulp";
-            // 
-            // lbl_stelvraag
-            // 
-            this.lbl_stelvraag.AutoSize = true;
-            this.lbl_stelvraag.BackColor = System.Drawing.Color.Teal;
-            this.lbl_stelvraag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_stelvraag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_stelvraag.ForeColor = System.Drawing.Color.White;
-            this.lbl_stelvraag.Location = new System.Drawing.Point(50, 326);
-            this.lbl_stelvraag.Name = "lbl_stelvraag";
-            this.lbl_stelvraag.Size = new System.Drawing.Size(161, 26);
-            this.lbl_stelvraag.TabIndex = 3;
-            this.lbl_stelvraag.Text = "Stel hier uw vraag";
             // 
             // btn_stelvraag
             // 
@@ -134,18 +121,29 @@
             this.tb_locatie.Size = new System.Drawing.Size(282, 39);
             this.tb_locatie.TabIndex = 8;
             // 
+            // lbl_stelvraag
+            // 
+            this.lbl_stelvraag.AutoSize = true;
+            this.lbl_stelvraag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_stelvraag.ForeColor = System.Drawing.Color.White;
+            this.lbl_stelvraag.Location = new System.Drawing.Point(46, 328);
+            this.lbl_stelvraag.Name = "lbl_stelvraag";
+            this.lbl_stelvraag.Size = new System.Drawing.Size(159, 24);
+            this.lbl_stelvraag.TabIndex = 9;
+            this.lbl_stelvraag.Text = "Stel hier uw vraag";
+            // 
             // Form_MainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(689, 531);
+            this.Controls.Add(this.lbl_stelvraag);
             this.Controls.Add(this.tb_locatie);
             this.Controls.Add(this.tb_vraag);
             this.Controls.Add(this.tb_bijzonderheid);
             this.Controls.Add(this.lb_vragen);
             this.Controls.Add(this.btn_stelvraag);
-            this.Controls.Add(this.lbl_stelvraag);
             this.Controls.Add(this.lbl_zoekhulp);
             this.Controls.Add(this.lbl_bijzonderheid);
             this.Controls.Add(this.lbl_locatie);
@@ -162,11 +160,11 @@
         private System.Windows.Forms.Label lbl_locatie;
         private System.Windows.Forms.Label lbl_bijzonderheid;
         private System.Windows.Forms.Label lbl_zoekhulp;
-        private System.Windows.Forms.Label lbl_stelvraag;
         private System.Windows.Forms.Button btn_stelvraag;
         private System.Windows.Forms.ListBox lb_vragen;
         private System.Windows.Forms.TextBox tb_bijzonderheid;
         private System.Windows.Forms.TextBox tb_vraag;
         private System.Windows.Forms.TextBox tb_locatie;
+        private System.Windows.Forms.Label lbl_stelvraag;
     }
 }
