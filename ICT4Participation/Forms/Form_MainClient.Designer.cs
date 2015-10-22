@@ -44,7 +44,7 @@
             this.lbl_locatie.AutoSize = true;
             this.lbl_locatie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_locatie.ForeColor = System.Drawing.Color.White;
-            this.lbl_locatie.Location = new System.Drawing.Point(46, 386);
+            this.lbl_locatie.Location = new System.Drawing.Point(46, 383);
             this.lbl_locatie.Name = "lbl_locatie";
             this.lbl_locatie.Size = new System.Drawing.Size(70, 24);
             this.lbl_locatie.TabIndex = 0;
@@ -55,7 +55,7 @@
             this.lbl_bijzonderheid.AutoSize = true;
             this.lbl_bijzonderheid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_bijzonderheid.ForeColor = System.Drawing.Color.White;
-            this.lbl_bijzonderheid.Location = new System.Drawing.Point(46, 449);
+            this.lbl_bijzonderheid.Location = new System.Drawing.Point(46, 444);
             this.lbl_bijzonderheid.Name = "lbl_bijzonderheid";
             this.lbl_bijzonderheid.Size = new System.Drawing.Size(126, 24);
             this.lbl_bijzonderheid.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.lbl_stelvraag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_stelvraag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_stelvraag.ForeColor = System.Drawing.Color.White;
-            this.lbl_stelvraag.Location = new System.Drawing.Point(50, 340);
+            this.lbl_stelvraag.Location = new System.Drawing.Point(50, 326);
             this.lbl_stelvraag.Name = "lbl_stelvraag";
             this.lbl_stelvraag.Size = new System.Drawing.Size(161, 26);
             this.lbl_stelvraag.TabIndex = 3;
