@@ -16,5 +16,10 @@ namespace ICT4Participation.Forms
         {
             InitializeComponent();
         }
+
+        private void pnl_profiel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
