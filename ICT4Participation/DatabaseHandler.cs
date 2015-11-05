@@ -49,7 +49,7 @@ namespace ICT4Participation
             {
                 cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM TUSER"; // QUERY
+                cmd.CommandText = "SELECT USERID, NAAM, GEBOORTEDATUM, GESLACHT, WOONPLAATS, ADRES, EMAIL, WACHTWOORD, TYPE FROM TUSER"; // QUERY
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
             }
@@ -62,55 +62,44 @@ namespace ICT4Participation
 
             try
             {
-                while (dr.Read())
-                {
-                    // Required Variabeles
-                    int id;
-                    string name;
-                    DateTime dateOfBirth;
-                    string gender;
-                    string city;
-                    string adress;
-                    string email;
-                    string password;
-                    string type;
-
-                    // Read from DB
-                    id = dr.GetInt32(0);
-                    name = dr.GetString(1);
-                    dateOfBirth = dr.GetDateTime(2);
-                    gender = dr.GetString(3);
-                    city = dr.GetString(4);
-                    adress = dr.GetString(5);
-                    email = dr.GetString(6);
-                    password = dr.GetString(7);
-
-                    type = dr.GetString(8);
-
-                    User toadd;
-                    switch (type)
+                    while (dr.Read())
                     {
-                        case "CLIENT":
-                            Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
-                            toadd = newClient;
-                            break;
-                        case "VOLUNTEER":
-                            toadd = null;
-                            //Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password);
-                            //toadd = newUser;
-                            break;
-                        case "ADMIN":
-                            Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
-                            toadd = newAdmin;
-                            break;
-                        default:
-                            toadd = null;
-                            break;
-                    }
+                        // Read from DB
+                        var id = dr.GetInt64(0);
+                        var name = dr.GetString(1);
+                        var dateOfBirth = dr.GetDateTime(2);
+                        var gender = dr.GetString(3);
+                        var city = dr.GetString(4);
+                        var adress = dr.GetString(5);
+                        var email = dr.GetString(6);
+                        var password = dr.GetString(7);
 
-                    userList.Add(toadd);
-                }
-                Disconnect();
+                        var type = dr.GetString(8);
+
+                        User toadd;
+                        switch (type)
+                        {
+                            case "CLIENT":
+                                Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
+                                toadd = newClient;
+                                break;
+                            case "VOLUNTEER":
+                                toadd = null;
+                                //Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password);
+                                //toadd = newUser;
+                                break;
+                            case "ADMIN":
+                                Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
+                                toadd = newAdmin;
+                                break;
+                            default:
+                                toadd = null;
+                                break;
+                        }
+
+                        userList.Add(toadd);
+                    }
+                    Disconnect();
                 return userList;
             }
             catch (InvalidCastException ex)
