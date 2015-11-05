@@ -8,6 +8,8 @@ namespace ICT4Participation
 {
    public class Schedule
     {
+
+        //fields
         private string monday;
         private string tuesday;
         private string wednesday;
@@ -16,6 +18,13 @@ namespace ICT4Participation
         private string saturday;
         private string sunday;
 
+
+        //properties
+        public int DagID
+        {
+            get; set;
+
+        }
         public string Monday
         {
             get { return monday; }
