@@ -57,6 +57,7 @@
             this.lbl_rating = new System.Windows.Forms.Label();
             this.lbl_VOG = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_uploadavatar = new System.Windows.Forms.Button();
             this.pnl_opdrachtaanvaard.SuspendLayout();
             this.pnl_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,6 +200,7 @@
             // 
             // pnl_profile
             // 
+            this.pnl_profile.Controls.Add(this.btn_uploadavatar);
             this.pnl_profile.Controls.Add(this.btn_backprofile);
             this.pnl_profile.Controls.Add(this.btn_schedule);
             this.pnl_profile.Controls.Add(this.chk_license);
@@ -246,6 +248,7 @@
             this.btn_schedule.TabIndex = 14;
             this.btn_schedule.Text = "Rooster";
             this.btn_schedule.UseVisualStyleBackColor = false;
+            this.btn_schedule.Click += new System.EventHandler(this.btn_schedule_Click);
             // 
             // chk_license
             // 
@@ -316,6 +319,7 @@
             this.lbl_namevolunteer.Name = "lbl_namevolunteer";
             this.lbl_namevolunteer.Size = new System.Drawing.Size(0, 17);
             this.lbl_namevolunteer.TabIndex = 7;
+            this.lbl_namevolunteer.Click += new System.EventHandler(this.lbl_namevolunteer_Click);
             // 
             // lbl_naamdonotuse
             // 
@@ -392,6 +396,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_uploadavatar
+            // 
+            this.btn_uploadavatar.BackColor = System.Drawing.Color.White;
+            this.btn_uploadavatar.FlatAppearance.BorderSize = 0;
+            this.btn_uploadavatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_uploadavatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_uploadavatar.Location = new System.Drawing.Point(11, 231);
+            this.btn_uploadavatar.Name = "btn_uploadavatar";
+            this.btn_uploadavatar.Size = new System.Drawing.Size(140, 28);
+            this.btn_uploadavatar.TabIndex = 16;
+            this.btn_uploadavatar.Text = "upload foto";
+            this.btn_uploadavatar.UseVisualStyleBackColor = false;
+            this.btn_uploadavatar.Click += new System.EventHandler(this.btn_uploadavatar_Click);
+            // 
             // Form_MainVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,5 +460,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_uploadavatar;
     }
 }

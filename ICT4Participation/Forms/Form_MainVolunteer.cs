@@ -21,5 +21,21 @@ namespace ICT4Participation.Forms
         {
 
         }
+
+        private void btn_schedule_Click(object sender, EventArgs e)
+        {
+            var formschedule = new Form_Shedule();
+            formschedule.Show();
+        }
+
+        private void lbl_namevolunteer_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_uploadavatar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
