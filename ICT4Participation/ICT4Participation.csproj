@@ -82,11 +82,11 @@
     <Compile Include="Forms\Form_MainVolunteer.Designer.cs">
       <DependentUpon>Form_MainVolunteer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Opdrachtaanvaarden.cs">
+    <Compile Include="Forms\Form_acceptassignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Opdrachtaanvaarden.Designer.cs">
-      <DependentUpon>Form_Opdrachtaanvaarden.cs</DependentUpon>
+    <Compile Include="Forms\Form_acceptassignment.Designer.cs">
+      <DependentUpon>Form_acceptassignment.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Question.cs">
       <SubType>Form</SubType>
@@ -133,8 +133,8 @@
     <EmbeddedResource Include="Forms\Form_MainVolunteer.resx">
       <DependentUpon>Form_MainVolunteer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Opdrachtaanvaarden.resx">
-      <DependentUpon>Form_Opdrachtaanvaarden.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_acceptassignment.resx">
+      <DependentUpon>Form_acceptassignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Question.resx">
       <DependentUpon>Form_Question.cs</DependentUpon>

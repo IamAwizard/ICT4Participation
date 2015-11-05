@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ICT4Participation.Forms
 {
-    public partial class Form_Opdrachtaanvaarden : Form
+    public partial class Form_acceptassignment : Form
     {
-        public Form_Opdrachtaanvaarden()
+        public Form_acceptassignment()
         {
             InitializeComponent();
         }
