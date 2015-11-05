@@ -10,7 +10,6 @@ namespace ICT4Participation
     {
 
         //here are the fields of the abstract class User
-        private int id;
         private string name;
         private DateTime dateOfBirth;
         private string gender;
