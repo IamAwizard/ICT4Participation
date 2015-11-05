@@ -41,7 +41,7 @@ namespace ICT4Participation
         {
             Form_Register registerform = new Form_Register(this);
             registerform.Show();
-            this.Hide();
+            this.Show();
         }
     }
 }
