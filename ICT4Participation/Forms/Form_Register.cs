@@ -8,14 +8,16 @@ namespace ICT4Participation
     public partial class Form_Register : Form
     {
         // Fields
+        Form_Login formsender;
         string vogpath;
         bool voguploaded;
 
         // Constructor
-        public Form_Register()
+        public Form_Register(Form_Login sender)
         {
             InitializeComponent();
 
+            this.formsender = sender;
             cbox_Gender.SelectedIndex = 0;
             vogpath = "";
             bool voguploaded = false;
@@ -66,7 +68,14 @@ namespace ICT4Participation
             name = tbox_Name.Text;
             // TODO: Add checks?
             // Gender
-            gender = cbox_Gender.Text;
+            if(cbox_Gender.Text == "Man")
+            {
+                gender = "M";
+            }
+            else
+            {
+                gender = "V";
+            }
             // City
             city = tbox_City.Text;
             // Address
@@ -101,13 +110,19 @@ namespace ICT4Participation
         /// <param name="e"></param>
         private void btn_VOGUpload_Click(object sender, EventArgs e)
         {
-            if(DialogResult.OK == OpenFileDialog.ShowDialog())
+            try {
+                if (DialogResult.OK == OpenFileDialog.ShowDialog())
+                {
+                    lbl_VOGPath.Text = OpenFileDialog.FileName;
+                    string destination = @"pdf.pdf";
+                    File.Copy(lbl_VOGPath.Text, destination);
+                    vogpath = destination;
+                    voguploaded = true;
+                }
+            }
+            catch (IOException ex)
             {
-                lbl_VOGPath.Text = OpenFileDialog.FileName;
-                string destination = @"C:\";
-                File.Copy(lbl_VOGPath.Text, destination);
-                vogpath = destination;
-                voguploaded = true;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -119,8 +134,26 @@ namespace ICT4Participation
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            User newUser = CheckAndReadEverything();
+
+                User newUser = CheckAndReadEverything();
+            if (newUser != null)
+            {
+                try
+                {
+                    DatabaseHandler.AddUser(newUser);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
          
+        }
+
+        private void Form_Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formsender.Show();
         }
     }
 }

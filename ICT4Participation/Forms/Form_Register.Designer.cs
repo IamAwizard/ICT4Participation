@@ -389,6 +389,7 @@
             this.Name = "Form_Register";
             this.ShowIcon = false;
             this.Text = "Registratie";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Register_FormClosing);
             this.gbox_SelectRole.ResumeLayout(false);
             this.gbox_SelectRole.PerformLayout();
             this.pnl_VOGInfo.ResumeLayout(false);

@@ -19,8 +19,29 @@ namespace ICT4Participation
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            bool isok = false;
             List<User> test = DatabaseHandler.GetUsers();
-            Console.WriteLine("testing ok break break");
+            foreach(User u in test)
+            {
+                if (u.Email == tbox_Username.Text && tbox_Password.Text == u.Password)
+                    isok = true;
+            }
+
+            if(isok)
+            {
+                MessageBox.Show("Inloggen ok");
+            }
+            else
+            {
+                MessageBox.Show(@"Foute email/wachtwoord combinatie");
+            }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Form_Register registerform = new Form_Register(this);
+            registerform.Show();
+            this.Hide();
         }
     }
 }
