@@ -12,36 +12,63 @@ namespace ICT4Participation
 {
     public partial class Form_Login : Form
     {
+        // Fields
+        LoginHandler loginhandler;
+
+        // Constructor
         public Form_Login()
         {
             InitializeComponent();
+            loginhandler = new LoginHandler();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool isok = false;
-            List<User> test = DatabaseHandler.GetUsers();
-            foreach(User u in test)
+            if (loginhandler.Authenticate(tbox_Username.Text, tbox_Password.Text))
             {
-                if (u.Email == tbox_Username.Text && tbox_Password.Text == u.Password)
-                    isok = true;
-            }
+                User authenticateduser = loginhandler.GetUser(tbox_Username.Text);
 
-            if(isok)
-            {
-                MessageBox.Show("Inloggen ok");
-            }
-            else
-            {
-                MessageBox.Show(@"Foute email/wachtwoord combinatie");
+                // ^ Above user is logged in, put Form code below inside this if-statement
+
+                // Client
+                if (authenticateduser is Client)
+                {
+                    Form_MainClient MainScreen = new Form_MainClient();
+                    this.Hide();
+                    tbox_Password.Text = string.Empty;
+                    tbox_Username.Text = string.Empty;
+                    MainScreen.ShowDialog();
+                    this.Show();
+                }
+                // Volunteer
+                if (authenticateduser is Volunteer)
+                {
+                    Form_MainVolunteer MainScreen = new Form_MainVolunteer();
+                    this.Hide();
+                    tbox_Password.Text = string.Empty;
+                    tbox_Username.Text = string.Empty;
+                    MainScreen.ShowDialog();
+                    this.Show();
+                }
+                // Admin
+                if (authenticateduser is Admin)
+                {
+                    Form_MainAdmin MainScreen = new Form_MainAdmin();
+                    this.Hide();
+                    tbox_Password.Text = string.Empty;
+                    tbox_Username.Text = string.Empty;
+                    MainScreen.ShowDialog();
+                    this.Show();
+                }
             }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Form_Register registerform = new Form_Register(this);
-            registerform.Show();
             this.Hide();
+            registerform.ShowDialog();
+            this.Show();
         }
     }
 }

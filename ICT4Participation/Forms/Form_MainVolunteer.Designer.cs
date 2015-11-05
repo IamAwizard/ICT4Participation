@@ -1,4 +1,4 @@
-﻿namespace ICT4Participation.Forms
+﻿namespace ICT4Participation
 {
     partial class Form_MainVolunteer
     {

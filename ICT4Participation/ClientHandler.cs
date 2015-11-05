@@ -37,11 +37,11 @@ namespace ICT4Participation
 
         public bool AddReview(string volunteername, int rating, string content)
         {
-            Volunteer target = (Volunteer)users.FindUser(volunteername);
-            if (reviews.AddReview(currentuser, target, rating, content))
-            {
-                return true;
-            }
+            //Volunteer target = (Volunteer)users.FindUser(volunteername);
+            //if (reviews.AddReview(currentuser, target, rating, content))
+            //{
+            //    return true;
+            //}
             return false;
         }
 

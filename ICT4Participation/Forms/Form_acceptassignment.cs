@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ICT4Participation.Forms
+namespace ICT4Participation
 {
-    public partial class Form_acceptassignment : Form
+    public partial class Form_AcceptAssignment : Form
     {
-        public Form_acceptassignment()
+        public Form_AcceptAssignment()
         {
             InitializeComponent();
         }

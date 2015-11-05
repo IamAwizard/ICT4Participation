@@ -134,13 +134,16 @@ namespace ICT4Participation
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-
+            
                 User newUser = CheckAndReadEverything();
             if (newUser != null)
             {
                 try
                 {
                     DatabaseHandler.AddUser(newUser);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    formsender.Show();
                 }
                 catch (IOException ex)
                 {

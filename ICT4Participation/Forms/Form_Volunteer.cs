@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ICT4Participation.Forms
+namespace ICT4Participation
 {
     public partial class Form_Volunteer : Form
     {

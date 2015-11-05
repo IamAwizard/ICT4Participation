@@ -23,9 +23,16 @@ namespace ICT4Participation
         }
 
         // Methods
-        public User FindUser(string name)
+        public User FindUserByName(string name)
         {
+            Synchronize();
             return users.Find(x => x.Name == name);
+        }
+
+        public User FindUserByEmail(string email)
+        {
+            Synchronize();
+            return users.Find(x => x.Email == email);
         }
 
         public bool AddUser(User user)
@@ -36,7 +43,7 @@ namespace ICT4Participation
 
         public void Synchronize()
         {
-
+            users = DatabaseHandler.GetUsers();
         }
     }
 }
