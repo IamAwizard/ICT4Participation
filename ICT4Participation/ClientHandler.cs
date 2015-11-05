@@ -9,26 +9,40 @@ namespace ICT4Participation
     class ClientHandler
     {
         // Fields
-        Client currentuser;
-
-        UserHandler users;
-        QuestionHandler questions;
-        ReviewHandler reviews;
+        ChatHandler chathandler;
+        QuestionHandler questionhandler;
+        ReviewHandler reviewhandler;
+        UserHandler userhandler;
 
         // Constructor   
-        public ClientHandler()
+        public ClientHandler(Client activeuser)
         {
-            questions = new QuestionHandler();
-            reviews = new ReviewHandler();
+            chathandler = new ChatHandler();
+            questionhandler = new QuestionHandler();
+            reviewhandler = new ReviewHandler();
+            userhandler = new UserHandler();
+            CurrentUser = activeuser;
         }
 
         // Properties
+        public Client CurrentUser { get; set; }
 
         // Methods
-        public bool AddQuestion(int auteur, string location, string transport, string distance, string discrepancy, string content)
+        public bool AddQuestion(int auteur, string location, string content)
         {
-            Question newQuestion = new Question(currentuser, auteur, location, transport, distance, discrepancy, content, DateTime.UtcNow, "NEE");
-            if (questions.AddQuestion(newQuestion))
+            Question newQuestion = new Question(CurrentUser, auteur, location, content, DateTime.Now);
+            if (questionhandler.AddQuestion(newQuestion))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool AddQuestion(int auteur, string location, string discrepancy, string content)
+        {
+            Question newQuestion = new Question(CurrentUser, auteur, location, content, DateTime.Now);
+            newQuestion.Discrepancy = discrepancy;
+            if (questionhandler.AddQuestion(newQuestion))
             {
                 return true;
             }
@@ -52,9 +66,9 @@ namespace ICT4Participation
             return false; ;
         }
 
-        public List<Question> GetQuestions()
+        public List<Question> GetMyQuestions()
         {
-            return questions.QuestionList;
+            return questionhandler.GetQuestionsByAuthor(CurrentUser);
         }
     }
 }

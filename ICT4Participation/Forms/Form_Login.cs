@@ -33,7 +33,7 @@ namespace ICT4Participation
                 // Client
                 if (authenticateduser is Client)
                 {
-                    Form_MainClient MainScreen = new Form_MainClient();
+                    Form_MainClient MainScreen = new Form_MainClient(authenticateduser);
                     this.Hide();
                     tbox_Password.Text = string.Empty;
                     tbox_Username.Text = string.Empty;
@@ -43,7 +43,7 @@ namespace ICT4Participation
                 // Volunteer
                 if (authenticateduser is Volunteer)
                 {
-                    Form_MainVolunteer MainScreen = new Form_MainVolunteer();
+                    Form_MainVolunteer MainScreen = new Form_MainVolunteer(authenticateduser);
                     this.Hide();
                     tbox_Password.Text = string.Empty;
                     tbox_Username.Text = string.Empty;
@@ -53,7 +53,7 @@ namespace ICT4Participation
                 // Admin
                 if (authenticateduser is Admin)
                 {
-                    Form_MainAdmin MainScreen = new Form_MainAdmin();
+                    Form_MainAdmin MainScreen = new Form_MainAdmin(authenticateduser);
                     this.Hide();
                     tbox_Password.Text = string.Empty;
                     tbox_Username.Text = string.Empty;

@@ -51,7 +51,7 @@ namespace ICT4Participation
 
         public void Synchronize()
         {
-          users =   DatabaseHandler.GetUsers();
+          users =   DatabaseHandler.GetAllUsers();
         }
     }
 }

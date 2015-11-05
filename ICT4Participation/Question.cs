@@ -23,6 +23,7 @@ namespace ICT4Participation
         //Properties
         public Volunteer Volunteer
         { get; set; }
+
         public Client Client
         { get; set; }
 
@@ -76,6 +77,19 @@ namespace ICT4Participation
             set { solved = value; }
         }
         // Constructor
+        public Question(Client client, int auteur, string location, string content, DateTime date)
+        {
+            this.Client = client;
+            this.Auteur = auteur;
+            this.Location = location;
+            this.Transport = null;
+            this.Content = content;
+            this.discrepancy = null;
+            this.Date = date;
+            this.Solved = "NEE";
+            this.Distance = null;
+        }
+
         public Question(Client client, int auteur, string location,string transport,string distance,string Discrepancy,string content,DateTime date,string solved)
         {
             this.Client = client;
@@ -88,11 +102,11 @@ namespace ICT4Participation
             this.Solved = solved;
             this.Distance = distance;
         }
-        
+
         // Methods
         public override string ToString()
         {
-            return "naam" + Auteur + "locatie" + location + "vervoersmiddel" + Transport+"afstand" +Distance + "inhoud" + Content + "Bijzonderheden" + Discrepancy + "Datum" + Date + "Geaccepteerd?" + Solved;
+            return Client.Name + " op " + Date.ToShortDateString()  +  ": " + ((content.Length > 40) ? content.Substring(0, 40) + "...." : content) + " - Opgelost: " + Solved;
         }
     }
 }

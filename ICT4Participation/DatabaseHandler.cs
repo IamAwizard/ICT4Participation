@@ -26,6 +26,10 @@ namespace ICT4Participation
         // Constructor
 
         // Methods
+
+        /// <summary>
+        /// Connect to the database...
+        /// </summary>
         public static void Connect()
         {
             con = new OracleConnection();
@@ -35,14 +39,48 @@ namespace ICT4Participation
 
         }
 
+        /// <summary>
+        /// Disconnect from the database...
+        /// </summary>
         public static void Disconnect()
         {
             con.Close();
             con.Dispose();
         }
 
+        /// <summary>
+        ///  Used to replace null values with string "NULL" values
+        ///  not in use as of 5-11-2015
+        /// </summary>
+        /// <param name="cmd"></param>
+        static void PopulateNullParameters(OracleCommand cmd)
+        {
+            foreach (OracleParameter p in cmd.Parameters)
+            {
+                if (p.Value == null)
+                {
+                    p.Value = "NULL";
+                }
+            }
+        }
 
-        public static List<Question> GetQuestions()
+        /// <summary>
+        /// Safely get string values from the oracledatareader if they are null
+        /// </summary>
+        /// <param name="odr"></param>
+        /// <param name="ColIndex"></param>
+        /// <returns></returns>
+        static string SafeGetValue(OracleDataReader odr, int ColIndex)
+        {
+            {
+                if (!odr.IsDBNull(ColIndex))
+                    return odr.GetString(ColIndex);
+                else
+                    return string.Empty;
+            }
+        }
+
+        public static List<Question> GetAllQuestions()
         {
             Connect();
             List<Question> questionlist = new List<Question>();
@@ -50,7 +88,7 @@ namespace ICT4Participation
             {
                 cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT QUESTIONID, AUTEUR, VRAAG , BIJZONDERHEID, LOCATIE, AFSTAND , VERVOER , DATUM , OPGELOST  "; // QUERY
+                cmd.CommandText = "SELECT QUESTIONID, AUTEUR, VRAAG , BIJZONDERHEID, LOCATIE, AFSTAND , VERVOER , DATUM , OPGELOST FROM TQUESTION"; // QUERY
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
             }
@@ -68,28 +106,28 @@ namespace ICT4Participation
                     // Read from DB
                     var questionid = dr.GetInt32(0);
                     var auteur = dr.GetInt32(1);
-                    var vraag = dr.GetString(2);
-                    var bijzonderheid = dr.GetString(3);
-                    var locatie = dr.GetString(4);
-                    var afstand = dr.GetString(5);
-                    var vervoer = dr.GetString(6);
-                    var datum = dr.GetDateTime(7);
-                    var opgelost = dr.GetString(8);
+                    var vraag = SafeGetValue(dr, 2);
+                    var bijzonderheid = SafeGetValue(dr, 3);
+                    var locatie = SafeGetValue(dr, 4);
+                    var afstand = SafeGetValue(dr, 5);
+                    var vervoer = SafeGetValue(dr, 6);
+                    DateTime datum = dr.GetDateTime(7);
+                    var opgelost = SafeGetValue(dr, 8);
 
                     Question toadd;
                     toadd = new Question(null, auteur, locatie, vervoer, afstand, bijzonderheid, vraag, datum, opgelost);
                     questionlist.Add(toadd);
                 }
-                foreach(Question q in questionlist)
+                foreach (Question q in questionlist)
                 {
                     q.Client = (Client)GetUser(q.Auteur);
                 }
                 return questionlist;
             }
-            catch
-            { 
-		MessageBox.Show(" kap er maar mee he pater");
-            	return null;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
             }
 
         }
@@ -164,7 +202,7 @@ namespace ICT4Participation
             }
         }
 
-        public static List<User> GetUsers()
+        public static List<User> GetAllUsers()
         {
             Connect();
             List<User> userList = new List<User>();
@@ -284,6 +322,40 @@ namespace ICT4Participation
             {
                 Disconnect();
             }
+        }
+
+        public static bool AddQuestion(Question newquestion)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                    "Insert into TQUESTION(AUTEUR, VRAAG, BIJZONDERHEID, LOCATIE, AFSTAND, VERVOER, DATUM, OPGELOST) VALUES (:NewAUTEUR, :NewVRAAG, :NewBIJZONDERHEID, :NewLOCATIE, :NewAFSTAND, :NewVERVOER, :NewDATUM, :NewOPGELOST)";
+
+                cmd.Parameters.Add("NewAUTEUR", OracleDbType.Int32).Value = newquestion.Auteur;
+                cmd.Parameters.Add("NewVRAAG", OracleDbType.Varchar2).Value = newquestion.Content;
+                cmd.Parameters.Add("NewBIJZONDERHEID", OracleDbType.Varchar2).Value = newquestion.Discrepancy;
+                cmd.Parameters.Add("NewLOCATIE", OracleDbType.Varchar2).Value = newquestion.Location;
+                cmd.Parameters.Add("NewAFSTAND", OracleDbType.Varchar2).Value = newquestion.Distance;
+                cmd.Parameters.Add("NewVERVOER", OracleDbType.Varchar2).Value = newquestion.Transport;
+                cmd.Parameters.Add("NewDATUM", OracleDbType.Varchar2).Value = newquestion.Date.ToString("dd-MMM-yy");
+                cmd.Parameters.Add("NewOPGELOST", OracleDbType.Varchar2).Value = newquestion.Solved;
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+
         }
     }
 }

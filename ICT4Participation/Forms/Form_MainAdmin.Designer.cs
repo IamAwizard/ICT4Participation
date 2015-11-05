@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MainAdmin));
             this.lb_Questions = new System.Windows.Forms.ListBox();
             this.lb_Reviews = new System.Windows.Forms.ListBox();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -109,9 +110,10 @@
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.lb_Reviews);
             this.Controls.Add(this.lb_Questions);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_MainAdmin";
-            this.Text = "Form_MainAdmin";
+            this.Text = "Beheersysteem";
             this.ResumeLayout(false);
             this.PerformLayout();
 

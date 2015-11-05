@@ -22,15 +22,34 @@ namespace ICT4Participation
         {
             get { return questions; }
         }
-        // Methods
-        public bool AddQuestion(Question question)
-        {
-            return false;
-        }
 
+        // Methods
         public void Synchronize()
         {
-
+            questions = DatabaseHandler.GetAllQuestions();
         }
+
+        public bool AddQuestion(Question question)
+        {
+            if (DatabaseHandler.AddQuestion(question))
+                return true;
+            else
+                return false;
+            
+        }
+
+        public List<Question> GetQuestionsByAuthor(User author)
+        {
+            Synchronize();
+            try
+            {
+                return questions.FindAll(x => x.Auteur == author.UserID);
+            }
+            catch (NullReferenceException ex)
+            {
+                return null;
+            }
+        }
+
     }
 }

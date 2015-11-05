@@ -54,7 +54,6 @@
             this.cbox_Gender = new System.Windows.Forms.ComboBox();
             this.dtp_DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbox_SelectRole.SuspendLayout();
             this.pnl_VOGInfo.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +65,9 @@
             this.lbl_Registration.ForeColor = System.Drawing.Color.White;
             this.lbl_Registration.Location = new System.Drawing.Point(62, 9);
             this.lbl_Registration.Name = "lbl_Registration";
-            this.lbl_Registration.Size = new System.Drawing.Size(282, 24);
+            this.lbl_Registration.Size = new System.Drawing.Size(309, 24);
             this.lbl_Registration.TabIndex = 0;
-            this.lbl_Registration.Text = "Welkom bij ICT4Participation!";
+            this.lbl_Registration.Text = "Registreren bij ICT4Participation";
             // 
             // gbox_SelectRole
             // 
@@ -112,15 +111,17 @@
             // 
             // btn_OK
             // 
+            this.btn_OK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_OK.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_OK.FlatAppearance.BorderSize = 0;
             this.btn_OK.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_OK.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OK.Location = new System.Drawing.Point(49, 458);
+            this.btn_OK.Location = new System.Drawing.Point(49, 356);
             this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(100, 35);
+            this.btn_OK.Size = new System.Drawing.Size(98, 35);
             this.btn_OK.TabIndex = 9;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = false;
@@ -128,15 +129,17 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Cancel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Cancel.FlatAppearance.BorderSize = 0;
             this.btn_Cancel.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.Location = new System.Drawing.Point(278, 456);
+            this.btn_Cancel.Location = new System.Drawing.Point(278, 354);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(100, 35);
+            this.btn_Cancel.Size = new System.Drawing.Size(98, 35);
             this.btn_Cancel.TabIndex = 10;
             this.btn_Cancel.Text = "Annuleer";
             this.btn_Cancel.UseVisualStyleBackColor = false;
@@ -149,9 +152,9 @@
             this.lbl_Email.ForeColor = System.Drawing.Color.White;
             this.lbl_Email.Location = new System.Drawing.Point(92, 46);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(50, 18);
+            this.lbl_Email.Size = new System.Drawing.Size(54, 18);
             this.lbl_Email.TabIndex = 11;
-            this.lbl_Email.Text = "E-Mail";
+            this.lbl_Email.Text = "E-mail:";
             // 
             // lbl_Password
             // 
@@ -160,9 +163,9 @@
             this.lbl_Password.ForeColor = System.Drawing.Color.White;
             this.lbl_Password.Location = new System.Drawing.Point(49, 76);
             this.lbl_Password.Name = "lbl_Password";
-            this.lbl_Password.Size = new System.Drawing.Size(93, 18);
+            this.lbl_Password.Size = new System.Drawing.Size(97, 18);
             this.lbl_Password.TabIndex = 12;
-            this.lbl_Password.Text = "Wachtwoord";
+            this.lbl_Password.Text = "Wachtwoord:";
             // 
             // lbl_Name
             // 
@@ -171,9 +174,9 @@
             this.lbl_Name.ForeColor = System.Drawing.Color.White;
             this.lbl_Name.Location = new System.Drawing.Point(31, 106);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(111, 18);
+            this.lbl_Name.Size = new System.Drawing.Size(115, 18);
             this.lbl_Name.TabIndex = 13;
-            this.lbl_Name.Text = "Volledige Naam";
+            this.lbl_Name.Text = "Volledige Naam:";
             // 
             // lbl_DateOfBirth
             // 
@@ -182,9 +185,9 @@
             this.lbl_DateOfBirth.ForeColor = System.Drawing.Color.White;
             this.lbl_DateOfBirth.Location = new System.Drawing.Point(30, 136);
             this.lbl_DateOfBirth.Name = "lbl_DateOfBirth";
-            this.lbl_DateOfBirth.Size = new System.Drawing.Size(112, 18);
+            this.lbl_DateOfBirth.Size = new System.Drawing.Size(116, 18);
             this.lbl_DateOfBirth.TabIndex = 14;
-            this.lbl_DateOfBirth.Text = "Geboortedatum";
+            this.lbl_DateOfBirth.Text = "Geboortedatum:";
             // 
             // lbl_Gender
             // 
@@ -193,9 +196,9 @@
             this.lbl_Gender.ForeColor = System.Drawing.Color.White;
             this.lbl_Gender.Location = new System.Drawing.Point(75, 164);
             this.lbl_Gender.Name = "lbl_Gender";
-            this.lbl_Gender.Size = new System.Drawing.Size(67, 18);
+            this.lbl_Gender.Size = new System.Drawing.Size(71, 18);
             this.lbl_Gender.TabIndex = 15;
-            this.lbl_Gender.Text = "Geslacht";
+            this.lbl_Gender.Text = "Geslacht:";
             // 
             // lbl_City
             // 
@@ -204,9 +207,9 @@
             this.lbl_City.ForeColor = System.Drawing.Color.White;
             this.lbl_City.Location = new System.Drawing.Point(54, 196);
             this.lbl_City.Name = "lbl_City";
-            this.lbl_City.Size = new System.Drawing.Size(88, 18);
+            this.lbl_City.Size = new System.Drawing.Size(92, 18);
             this.lbl_City.TabIndex = 16;
-            this.lbl_City.Text = "Woonplaats";
+            this.lbl_City.Text = "Woonplaats:";
             // 
             // lbl_Address
             // 
@@ -215,9 +218,9 @@
             this.lbl_Address.ForeColor = System.Drawing.Color.White;
             this.lbl_Address.Location = new System.Drawing.Point(96, 226);
             this.lbl_Address.Name = "lbl_Address";
-            this.lbl_Address.Size = new System.Drawing.Size(46, 18);
+            this.lbl_Address.Size = new System.Drawing.Size(50, 18);
             this.lbl_Address.TabIndex = 17;
-            this.lbl_Address.Text = "Adres";
+            this.lbl_Address.Text = "Adres:";
             // 
             // pnl_VOGInfo
             // 
@@ -352,21 +355,12 @@
             this.OpenFileDialog.FileName = "VOG";
             this.OpenFileDialog.Filter = "\"PDF file|*.pdf|All Files|*.*\"";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(331, 272);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(60, 21);
-            this.comboBox1.TabIndex = 28;
-            // 
             // Form_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(416, 503);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(414, 401);
             this.Controls.Add(this.dtp_DateOfBirth);
             this.Controls.Add(this.cbox_Gender);
             this.Controls.Add(this.tbox_Address);
@@ -386,8 +380,12 @@
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.gbox_SelectRole);
             this.Controls.Add(this.lbl_Registration);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(430, 540);
+            this.MinimumSize = new System.Drawing.Size(430, 440);
             this.Name = "Form_Register";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registratie";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Register_FormClosing);
             this.gbox_SelectRole.ResumeLayout(false);
@@ -427,6 +425,5 @@
         private System.Windows.Forms.ComboBox cbox_Gender;
         private System.Windows.Forms.DateTimePicker dtp_DateOfBirth;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

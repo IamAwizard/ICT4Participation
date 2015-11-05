@@ -34,10 +34,12 @@ namespace ICT4Participation
             if(rbtn_Volunteer.Checked)
             {
                 pnl_VOGInfo.Show();
+                Height = MaximumSize.Height;
             }
             else
             {
                 pnl_VOGInfo.Hide();
+                Height = MinimumSize.Height; ;
             }
         }
 
@@ -142,8 +144,10 @@ namespace ICT4Participation
                 {
                     DatabaseHandler.AddUser(newUser);
                     this.DialogResult = DialogResult.OK;
+                    MessageBox.Show("Account aanmaken gelukt!");
+                    formsender.tbox_Username.Text = newUser.Email;
+                    formsender.tbox_Password.Text = newUser.Password;
                     this.Close();
-                    formsender.Show();
                 }
                 catch (IOException ex)
                 {

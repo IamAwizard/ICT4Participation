@@ -12,7 +12,7 @@ namespace ICT4Participation
 {
     public partial class Form_MainAdmin : Form
     {
-        public Form_MainAdmin()
+        public Form_MainAdmin(User loggedinasuser)
         {
             InitializeComponent();
         }

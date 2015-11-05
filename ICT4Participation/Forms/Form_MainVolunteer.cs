@@ -12,28 +12,15 @@ namespace ICT4Participation
 {
     public partial class Form_MainVolunteer : Form
     {
-        public Form_MainVolunteer()
+        User currentuser;
+        public Form_MainVolunteer(User loggedinasuser)
         {
             InitializeComponent();
+            currentuser = loggedinasuser;
+            lbl_UserName.Text = currentuser.Name;
         }
 
-        private void pnl_profiel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_schedule_Click(object sender, EventArgs e)
-        {
-            var formschedule = new Form_Shedule();
-            formschedule.Show();
-        }
-
-        private void lbl_namevolunteer_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btn_uploadavatar_Click(object sender, EventArgs e)
+        private void Form_Volunteer_Load(object sender, EventArgs e)
         {
 
         }
