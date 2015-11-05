@@ -30,54 +30,88 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tb_opdracht = new System.Windows.Forms.TextBox();
+            this.tb_bijzonderheid = new System.Windows.Forms.TextBox();
+            this.btn_chat = new System.Windows.Forms.Button();
+            this.btn_accept = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(249, 159);
+            this.label1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(113, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "De opdracht";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(474, 247);
+            this.label2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 244);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(126, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Bijzonderheid";
             // 
-            // label3
+            // tb_opdracht
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(482, 255);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.tb_opdracht.Location = new System.Drawing.Point(134, 12);
+            this.tb_opdracht.Multiline = true;
+            this.tb_opdracht.Name = "tb_opdracht";
+            this.tb_opdracht.Size = new System.Drawing.Size(481, 229);
+            this.tb_opdracht.TabIndex = 4;
             // 
-            // label4
+            // tb_bijzonderheid
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(490, 263);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.tb_bijzonderheid.Location = new System.Drawing.Point(16, 292);
+            this.tb_bijzonderheid.Multiline = true;
+            this.tb_bijzonderheid.Name = "tb_bijzonderheid";
+            this.tb_bijzonderheid.Size = new System.Drawing.Size(305, 159);
+            this.tb_bijzonderheid.TabIndex = 5;
+            // 
+            // btn_chat
+            // 
+            this.btn_chat.BackColor = System.Drawing.Color.White;
+            this.btn_chat.FlatAppearance.BorderSize = 0;
+            this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_chat.Location = new System.Drawing.Point(412, 292);
+            this.btn_chat.Name = "btn_chat";
+            this.btn_chat.Size = new System.Drawing.Size(175, 50);
+            this.btn_chat.TabIndex = 6;
+            this.btn_chat.Text = "Chat";
+            this.btn_chat.UseVisualStyleBackColor = false;
+            // 
+            // btn_accept
+            // 
+            this.btn_accept.BackColor = System.Drawing.Color.White;
+            this.btn_accept.FlatAppearance.BorderSize = 0;
+            this.btn_accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_accept.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_accept.Location = new System.Drawing.Point(412, 377);
+            this.btn_accept.Name = "btn_accept";
+            this.btn_accept.Size = new System.Drawing.Size(175, 50);
+            this.btn_accept.TabIndex = 7;
+            this.btn_accept.Text = "Accepteren";
+            this.btn_accept.UseVisualStyleBackColor = false;
             // 
             // Form_Question
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(994, 510);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(645, 510);
+            this.Controls.Add(this.btn_accept);
+            this.Controls.Add(this.btn_chat);
+            this.Controls.Add(this.tb_bijzonderheid);
+            this.Controls.Add(this.tb_opdracht);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form_Question";
@@ -91,7 +125,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tb_opdracht;
+        private System.Windows.Forms.TextBox tb_bijzonderheid;
+        private System.Windows.Forms.Button btn_chat;
+        private System.Windows.Forms.Button btn_accept;
     }
 }
