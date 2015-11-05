@@ -25,9 +25,9 @@ namespace ICT4Participation
         // Properties
 
         // Methods
-        public bool AddQuestion(string name, string location, string transport, int distance, string discrepancy, string content)
+        public bool AddQuestion(int auteur, string location, string transport, string distance, string discrepancy, string content)
         {
-            Question newQuestion = new Question(currentuser, name, location, transport, distance, discrepancy, content, DateTime.UtcNow, false);
+            Question newQuestion = new Question(currentuser, auteur, location, transport, distance, discrepancy, content, DateTime.UtcNow, "NEE");
             if (questions.AddQuestion(newQuestion))
             {
                 return true;

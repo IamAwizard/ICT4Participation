@@ -75,7 +75,10 @@ namespace ICT4Participation
             this.Email = email;
             this.Password = password;
         }
+        public User()
+        {
 
+        }
         public override string ToString()
         {
             return "Name " + Name + " Date of birth " + DateOfBirth.ToString() + " Gender " + Gender + " City " + Adress + " Adress " + Email + " email "

@@ -21,7 +21,7 @@ namespace ICT4Participation
         // Methods
         public bool AnswerQuestion(Question question, string answer)
         {
-            questions.QuestionList.Find(x => x.Name == question.Name).Answer = answer;
+            questions.QuestionList.Find(x => x.Auteur == question.Auteur).Answer = answer;
             return true;
         }
 

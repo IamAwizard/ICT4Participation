@@ -9,26 +9,27 @@ namespace ICT4Participation
    public class Question
     {
         // Fields
-        Client client;
         Volunteer volunteer;
-        private string name;
+        private int auteur;
         private DateTime date;
         private string content;
         private string discrepancy;
         private string location;
-        private int distance;
+        private string distance;
         private string transport;
         private string answer;
-        private bool solved;
+        private string solved;
 
         //Properties
         public Volunteer Volunteer
         { get; set; }
+        public Client Client
+        { get; set; }
 
-        public string Name
+        public int Auteur
         {
-            get { return name; }
-            set { name = value; }
+            get { return auteur; }
+            set { auteur = value; }
         }
 
         public DateTime Date
@@ -51,7 +52,7 @@ namespace ICT4Participation
             get { return location; }
             set { location = value; }
         }
-        public int Distance
+        public string Distance
         {
             get { return distance; }
             set { distance = value; }
@@ -69,29 +70,29 @@ namespace ICT4Participation
             set { answer = value; }
         }
 
-        public bool Solved
+        public string Solved
         {
             get { return solved; }
             set { solved = value; }
         }
         // Constructor
-        public Question(Client client, string name, string location,string transport,int distance,string Discrepancy,string content,DateTime date,bool solved)
+        public Question(Client client, int auteur, string location,string transport,string distance,string Discrepancy,string content,DateTime date,string solved)
         {
-            this.client = client;
-            this.Name = this.name;
-            this.Location = this.location;
-            this.Transport = this.transport;
-            this.Content = this.content;
-            this.Discrepancy = this.discrepancy;
-            this.Date = this.date;
-            this.Solved = this.solved;
-            this.Distance = this.distance;
+            this.Client = client;
+            this.Auteur = auteur;
+            this.Location = location;
+            this.Transport = transport;
+            this.Content = content;
+            this.discrepancy = Discrepancy;
+            this.Date = date;
+            this.Solved = solved;
+            this.Distance = distance;
         }
         
         // Methods
         public override string ToString()
         {
-            return "naam" + Name + "locatie" + location + "vervoersmiddel" + Transport+"afstand" +Distance + "inhoud" + Content + "Bijzonderheden" + Discrepancy + "Datum" + Date + "Geaccepteerd?" + Solved;
+            return "naam" + Auteur + "locatie" + location + "vervoersmiddel" + Transport+"afstand" +Distance + "inhoud" + Content + "Bijzonderheden" + Discrepancy + "Datum" + Date + "Geaccepteerd?" + Solved;
         }
     }
 }

@@ -41,6 +41,129 @@ namespace ICT4Participation
             con.Dispose();
         }
 
+
+        public static List<Question> GetQuestions()
+        {
+            Connect();
+            List<Question> questionlist = new List<Question>();
+            try
+            {
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT QUESTIONID, AUTEUR, VRAAG , BIJZONDERHEID, LOCATIE, AFSTAND , VERVOER , DATUM , OPGELOST  "; // QUERY
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                Disconnect();
+                return null;
+            }
+
+            try
+            {
+                while (dr.Read())
+                {
+                    // Read from DB
+                    var questionid = dr.GetInt32(0);
+                    var auteur = dr.GetInt32(1);
+                    var vraag = dr.GetString(2);
+                    var bijzonderheid = dr.GetString(3);
+                    var locatie = dr.GetString(4);
+                    var afstand = dr.GetString(5);
+                    var vervoer = dr.GetString(6);
+                    var datum = dr.GetDateTime(7);
+                    var opgelost = dr.GetString(8);
+
+                    Question toadd;
+                    toadd = new Question(null, auteur, locatie, vervoer, afstand, bijzonderheid, vraag, datum, opgelost);
+                    questionlist.Add(toadd);
+                }
+                foreach(Question q in questionlist)
+                {
+                    q.Client = (Client)GetUser(q.Auteur);
+                }
+                return questionlist;
+            }
+            catch
+            {
+                return null;
+                MessageBox.Show(" kap er maar mee he pater");
+            }
+
+        }
+
+        public static User GetUser(int ids)
+        {
+            Connect();
+            User toadd = null;
+            try
+            {
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT USERID, NAAM, GEBOORTEDATUM, GESLACHT, WOONPLAATS, ADRES, EMAIL, WACHTWOORD, TYPE FROM TUSER WHERE USERID = " + ids; // QUERY
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                Disconnect();
+                return null;
+            }
+
+            try
+            {
+                while (dr.Read())
+                {
+                    // Read from DB
+                    var id = dr.GetInt32(0);
+                    var name = dr.GetString(1);
+                    var dateOfBirth = dr.GetDateTime(2);
+                    var gender = dr.GetString(3);
+                    var city = dr.GetString(4);
+                    var adress = dr.GetString(5);
+                    var email = dr.GetString(6);
+                    var password = dr.GetString(7);
+
+                    var type = dr.GetString(8);
+
+
+                    switch (type)
+                    {
+                        case "CLIENT":
+                            Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
+                            toadd = newClient;
+                            toadd.UserID = id;
+                            break;
+                        case "VOLUNTEER":
+                            toadd = null;
+                            Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "", "", "");
+                            toadd = newUser;
+                            break;
+                        case "ADMIN":
+                            Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
+                            toadd = newAdmin;
+                            toadd.UserID = id;
+                            break;
+                        default:
+                            toadd = null;
+                            break;
+                    }
+
+                }
+                Disconnect();
+                return toadd;
+            }
+            catch (InvalidCastException ex)
+            {
+                Disconnect();
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
+        }
+
         public static List<User> GetUsers()
         {
             Connect();
@@ -86,8 +209,8 @@ namespace ICT4Participation
                             break;
                         case "VOLUNTEER":
                             toadd = null;
-                            //Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password);
-                            //toadd = newUser;
+                            Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "", "", "");
+                            toadd = newUser;
                             break;
                         case "ADMIN":
                             Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
