@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_opdracht = new System.Windows.Forms.TextBox();
-            this.tb_bijzonderheid = new System.Windows.Forms.TextBox();
+            this.tb_assignment = new System.Windows.Forms.TextBox();
+            this.tb_specialty = new System.Windows.Forms.TextBox();
             this.btn_chat = new System.Windows.Forms.Button();
             this.btn_accept = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -60,21 +60,21 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Bijzonderheid";
             // 
-            // tb_opdracht
+            // tb_assignment
             // 
-            this.tb_opdracht.Location = new System.Drawing.Point(134, 12);
-            this.tb_opdracht.Multiline = true;
-            this.tb_opdracht.Name = "tb_opdracht";
-            this.tb_opdracht.Size = new System.Drawing.Size(481, 229);
-            this.tb_opdracht.TabIndex = 4;
+            this.tb_assignment.Location = new System.Drawing.Point(134, 12);
+            this.tb_assignment.Multiline = true;
+            this.tb_assignment.Name = "tb_assignment";
+            this.tb_assignment.Size = new System.Drawing.Size(481, 229);
+            this.tb_assignment.TabIndex = 4;
             // 
-            // tb_bijzonderheid
+            // tb_specialty
             // 
-            this.tb_bijzonderheid.Location = new System.Drawing.Point(16, 292);
-            this.tb_bijzonderheid.Multiline = true;
-            this.tb_bijzonderheid.Name = "tb_bijzonderheid";
-            this.tb_bijzonderheid.Size = new System.Drawing.Size(305, 159);
-            this.tb_bijzonderheid.TabIndex = 5;
+            this.tb_specialty.Location = new System.Drawing.Point(16, 292);
+            this.tb_specialty.Multiline = true;
+            this.tb_specialty.Name = "tb_specialty";
+            this.tb_specialty.Size = new System.Drawing.Size(305, 159);
+            this.tb_specialty.TabIndex = 5;
             // 
             // btn_chat
             // 
@@ -110,8 +110,8 @@
             this.ClientSize = new System.Drawing.Size(645, 510);
             this.Controls.Add(this.btn_accept);
             this.Controls.Add(this.btn_chat);
-            this.Controls.Add(this.tb_bijzonderheid);
-            this.Controls.Add(this.tb_opdracht);
+            this.Controls.Add(this.tb_specialty);
+            this.Controls.Add(this.tb_assignment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form_Question";
@@ -125,8 +125,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_opdracht;
-        private System.Windows.Forms.TextBox tb_bijzonderheid;
+        private System.Windows.Forms.TextBox tb_assignment;
+        private System.Windows.Forms.TextBox tb_specialty;
         private System.Windows.Forms.Button btn_chat;
         private System.Windows.Forms.Button btn_accept;
     }

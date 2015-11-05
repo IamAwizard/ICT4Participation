@@ -40,8 +40,16 @@
             this.lbl_bijzonder = new System.Windows.Forms.Label();
             this.lbl_reistijd = new System.Windows.Forms.Label();
             this.lbl_opdracht = new System.Windows.Forms.Label();
-            this.pnl_profiel = new System.Windows.Forms.Panel();
-            this.lbl_naamvolunteer = new System.Windows.Forms.Label();
+            this.pnl_profile = new System.Windows.Forms.Panel();
+            this.btn_backprofile = new System.Windows.Forms.Button();
+            this.btn_schedule = new System.Windows.Forms.Button();
+            this.chk_license = new System.Windows.Forms.CheckBox();
+            this.lbl_leeftijd = new System.Windows.Forms.Label();
+            this.tb_bio = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_namevolunteer = new System.Windows.Forms.Label();
             this.lbl_naamdonotuse = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,16 +57,8 @@
             this.lbl_rating = new System.Windows.Forms.Label();
             this.lbl_VOG = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tb_bio = new System.Windows.Forms.TextBox();
-            this.lbl_leeftijd = new System.Windows.Forms.Label();
-            this.chk_rijbewijs = new System.Windows.Forms.CheckBox();
-            this.btn_rooster = new System.Windows.Forms.Button();
-            this.btn_backprofiel = new System.Windows.Forms.Button();
             this.pnl_opdrachtaanvaard.SuspendLayout();
-            this.pnl_profiel.SuspendLayout();
+            this.pnl_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,38 +197,125 @@
             this.lbl_opdracht.TabIndex = 0;
             this.lbl_opdracht.Text = "Opdracht";
             // 
-            // pnl_profiel
+            // pnl_profile
             // 
-            this.pnl_profiel.Controls.Add(this.btn_backprofiel);
-            this.pnl_profiel.Controls.Add(this.btn_rooster);
-            this.pnl_profiel.Controls.Add(this.chk_rijbewijs);
-            this.pnl_profiel.Controls.Add(this.lbl_leeftijd);
-            this.pnl_profiel.Controls.Add(this.tb_bio);
-            this.pnl_profiel.Controls.Add(this.label6);
-            this.pnl_profiel.Controls.Add(this.label5);
-            this.pnl_profiel.Controls.Add(this.label3);
-            this.pnl_profiel.Controls.Add(this.lbl_naamvolunteer);
-            this.pnl_profiel.Controls.Add(this.lbl_naamdonotuse);
-            this.pnl_profiel.Controls.Add(this.label2);
-            this.pnl_profiel.Controls.Add(this.label1);
-            this.pnl_profiel.Controls.Add(this.lbl_score);
-            this.pnl_profiel.Controls.Add(this.lbl_rating);
-            this.pnl_profiel.Controls.Add(this.lbl_VOG);
-            this.pnl_profiel.Controls.Add(this.pictureBox1);
-            this.pnl_profiel.Location = new System.Drawing.Point(1, 2);
-            this.pnl_profiel.Name = "pnl_profiel";
-            this.pnl_profiel.Size = new System.Drawing.Size(561, 519);
-            this.pnl_profiel.TabIndex = 0;
-            this.pnl_profiel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_profiel_Paint);
+            this.pnl_profile.Controls.Add(this.btn_backprofile);
+            this.pnl_profile.Controls.Add(this.btn_schedule);
+            this.pnl_profile.Controls.Add(this.chk_license);
+            this.pnl_profile.Controls.Add(this.lbl_leeftijd);
+            this.pnl_profile.Controls.Add(this.tb_bio);
+            this.pnl_profile.Controls.Add(this.label6);
+            this.pnl_profile.Controls.Add(this.label5);
+            this.pnl_profile.Controls.Add(this.label3);
+            this.pnl_profile.Controls.Add(this.lbl_namevolunteer);
+            this.pnl_profile.Controls.Add(this.lbl_naamdonotuse);
+            this.pnl_profile.Controls.Add(this.label2);
+            this.pnl_profile.Controls.Add(this.label1);
+            this.pnl_profile.Controls.Add(this.lbl_score);
+            this.pnl_profile.Controls.Add(this.lbl_rating);
+            this.pnl_profile.Controls.Add(this.lbl_VOG);
+            this.pnl_profile.Controls.Add(this.pictureBox1);
+            this.pnl_profile.Location = new System.Drawing.Point(1, 2);
+            this.pnl_profile.Name = "pnl_profile";
+            this.pnl_profile.Size = new System.Drawing.Size(561, 519);
+            this.pnl_profile.TabIndex = 0;
+            this.pnl_profile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_profiel_Paint);
             // 
-            // lbl_naamvolunteer
+            // btn_backprofile
             // 
-            this.lbl_naamvolunteer.AutoSize = true;
-            this.lbl_naamvolunteer.ForeColor = System.Drawing.Color.White;
-            this.lbl_naamvolunteer.Location = new System.Drawing.Point(299, 149);
-            this.lbl_naamvolunteer.Name = "lbl_naamvolunteer";
-            this.lbl_naamvolunteer.Size = new System.Drawing.Size(0, 17);
-            this.lbl_naamvolunteer.TabIndex = 7;
+            this.btn_backprofile.BackColor = System.Drawing.Color.White;
+            this.btn_backprofile.FlatAppearance.BorderSize = 0;
+            this.btn_backprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_backprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_backprofile.Location = new System.Drawing.Point(330, 465);
+            this.btn_backprofile.Name = "btn_backprofile";
+            this.btn_backprofile.Size = new System.Drawing.Size(197, 41);
+            this.btn_backprofile.TabIndex = 15;
+            this.btn_backprofile.Text = "Back";
+            this.btn_backprofile.UseVisualStyleBackColor = false;
+            // 
+            // btn_schedule
+            // 
+            this.btn_schedule.BackColor = System.Drawing.Color.White;
+            this.btn_schedule.FlatAppearance.BorderSize = 0;
+            this.btn_schedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_schedule.Location = new System.Drawing.Point(330, 406);
+            this.btn_schedule.Name = "btn_schedule";
+            this.btn_schedule.Size = new System.Drawing.Size(197, 41);
+            this.btn_schedule.TabIndex = 14;
+            this.btn_schedule.Text = "Rooster";
+            this.btn_schedule.UseVisualStyleBackColor = false;
+            // 
+            // chk_license
+            // 
+            this.chk_license.AutoSize = true;
+            this.chk_license.Location = new System.Drawing.Point(114, 491);
+            this.chk_license.Name = "chk_license";
+            this.chk_license.Size = new System.Drawing.Size(18, 17);
+            this.chk_license.TabIndex = 13;
+            this.chk_license.UseVisualStyleBackColor = true;
+            // 
+            // lbl_leeftijd
+            // 
+            this.lbl_leeftijd.AutoSize = true;
+            this.lbl_leeftijd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_leeftijd.ForeColor = System.Drawing.Color.White;
+            this.lbl_leeftijd.Location = new System.Drawing.Point(110, 441);
+            this.lbl_leeftijd.Name = "lbl_leeftijd";
+            this.lbl_leeftijd.Size = new System.Drawing.Size(0, 24);
+            this.lbl_leeftijd.TabIndex = 12;
+            // 
+            // tb_bio
+            // 
+            this.tb_bio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tb_bio.Location = new System.Drawing.Point(94, 263);
+            this.tb_bio.Multiline = true;
+            this.tb_bio.Name = "tb_bio";
+            this.tb_bio.Size = new System.Drawing.Size(396, 127);
+            this.tb_bio.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(11, 485);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 24);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Rijbewijs";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(12, 441);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Leeftijd";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(7, 306);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 24);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Bio";
+            // 
+            // lbl_namevolunteer
+            // 
+            this.lbl_namevolunteer.AutoSize = true;
+            this.lbl_namevolunteer.ForeColor = System.Drawing.Color.White;
+            this.lbl_namevolunteer.Location = new System.Drawing.Point(299, 149);
+            this.lbl_namevolunteer.Name = "lbl_namevolunteer";
+            this.lbl_namevolunteer.Size = new System.Drawing.Size(0, 17);
+            this.lbl_namevolunteer.TabIndex = 7;
             // 
             // lbl_naamdonotuse
             // 
@@ -305,107 +392,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 306);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 24);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Bio";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 441);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 24);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Leeftijd";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(11, 485);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 24);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Rijbewijs";
-            // 
-            // tb_bio
-            // 
-            this.tb_bio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tb_bio.Location = new System.Drawing.Point(94, 263);
-            this.tb_bio.Multiline = true;
-            this.tb_bio.Name = "tb_bio";
-            this.tb_bio.Size = new System.Drawing.Size(396, 127);
-            this.tb_bio.TabIndex = 11;
-            // 
-            // lbl_leeftijd
-            // 
-            this.lbl_leeftijd.AutoSize = true;
-            this.lbl_leeftijd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_leeftijd.ForeColor = System.Drawing.Color.White;
-            this.lbl_leeftijd.Location = new System.Drawing.Point(110, 441);
-            this.lbl_leeftijd.Name = "lbl_leeftijd";
-            this.lbl_leeftijd.Size = new System.Drawing.Size(0, 24);
-            this.lbl_leeftijd.TabIndex = 12;
-            // 
-            // chk_rijbewijs
-            // 
-            this.chk_rijbewijs.AutoSize = true;
-            this.chk_rijbewijs.Location = new System.Drawing.Point(114, 491);
-            this.chk_rijbewijs.Name = "chk_rijbewijs";
-            this.chk_rijbewijs.Size = new System.Drawing.Size(18, 17);
-            this.chk_rijbewijs.TabIndex = 13;
-            this.chk_rijbewijs.UseVisualStyleBackColor = true;
-            // 
-            // btn_rooster
-            // 
-            this.btn_rooster.BackColor = System.Drawing.Color.White;
-            this.btn_rooster.FlatAppearance.BorderSize = 0;
-            this.btn_rooster.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rooster.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_rooster.Location = new System.Drawing.Point(330, 406);
-            this.btn_rooster.Name = "btn_rooster";
-            this.btn_rooster.Size = new System.Drawing.Size(197, 41);
-            this.btn_rooster.TabIndex = 14;
-            this.btn_rooster.Text = "Rooster";
-            this.btn_rooster.UseVisualStyleBackColor = false;
-            // 
-            // btn_backprofiel
-            // 
-            this.btn_backprofiel.BackColor = System.Drawing.Color.White;
-            this.btn_backprofiel.FlatAppearance.BorderSize = 0;
-            this.btn_backprofiel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_backprofiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_backprofiel.Location = new System.Drawing.Point(330, 465);
-            this.btn_backprofiel.Name = "btn_backprofiel";
-            this.btn_backprofiel.Size = new System.Drawing.Size(197, 41);
-            this.btn_backprofiel.TabIndex = 15;
-            this.btn_backprofiel.Text = "Back";
-            this.btn_backprofiel.UseVisualStyleBackColor = false;
-            // 
             // Form_MainVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(567, 520);
-            this.Controls.Add(this.pnl_profiel);
+            this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_opdrachtaanvaard);
             this.Name = "Form_MainVolunteer";
             this.Text = "Form_MainVolunteer";
             this.pnl_opdrachtaanvaard.ResumeLayout(false);
             this.pnl_opdrachtaanvaard.PerformLayout();
-            this.pnl_profiel.ResumeLayout(false);
-            this.pnl_profiel.PerformLayout();
+            this.pnl_profile.ResumeLayout(false);
+            this.pnl_profile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -425,8 +425,8 @@
         private System.Windows.Forms.Label lbl_bijzonder;
         private System.Windows.Forms.Label lbl_reistijd;
         private System.Windows.Forms.Label lbl_opdracht;
-        private System.Windows.Forms.Panel pnl_profiel;
-        private System.Windows.Forms.Label lbl_naamvolunteer;
+        private System.Windows.Forms.Panel pnl_profile;
+        private System.Windows.Forms.Label lbl_namevolunteer;
         private System.Windows.Forms.Label lbl_naamdonotuse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -434,9 +434,9 @@
         private System.Windows.Forms.Label lbl_rating;
         private System.Windows.Forms.Label lbl_VOG;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_backprofiel;
-        private System.Windows.Forms.Button btn_rooster;
-        private System.Windows.Forms.CheckBox chk_rijbewijs;
+        private System.Windows.Forms.Button btn_backprofile;
+        private System.Windows.Forms.Button btn_schedule;
+        private System.Windows.Forms.CheckBox chk_license;
         private System.Windows.Forms.Label lbl_leeftijd;
         private System.Windows.Forms.TextBox tb_bio;
         private System.Windows.Forms.Label label6;

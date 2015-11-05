@@ -15,7 +15,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -127,14 +127,14 @@
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_MainAdmin.resx">
-      <DependentUpon>Form_MainAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_MainClient.resx">
       <DependentUpon>Form_MainClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_MainVolunteer.resx">
       <DependentUpon>Form_MainVolunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Opdrachtaanvaarden.resx">
+      <DependentUpon>Form_Opdrachtaanvaarden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Question.resx">
       <DependentUpon>Form_Question.cs</DependentUpon>

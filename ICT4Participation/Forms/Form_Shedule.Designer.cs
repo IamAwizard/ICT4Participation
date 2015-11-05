@@ -52,7 +52,7 @@
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(177, 56);
             this.btn_back.TabIndex = 1;
-            this.btn_back.Text = "Back";
+            this.btn_back.Text = "Terug";
             this.btn_back.UseVisualStyleBackColor = false;
             // 
             // Form_Shedule
