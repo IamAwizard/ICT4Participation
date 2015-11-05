@@ -13,9 +13,15 @@ namespace ICT4Participation
 
         // Properties
         public List<Chat> ChatList
+        
         {
             get { return chats; }
             set { chats = value; }
+        }
+
+        public int BerichtID
+        {
+            get; set;
         }
         // Constructor
         public Chats()
