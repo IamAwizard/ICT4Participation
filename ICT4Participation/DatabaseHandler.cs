@@ -87,9 +87,10 @@ namespace ICT4Participation
                 return questionlist;
             }
             catch
-            {
-                return null;
-                MessageBox.Show(" kap er maar mee he pater");
+            { 
+           MessageBox.Show(" kap er maar mee he pater");
+
+            return null;
             }
 
         }
