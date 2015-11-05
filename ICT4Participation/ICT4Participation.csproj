@@ -136,6 +136,9 @@
     <EmbeddedResource Include="Forms\Form_MainVolunteer.resx">
       <DependentUpon>Form_MainVolunteer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Question.resx">
+      <DependentUpon>Form_Question.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Register.resx">
       <DependentUpon>Form_Register.cs</DependentUpon>
     </EmbeddedResource>
