@@ -16,6 +16,9 @@ namespace ICT4Participation
         private string content;
 
         // Properties
+
+       public int ReviewID
+        { get; set; }
         public DateTime Date
         {
             get { return date; }
