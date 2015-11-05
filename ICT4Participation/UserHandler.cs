@@ -10,7 +10,7 @@ namespace ICT4Participation
     {
         // Fields
         private List<User> users;
-
+        
         // Properties
         public List<User>Users
         { get { return users; }
@@ -37,13 +37,21 @@ namespace ICT4Participation
 
         public bool AddUser(User user)
         {
-            users.Add(user);
-            return true;
+            try
+            {
+                DatabaseHandler.AddUser(user);
+                return true;
+            }
+            catch(NullReferenceException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
         public void Synchronize()
         {
-            users = DatabaseHandler.GetUsers();
+          users =   DatabaseHandler.GetUsers();
         }
     }
 }
