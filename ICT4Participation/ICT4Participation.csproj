@@ -102,6 +102,9 @@
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_MainAdmin.resx">
+      <DependentUpon>Form_MainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_MainClient.resx">
       <DependentUpon>Form_MainClient.cs</DependentUpon>
     </EmbeddedResource>
