@@ -16,5 +16,11 @@ namespace ICT4Participation
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            List<User> test = DatabaseHandler.GetUsers();
+            Console.WriteLine("testing ok break break");
+        }
     }
 }

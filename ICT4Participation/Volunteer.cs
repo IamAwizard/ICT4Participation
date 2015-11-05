@@ -9,7 +9,7 @@ namespace ICT4Participation
     public class Volunteer : User
     {
         //fields
-         Schedule schedule;
+        Schedule schedule;
         private bool drivingLicense;
         private string biography;
         private string pathToVOG;

@@ -15,7 +15,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -37,6 +37,7 @@
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,11 +82,35 @@
     <Compile Include="Forms\Form_MainVolunteer.Designer.cs">
       <DependentUpon>Form_MainVolunteer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Opdrachtaanvaarden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Opdrachtaanvaarden.Designer.cs">
+      <DependentUpon>Form_Opdrachtaanvaarden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Question.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Question.Designer.cs">
+      <DependentUpon>Form_Question.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Register.Designer.cs">
       <DependentUpon>Form_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Shedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Shedule.Designer.cs">
+      <DependentUpon>Form_Shedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Volunteer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Volunteer.Designer.cs">
+      <DependentUpon>Form_Volunteer.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginHandler.cs" />
     <Compile Include="Program.cs" />
@@ -113,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Register.resx">
       <DependentUpon>Form_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Shedule.resx">
+      <DependentUpon>Form_Shedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Volunteer.resx">
+      <DependentUpon>Form_Volunteer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
