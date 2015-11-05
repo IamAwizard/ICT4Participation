@@ -120,7 +120,7 @@ namespace ICT4Participation
         private void btn_OK_Click(object sender, EventArgs e)
         {
             User newUser = CheckAndReadEverything();
-            // TODO do something with this user bro
+         
         }
     }
 }

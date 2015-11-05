@@ -54,6 +54,7 @@
             this.cbox_Gender = new System.Windows.Forms.ComboBox();
             this.dtp_DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbox_SelectRole.SuspendLayout();
             this.pnl_VOGInfo.SuspendLayout();
             this.SuspendLayout();
@@ -351,12 +352,21 @@
             this.OpenFileDialog.FileName = "VOG";
             this.OpenFileDialog.Filter = "\"PDF file|*.pdf|All Files|*.*\"";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(331, 272);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(60, 21);
+            this.comboBox1.TabIndex = 28;
+            // 
             // Form_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(416, 503);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dtp_DateOfBirth);
             this.Controls.Add(this.cbox_Gender);
             this.Controls.Add(this.tbox_Address);
@@ -416,5 +426,6 @@
         private System.Windows.Forms.ComboBox cbox_Gender;
         private System.Windows.Forms.DateTimePicker dtp_DateOfBirth;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
