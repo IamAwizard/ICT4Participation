@@ -4,10 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ICT4Participation.Forms
+namespace ICT4Participation
 {
     class Chats
     {
+        // Fields
         private List<Chat> chats;
+
+        // Properties
+        public List<Chat> ChatList
+        {
+            get { return chats; }
+            set { chats = value; }
+        }
+        // Constructor
+        public Chats()
+        {
+
+        }
+
+        // Methods
+        public void Synchronize()
+        {
+
+        }
     }
 }

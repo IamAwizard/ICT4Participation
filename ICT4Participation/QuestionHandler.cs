@@ -27,5 +27,10 @@ namespace ICT4Participation
         {
             return false;
         }
+
+        public void Synchronize()
+        {
+
+        }
     }
 }

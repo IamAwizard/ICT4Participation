@@ -48,7 +48,7 @@ namespace ICT4Participation
         // TODO: NOT CORRECT
         public bool AddMeeting(Client client, Volunteer volunteer, DateTime date, string location)
         {
-            Appointment meeting = new Appointment();
+            Appointment meeting = new Appointment(client, volunteer, date, location);
             return false; ;
         }
 

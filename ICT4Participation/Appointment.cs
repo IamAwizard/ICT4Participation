@@ -16,9 +16,9 @@ namespace ICT4Participation
         private string location;
 
         public DateTime Date
-        { get; set; }
+        { get { return date; } set { date = value; } }
         public string Location
-        { get; set; }
+        { get { return Location; } set { location = value; } }
 
         public Appointment(Client client, Volunteer volunteer,DateTime date, string location)
         {

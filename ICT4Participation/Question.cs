@@ -8,7 +8,7 @@ namespace ICT4Participation
 {
    public class Question
     {
-        //fields
+        // Fields
         Client client;
         Volunteer volunteer;
         private string name;
@@ -18,9 +18,10 @@ namespace ICT4Participation
         private string location;
         private int distance;
         private string transport;
+        private string answer;
         private bool solved;
-        //properties
 
+        //Properties
         public Volunteer Volunteer
         { get; set; }
 
@@ -61,12 +62,19 @@ namespace ICT4Participation
             get { return transport; }
             set { transport = value; }
         }
+
+        public string Answer
+        {
+            get { return answer; }
+            set { answer = value; }
+        }
+
         public bool Solved
         {
             get { return solved; }
             set { solved = value; }
         }
-        //constructor
+        // Constructor
         public Question(Client client, string name, string location,string transport,int distance,string Discrepancy,string content,DateTime date,bool solved)
         {
             this.client = client;
@@ -80,6 +88,7 @@ namespace ICT4Participation
             this.Distance = this.distance;
         }
         
+        // Methods
         public override string ToString()
         {
             return "naam" + Name + "locatie" + location + "vervoersmiddel" + Transport+"afstand" +Distance + "inhoud" + Content + "Bijzonderheden" + Discrepancy + "Datum" + Date + "Geaccepteerd?" + Solved;

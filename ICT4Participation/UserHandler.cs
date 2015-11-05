@@ -11,12 +11,16 @@ namespace ICT4Participation
         // Fields
         private List<User> users;
 
-        // properties
+        // Properties
         public List<User>Users
         { get { return users; }
         set { users = value; } }
 
-        // constructor
+        // Constructor
+        public UserHandler()
+        {
+
+        }
 
         // Methods
         public User FindUser(string name)
@@ -30,5 +34,9 @@ namespace ICT4Participation
             return true;
         }
 
+        public void Synchronize()
+        {
+
+        }
     }
 }

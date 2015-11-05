@@ -16,5 +16,10 @@ namespace ICT4Participation.Forms
         {
             InitializeComponent();
         }
+
+        private void Form_MainClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
