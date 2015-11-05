@@ -14,6 +14,9 @@ namespace ICT4Participation
     class DatabaseHandler
     {
         // Fields
+
+        // connectionstring = "User Id=loginname; Password=password;Data Source=localhost";
+        string connectionstring = "User Id=dbi259530;Password=ZBEB4DKxvr;Data Source=192.168.15.50/fhictora";
         private OracleConnection con;
         private OracleCommand cmd;
         private OracleDataReader dr;
@@ -31,7 +34,7 @@ namespace ICT4Participation
         public void Connect()
         {
             con = new OracleConnection();
-            con.ConnectionString = "User Id=loginname; Password=password;Data Source=localhost";
+            con.ConnectionString = connectionstring;
             con.Open();
             Console.WriteLine("CONNECTION SUCCESFULL");
 
@@ -50,7 +53,7 @@ namespace ICT4Participation
             {
                 cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM USER"; // QUERY
+                cmd.CommandText = "SELECT * FROM TUSER"; // QUERY
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
             }
