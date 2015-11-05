@@ -11,27 +11,22 @@ using Oracle.DataAccess.Client;
 
 namespace ICT4Participation
 {
-    class DatabaseHandler
+    static class DatabaseHandler
     {
         // Fields
 
         // connectionstring = "User Id=loginname; Password=password;Data Source=localhost";
-        string connectionstring = "User Id=dbi259530;Password=ZBEB4DKxvr;Data Source=192.168.15.50/fhictora";
-        private OracleConnection con;
-        private OracleCommand cmd;
-        private OracleDataReader dr;
+        static string connectionstring = "User Id=dbi259530;Password=ZBEB4DKxvr;Data Source=192.168.15.50/fhictora";
+        static private OracleConnection con;
+        static private OracleCommand cmd;
+        static private OracleDataReader dr;
 
         // Properties
 
         // Constructor
-        public DatabaseHandler()
-        {
-            //Connect();
-            //Disconnect();
-        }
 
         // Methods
-        public void Connect()
+        public static void Connect()
         {
             con = new OracleConnection();
             con.ConnectionString = connectionstring;
@@ -40,14 +35,15 @@ namespace ICT4Participation
 
         }
 
-        public void Disconnect()
+        public static void Disconnect()
         {
             con.Close();
             con.Dispose();
         }
 
-        public List<User> GetUsers()
+        public static List<User> GetUsers()
         {
+            Connect();
             List<User> userList = new List<User>();
             try
             {
@@ -60,6 +56,8 @@ namespace ICT4Participation
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+                Disconnect();
+                return null;
             }
 
             try
@@ -75,12 +73,11 @@ namespace ICT4Participation
                     string adress;
                     string email;
                     string password;
-
-                    int type;
+                    string type;
 
                     // Read from DB
                     id = dr.GetInt32(0);
-                    name = Convert.ToString(dr.GetValue(1));
+                    name = dr.GetString(1);
                     dateOfBirth = dr.GetDateTime(2);
                     gender = dr.GetString(3);
                     city = dr.GetString(4);
@@ -88,21 +85,21 @@ namespace ICT4Participation
                     email = dr.GetString(6);
                     password = dr.GetString(7);
 
-                    type = dr.GetInt32(8);
+                    type = dr.GetString(8);
 
                     User toadd;
                     switch (type)
                     {
-                        case 1:
+                        case "CLIENT":
                             Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
                             toadd = newClient;
                             break;
-                        case 2:
+                        case "VOLUNTEER":
                             toadd = null;
                             //Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password);
                             //toadd = newUser;
                             break;
-                        case 3:
+                        case "ADMIN":
                             Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
                             toadd = newAdmin;
                             break;
@@ -113,16 +110,15 @@ namespace ICT4Participation
 
                     userList.Add(toadd);
                 }
-
+                Disconnect();
                 return userList;
             }
             catch (InvalidCastException ex)
             {
+                Disconnect();
                 MessageBox.Show(ex.ToString());
+                return null;
             }
-
-            return null;
-
         }
     }
 }
