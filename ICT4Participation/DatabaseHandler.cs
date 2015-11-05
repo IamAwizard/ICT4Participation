@@ -62,44 +62,46 @@ namespace ICT4Participation
 
             try
             {
-                    while (dr.Read())
+                while (dr.Read())
+                {
+                    // Read from DB
+                    var id = dr.GetInt32(0);
+                    var name = dr.GetString(1);
+                    var dateOfBirth = dr.GetDateTime(2);
+                    var gender = dr.GetString(3);
+                    var city = dr.GetString(4);
+                    var adress = dr.GetString(5);
+                    var email = dr.GetString(6);
+                    var password = dr.GetString(7);
+
+                    var type = dr.GetString(8);
+
+                    User toadd;
+                    switch (type)
                     {
-                        // Read from DB
-                        var id = dr.GetInt64(0);
-                        var name = dr.GetString(1);
-                        var dateOfBirth = dr.GetDateTime(2);
-                        var gender = dr.GetString(3);
-                        var city = dr.GetString(4);
-                        var adress = dr.GetString(5);
-                        var email = dr.GetString(6);
-                        var password = dr.GetString(7);
-
-                        var type = dr.GetString(8);
-
-                        User toadd;
-                        switch (type)
-                        {
-                            case "CLIENT":
-                                Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
-                                toadd = newClient;
-                                break;
-                            case "VOLUNTEER":
-                                toadd = null;
-                                //Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password);
-                                //toadd = newUser;
-                                break;
-                            case "ADMIN":
-                                Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
-                                toadd = newAdmin;
-                                break;
-                            default:
-                                toadd = null;
-                                break;
-                        }
-
-                        userList.Add(toadd);
+                        case "CLIENT":
+                            Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
+                            toadd = newClient;
+                            toadd.UserID = id;
+                            break;
+                        case "VOLUNTEER":
+                            toadd = null;
+                            //Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password);
+                            //toadd = newUser;
+                            break;
+                        case "ADMIN":
+                            Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
+                            toadd = newAdmin;
+                            toadd.UserID = id;
+                            break;
+                        default:
+                            toadd = null;
+                            break;
                     }
-                    Disconnect();
+
+                    userList.Add(toadd);
+                }
+                Disconnect();
                 return userList;
             }
             catch (InvalidCastException ex)

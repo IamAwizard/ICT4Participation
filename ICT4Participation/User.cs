@@ -26,6 +26,9 @@ namespace ICT4Participation
             set { name = value; }
         }
 
+        public int UserID
+        { get; set; }
+
         public DateTime DateOfBirth
         {
             get { return dateOfBirth; }
