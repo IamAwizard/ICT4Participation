@@ -78,7 +78,7 @@
             this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_reistijd);
             this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_opdracht);
             this.pnl_opdrachtaanvaard.Location = new System.Drawing.Point(1, 2);
-            this.pnl_opdrachtaanvaard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_opdrachtaanvaard.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_opdrachtaanvaard.Name = "pnl_opdrachtaanvaard";
             this.pnl_opdrachtaanvaard.Size = new System.Drawing.Size(421, 424);
             this.pnl_opdrachtaanvaard.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.btn_accepteer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_accepteer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_accepteer.Location = new System.Drawing.Point(254, 368);
-            this.btn_accepteer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_accepteer.Margin = new System.Windows.Forms.Padding(2);
             this.btn_accepteer.Name = "btn_accepteer";
             this.btn_accepteer.Size = new System.Drawing.Size(142, 35);
             this.btn_accepteer.TabIndex = 10;
@@ -108,7 +108,7 @@
             this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back.Location = new System.Drawing.Point(254, 322);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(142, 35);
             this.btn_back.TabIndex = 9;
@@ -118,7 +118,7 @@
             // tb_vervoersmiddel
             // 
             this.tb_vervoersmiddel.Location = new System.Drawing.Point(163, 268);
-            this.tb_vervoersmiddel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_vervoersmiddel.Margin = new System.Windows.Forms.Padding(2);
             this.tb_vervoersmiddel.Multiline = true;
             this.tb_vervoersmiddel.Name = "tb_vervoersmiddel";
             this.tb_vervoersmiddel.Size = new System.Drawing.Size(188, 35);
@@ -127,7 +127,7 @@
             // tb_afstand
             // 
             this.tb_afstand.Location = new System.Drawing.Point(163, 213);
-            this.tb_afstand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_afstand.Margin = new System.Windows.Forms.Padding(2);
             this.tb_afstand.Multiline = true;
             this.tb_afstand.Name = "tb_afstand";
             this.tb_afstand.Size = new System.Drawing.Size(188, 35);
@@ -136,7 +136,7 @@
             // tb_bijzonder
             // 
             this.tb_bijzonder.Location = new System.Drawing.Point(163, 161);
-            this.tb_bijzonder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_bijzonder.Margin = new System.Windows.Forms.Padding(2);
             this.tb_bijzonder.Multiline = true;
             this.tb_bijzonder.Name = "tb_bijzonder";
             this.tb_bijzonder.Size = new System.Drawing.Size(188, 35);
@@ -145,7 +145,7 @@
             // tb_reistijd
             // 
             this.tb_reistijd.Location = new System.Drawing.Point(163, 101);
-            this.tb_reistijd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_reistijd.Margin = new System.Windows.Forms.Padding(2);
             this.tb_reistijd.Multiline = true;
             this.tb_reistijd.Name = "tb_reistijd";
             this.tb_reistijd.Size = new System.Drawing.Size(188, 35);
@@ -230,7 +230,7 @@
             this.pnl_profile.Controls.Add(this.lbl_VOG);
             this.pnl_profile.Controls.Add(this.pictureBox1);
             this.pnl_profile.Location = new System.Drawing.Point(1, 2);
-            this.pnl_profile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_profile.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_profile.Name = "pnl_profile";
             this.pnl_profile.Size = new System.Drawing.Size(421, 422);
             this.pnl_profile.TabIndex = 0;
@@ -243,7 +243,7 @@
             this.btn_uploadavatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_uploadavatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_uploadavatar.Location = new System.Drawing.Point(8, 188);
-            this.btn_uploadavatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_uploadavatar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_uploadavatar.Name = "btn_uploadavatar";
             this.btn_uploadavatar.Size = new System.Drawing.Size(105, 23);
             this.btn_uploadavatar.TabIndex = 16;
@@ -258,7 +258,7 @@
             this.btn_backprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_backprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_backprofile.Location = new System.Drawing.Point(248, 378);
-            this.btn_backprofile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_backprofile.Margin = new System.Windows.Forms.Padding(2);
             this.btn_backprofile.Name = "btn_backprofile";
             this.btn_backprofile.Size = new System.Drawing.Size(148, 33);
             this.btn_backprofile.TabIndex = 15;
@@ -272,7 +272,7 @@
             this.btn_schedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_schedule.Location = new System.Drawing.Point(248, 330);
-            this.btn_schedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_schedule.Margin = new System.Windows.Forms.Padding(2);
             this.btn_schedule.Name = "btn_schedule";
             this.btn_schedule.Size = new System.Drawing.Size(148, 33);
             this.btn_schedule.TabIndex = 14;
@@ -284,7 +284,7 @@
             // 
             this.chk_license.AutoSize = true;
             this.chk_license.Location = new System.Drawing.Point(86, 399);
-            this.chk_license.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chk_license.Margin = new System.Windows.Forms.Padding(2);
             this.chk_license.Name = "chk_license";
             this.chk_license.Size = new System.Drawing.Size(15, 14);
             this.chk_license.TabIndex = 13;
@@ -305,7 +305,7 @@
             // 
             this.tb_bio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tb_bio.Location = new System.Drawing.Point(70, 214);
-            this.tb_bio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_bio.Margin = new System.Windows.Forms.Padding(2);
             this.tb_bio.Multiline = true;
             this.tb_bio.Name = "tb_bio";
             this.tb_bio.Size = new System.Drawing.Size(298, 104);
@@ -434,7 +434,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(142, 172);
             this.pictureBox1.TabIndex = 0;
@@ -448,8 +448,9 @@
             this.ClientSize = new System.Drawing.Size(425, 422);
             this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_opdrachtaanvaard);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Profile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_MainVolunteer";
             this.pnl_opdrachtaanvaard.ResumeLayout(false);
             this.pnl_opdrachtaanvaard.PerformLayout();

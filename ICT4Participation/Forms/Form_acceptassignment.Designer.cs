@@ -104,7 +104,7 @@
             // tb_specialty
             // 
             this.tb_specialty.Location = new System.Drawing.Point(130, 82);
-            this.tb_specialty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_specialty.Margin = new System.Windows.Forms.Padding(2);
             this.tb_specialty.Multiline = true;
             this.tb_specialty.Name = "tb_specialty";
             this.tb_specialty.Size = new System.Drawing.Size(206, 41);
@@ -113,7 +113,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(130, 144);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(206, 41);
@@ -122,7 +122,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(130, 205);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(206, 41);
@@ -131,7 +131,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(130, 266);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(206, 41);
@@ -144,7 +144,7 @@
             this.btn_backassignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_backassignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_backassignment.Location = new System.Drawing.Point(30, 363);
-            this.btn_backassignment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_backassignment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_backassignment.Name = "btn_backassignment";
             this.btn_backassignment.Size = new System.Drawing.Size(148, 33);
             this.btn_backassignment.TabIndex = 16;
@@ -158,7 +158,7 @@
             this.btn_acceptassignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_acceptassignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_acceptassignment.Location = new System.Drawing.Point(213, 363);
-            this.btn_acceptassignment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_acceptassignment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_acceptassignment.Name = "btn_acceptassignment";
             this.btn_acceptassignment.Size = new System.Drawing.Size(148, 33);
             this.btn_acceptassignment.TabIndex = 17;
@@ -182,8 +182,9 @@
             this.Controls.Add(this.lbl_vehicle);
             this.Controls.Add(this.lbl_traveltime);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_AcceptAssignment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Opdrachtaanvaarden";
             this.ResumeLayout(false);
             this.PerformLayout();

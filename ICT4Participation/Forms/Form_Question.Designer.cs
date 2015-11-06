@@ -42,9 +42,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.Highlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Location = new System.Drawing.Point(9, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 24);
+            this.label1.Size = new System.Drawing.Size(89, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "De opdracht";
             // 
@@ -54,26 +55,29 @@
             this.label2.BackColor = System.Drawing.SystemColors.Highlight;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 244);
+            this.label2.Location = new System.Drawing.Point(9, 198);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 24);
+            this.label2.Size = new System.Drawing.Size(97, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Bijzonderheid";
             // 
             // tb_assignment
             // 
-            this.tb_assignment.Location = new System.Drawing.Point(134, 12);
+            this.tb_assignment.Location = new System.Drawing.Point(100, 10);
+            this.tb_assignment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_assignment.Multiline = true;
             this.tb_assignment.Name = "tb_assignment";
-            this.tb_assignment.Size = new System.Drawing.Size(481, 229);
+            this.tb_assignment.Size = new System.Drawing.Size(362, 187);
             this.tb_assignment.TabIndex = 4;
             // 
             // tb_specialty
             // 
-            this.tb_specialty.Location = new System.Drawing.Point(16, 292);
+            this.tb_specialty.Location = new System.Drawing.Point(12, 237);
+            this.tb_specialty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_specialty.Multiline = true;
             this.tb_specialty.Name = "tb_specialty";
-            this.tb_specialty.Size = new System.Drawing.Size(305, 159);
+            this.tb_specialty.Size = new System.Drawing.Size(230, 130);
             this.tb_specialty.TabIndex = 5;
             // 
             // btn_chat
@@ -82,9 +86,10 @@
             this.btn_chat.FlatAppearance.BorderSize = 0;
             this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_chat.Location = new System.Drawing.Point(412, 292);
+            this.btn_chat.Location = new System.Drawing.Point(309, 237);
+            this.btn_chat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_chat.Name = "btn_chat";
-            this.btn_chat.Size = new System.Drawing.Size(175, 50);
+            this.btn_chat.Size = new System.Drawing.Size(131, 41);
             this.btn_chat.TabIndex = 6;
             this.btn_chat.Text = "Chat";
             this.btn_chat.UseVisualStyleBackColor = false;
@@ -95,26 +100,29 @@
             this.btn_accept.FlatAppearance.BorderSize = 0;
             this.btn_accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_accept.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_accept.Location = new System.Drawing.Point(412, 377);
+            this.btn_accept.Location = new System.Drawing.Point(309, 306);
+            this.btn_accept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_accept.Name = "btn_accept";
-            this.btn_accept.Size = new System.Drawing.Size(175, 50);
+            this.btn_accept.Size = new System.Drawing.Size(131, 41);
             this.btn_accept.TabIndex = 7;
             this.btn_accept.Text = "Accepteren";
             this.btn_accept.UseVisualStyleBackColor = false;
             // 
             // Form_Question
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(645, 510);
+            this.ClientSize = new System.Drawing.Size(484, 414);
             this.Controls.Add(this.btn_accept);
             this.Controls.Add(this.btn_chat);
             this.Controls.Add(this.tb_specialty);
             this.Controls.Add(this.tb_assignment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Question";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Question";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -36,10 +36,11 @@
             // dg_schedule
             // 
             this.dg_schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_schedule.Location = new System.Drawing.Point(64, 83);
+            this.dg_schedule.Location = new System.Drawing.Point(48, 67);
+            this.dg_schedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dg_schedule.Name = "dg_schedule";
             this.dg_schedule.RowTemplate.Height = 24;
-            this.dg_schedule.Size = new System.Drawing.Size(583, 281);
+            this.dg_schedule.Size = new System.Drawing.Size(437, 228);
             this.dg_schedule.TabIndex = 0;
             // 
             // btn_back
@@ -48,22 +49,25 @@
             this.btn_back.FlatAppearance.BorderSize = 0;
             this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_back.Location = new System.Drawing.Point(446, 384);
+            this.btn_back.Location = new System.Drawing.Point(334, 312);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(177, 56);
+            this.btn_back.Size = new System.Drawing.Size(133, 46);
             this.btn_back.TabIndex = 1;
             this.btn_back.Text = "Terug";
             this.btn_back.UseVisualStyleBackColor = false;
             // 
             // Form_Shedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(723, 513);
+            this.ClientSize = new System.Drawing.Size(542, 417);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.dg_schedule);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Shedule";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Shedule";
             ((System.ComponentModel.ISupportInitialize)(this.dg_schedule)).EndInit();
             this.ResumeLayout(false);

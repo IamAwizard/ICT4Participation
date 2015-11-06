@@ -112,6 +112,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_MainVolunteer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vrijwilligerssysteem";
             this.Load += new System.EventHandler(this.Form_Volunteer_Load);
             this.ResumeLayout(false);
