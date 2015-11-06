@@ -35,7 +35,7 @@ namespace ICT4Participation
                 return true;
             else
                 return false;
-            
+
         }
 
         public List<Question> GetQuestionsByAuthor(User author)
@@ -51,5 +51,10 @@ namespace ICT4Participation
             }
         }
 
+        public List<Question> GetAllQuestions()
+        {
+            Synchronize();
+            return QuestionList;
+        }
     }
 }

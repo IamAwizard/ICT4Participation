@@ -10,11 +10,13 @@ namespace ICT4Participation
     {
         // Fields
         Admin currentuser;
-
+        QuestionHandler questionhandler;
+        ReviewHandler reviewhandler;
         // Constructor   
         public AdminHandler()
         {
-
+            questionhandler = new QuestionHandler();
+            reviewhandler = new ReviewHandler();
         }
 
         // Properties
@@ -41,7 +43,7 @@ namespace ICT4Participation
         public List<Question> GetQuestions()
         {
             // TODO: IMPLEMENT
-            return null;
+            return questionhandler.GetAllQuestions();
         }
     }
 }
