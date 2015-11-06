@@ -324,6 +324,11 @@ namespace ICT4Participation
             }
         }
 
+        public static void addavatar()
+        {
+
+        }
+
         public static bool AddQuestion(Question newquestion)
         {
             try

@@ -12,17 +12,25 @@ namespace ICT4Participation
 {
     public partial class Form_MainVolunteer : Form
     {
-        User currentuser;
+        Volunteer currentuser;
         public Form_MainVolunteer(User loggedinasuser)
         {
             InitializeComponent();
-            currentuser = loggedinasuser;
+            currentuser = loggedinasuser as Volunteer;
             lbl_UserName.Text = currentuser.Name;
         }
 
         private void Form_Volunteer_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_profile_Click(object sender, EventArgs e)
+        {
+            Form_Profile profiledialog = new Form_Profile(currentuser);
+            this.Hide();
+            profiledialog.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -12,9 +12,14 @@ namespace ICT4Participation
 {
     public partial class Form_Profile : Form
     {
-        public Form_Profile()
+        Volunteer volunteer;
+        public Form_Profile(Volunteer user)
         {
+            int leeftijd = 2015 - user.DateOfBirth.Year;
             InitializeComponent();
+            volunteer = user;
+            lbl_namevolunteer.Text = user.Name;
+            lbl_leeftijd.Text = Convert.ToString(leeftijd);
         }
 
         private void pnl_profiel_Paint(object sender, PaintEventArgs e)
