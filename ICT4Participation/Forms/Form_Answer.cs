@@ -23,10 +23,7 @@ namespace ICT4Participation
         {
             currentquestion.Answer = tb_answer.Text;
             DatabaseHandler.UpdateQuestion(currentquestion);
-            Form_AcceptAssignment acceptdialog = new Form_AcceptAssignment(currentquestion);
-            this.Hide();
-            acceptdialog.ShowDialog();
-            this.Show();
+            this.Close();
         }
     }
 }

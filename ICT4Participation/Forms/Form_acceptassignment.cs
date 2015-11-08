@@ -44,10 +44,11 @@ namespace ICT4Participation
             this.Hide();
             answer.ShowDialog();
             this.Show();
-            currentquestion.Solved = "JA";
-           
-            volunteerhandler.UpdateQuestion(currentquestion);
-            
+            if (string.IsNullOrWhiteSpace(currentquestion.Answer))
+            {
+                currentquestion.Solved = "JA";
+                volunteerhandler.UpdateQuestion(currentquestion);
+            }
         }
 
         

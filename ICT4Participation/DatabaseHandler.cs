@@ -374,7 +374,7 @@ namespace ICT4Participation
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText =
-                   "UPDATE TQUESTION SET VRAAG = :newContent, BIJZONDERHEID =  :newDiscripancy, LOCATIE = :newLocation, AFSTAND = :newDistance, VERVOER = :newTransport, DATUM = :newDate, OPGELOST =:newSolved WHERE QUESTIONID = :newIDvalue";
+                   "UPDATE TQUESTION SET VRAAG = :newContent, BIJZONDERHEID =  :newDiscripancy, LOCATIE = :newLocation, AFSTAND = :newDistance, VERVOER = :newTransport, DATUM = :newDate, OPGELOST =:newSolved, ANTWOORD = :newAnswer WHERE QUESTIONID = :newIDvalue";
 
                 cmd.Parameters.Add("newContent", OracleDbType.Varchar2).Value = question.Content;
                 cmd.Parameters.Add("newDiscripancy", OracleDbType.Varchar2).Value = question.Discrepancy;
@@ -383,8 +383,8 @@ namespace ICT4Participation
                 cmd.Parameters.Add("newTransport", OracleDbType.Varchar2).Value = question.Transport;
                 cmd.Parameters.Add("newDate", OracleDbType.Date).Value = question.Date.ToString("dd-MMM-yy");
                 cmd.Parameters.Add("newSolved", OracleDbType.Varchar2).Value = question.Solved;
+                cmd.Parameters.Add("newAnswer", OracleDbType.Varchar2).Value = question.Answer;
                 cmd.Parameters.Add("newIDvalue", OracleDbType.Int32).Value = question.ID;
-
 
                 cmd.ExecuteNonQuery();
                 return true;
