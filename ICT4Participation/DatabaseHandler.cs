@@ -116,6 +116,7 @@ namespace ICT4Participation
 
                     Question toadd;
                     toadd = new Question(null, auteur, locatie, vervoer, afstand, bijzonderheid, vraag, datum, opgelost);
+                    toadd.ID = questionid;
                     questionlist.Add(toadd);
                 }
                 foreach (Question q in questionlist)
@@ -363,18 +364,25 @@ namespace ICT4Participation
 
         }
 
-        public static bool bevestigen(Question question)
+        public static bool UpdateQuestion(Question question)
         {
             try
             {
-               
+                Connect();
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText =
-                   "UPDATE TABLE TQUESTION SET (LOCATIE, AFSTAND, VERVOER) VALUES (:NewLOCATIE, :NewAFSTAND, :NewVERVOER");
-                cmd.Parameters.Add("NewLOCATIE", OracleDbType.Varchar2).Value = question.Location;
-                cmd.Parameters.Add("NewAFSTAND", OracleDbType.Varchar2).Value = question.Distance;
-                cmd.Parameters.Add("NewVERVOER", OracleDbType.Varchar2).Value = question.Transport;
+                   "UPDATE TQUESTION SET VRAAG = :newContent, BIJZONDERHEID =  :newDiscripancy, LOCATIE = :newLocation, AFSTAND = :newDistance, VERVOER = :newTransport, DATUM = :newDate, OPGELOST =:newSolved WHERE QUESTIONID = :newIDvalue";
+
+                cmd.Parameters.Add("newContent", OracleDbType.Varchar2).Value = question.Content;
+                cmd.Parameters.Add("newDiscripancy", OracleDbType.Varchar2).Value = question.Discrepancy;
+                cmd.Parameters.Add("newLocation", OracleDbType.Varchar2).Value = question.Location;
+                cmd.Parameters.Add("newDistance", OracleDbType.Varchar2).Value = question.Distance;
+                cmd.Parameters.Add("newTransport", OracleDbType.Varchar2).Value = question.Transport;
+                cmd.Parameters.Add("newDate", OracleDbType.Date).Value = question.Date.ToString("dd-MMM-yy");
+                cmd.Parameters.Add("newSolved", OracleDbType.Varchar2).Value = question.Solved;
+                cmd.Parameters.Add("newIDvalue", OracleDbType.Int32).Value = question.ID;
+
 
                 cmd.ExecuteNonQuery();
                 return true;

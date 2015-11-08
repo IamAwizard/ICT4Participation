@@ -21,11 +21,10 @@ namespace ICT4Participation
         private string solved;
 
         //Properties
-        public Volunteer Volunteer
-        { get; set; }
+        public int ID { get; set; }
+        public Volunteer Volunteer { get; set; }
+        public Client Client { get; set; }
 
-        public Client Client
-        { get; set; }
 
         public int Auteur
         {
@@ -107,6 +106,12 @@ namespace ICT4Participation
         public override string ToString()
         {
             return Client.Name + " op " + Date.ToShortDateString()  +  ": " + ((content.Length > 40) ? content.Substring(0, 40) + "...." : content) + " - Opgelost: " + Solved;
+        }
+
+        // Methods
+        public string ToStringLong()
+        {
+            return Client.Name + " op " + Date.ToShortDateString() + ": " + ((content.Length > 40) ? content.Substring(0, 40) + "...." : content) + " - Opgelost: " + Solved;
         }
     }
 }

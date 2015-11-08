@@ -49,6 +49,14 @@ namespace ICT4Participation
             return false;
         }
 
+        public bool UpdateQuestion(Question questiontoupdate)
+        {
+            if (questionhandler.UpdateQuestion(questiontoupdate))
+                return true;
+            else
+                return false;
+        }
+
         public bool AddReview(string volunteername, int rating, string content)
         {
             //Volunteer target = (Volunteer)users.FindUser(volunteername);

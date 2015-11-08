@@ -14,15 +14,21 @@ namespace ICT4Participation
     {
         // Fields
         Question currentquestion;
+        User currentuser;
         ClientHandler clienthandler;
+        bool isChanged;
 
         // Constructor
-        public Form_QuestionDetails(Question questiontoshow)
+        public Form_QuestionDetails(Question questiontoshow, Client currentuser)
         {
             InitializeComponent();
+
+            this.currentuser = currentuser;
+            clienthandler = new ClientHandler(this.currentuser as Client);
             currentquestion = questiontoshow;
             RefreshInterface();
             this.ActiveControl = lbl_Info1;
+            isChanged = false;
         }
 
 
@@ -60,13 +66,23 @@ namespace ICT4Participation
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tbox_Question_TextChanged(object sender, EventArgs e)
         {
-            currentquestion.Distance = tbox_Distance.Text;
-            currentquestion.Transport = tbox_Transport.Text;
-            currentquestion.Location = tbox_Location.Text;
-            currentquestion.Discrepancy = tbox_Discrepancy.Text;
-            RefreshInterface();
+            isChanged = true;
+        }
+
+        private void Form_QuestionDetails_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isChanged)
+            {
+                currentquestion.Content = tbox_Question.Text;
+                currentquestion.Location = tbox_Location.Text;
+                currentquestion.Discrepancy = tbox_Discrepancy.Text;
+                currentquestion.Transport = tbox_Transport.Text;
+                currentquestion.Distance = tbox_Distance.Text;
+
+                clienthandler.UpdateQuestion(currentquestion);
+            }
         }
     }
 }

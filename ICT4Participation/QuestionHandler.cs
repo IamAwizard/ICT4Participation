@@ -39,6 +39,14 @@ namespace ICT4Participation
 
         }
 
+        public bool UpdateQuestion(Question questiontoupdate)
+        {
+            if (DatabaseHandler.UpdateQuestion(questiontoupdate))
+                return true;
+            else
+                return false;
+        }
+
         public List<Question> GetQuestionsByAuthor(User author)
         {
             Synchronize();

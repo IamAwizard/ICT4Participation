@@ -54,7 +54,6 @@
             this.lbl_QuestionAnswered = new System.Windows.Forms.Label();
             this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
             this.lbl_NoAnswer = new System.Windows.Forms.Label();
-            this.btn_Bevestigen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbox_Question.SuspendLayout();
             this.gbox_Answer.SuspendLayout();
@@ -77,10 +76,10 @@
             this.tbox_Question.Location = new System.Drawing.Point(31, 89);
             this.tbox_Question.Multiline = true;
             this.tbox_Question.Name = "tbox_Question";
-            this.tbox_Question.ReadOnly = true;
             this.tbox_Question.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbox_Question.Size = new System.Drawing.Size(465, 171);
             this.tbox_Question.TabIndex = 5;
+            this.tbox_Question.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
             // lbl_ClientName
             // 
@@ -95,7 +94,6 @@
             // 
             // gbox_Question
             // 
-            this.gbox_Question.Controls.Add(this.btn_Bevestigen);
             this.gbox_Question.Controls.Add(this.tbox_Distance);
             this.gbox_Question.Controls.Add(this.label3);
             this.gbox_Question.Controls.Add(this.tbox_Transport);
@@ -124,6 +122,7 @@
             this.tbox_Distance.Name = "tbox_Distance";
             this.tbox_Distance.Size = new System.Drawing.Size(353, 26);
             this.tbox_Distance.TabIndex = 12;
+            this.tbox_Distance.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
             // label3
             // 
@@ -140,6 +139,7 @@
             this.tbox_Transport.Name = "tbox_Transport";
             this.tbox_Transport.Size = new System.Drawing.Size(353, 26);
             this.tbox_Transport.TabIndex = 10;
+            this.tbox_Transport.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
             // label2
             // 
@@ -156,6 +156,7 @@
             this.tbox_Discrepancy.Name = "tbox_Discrepancy";
             this.tbox_Discrepancy.Size = new System.Drawing.Size(353, 26);
             this.tbox_Discrepancy.TabIndex = 8;
+            this.tbox_Discrepancy.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
             // tbox_Location
             // 
@@ -163,6 +164,7 @@
             this.tbox_Location.Name = "tbox_Location";
             this.tbox_Location.Size = new System.Drawing.Size(353, 26);
             this.tbox_Location.TabIndex = 4;
+            this.tbox_Location.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
             // lbl_Info4
             // 
@@ -325,18 +327,6 @@
             this.lbl_NoAnswer.TabIndex = 5;
             this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
             // 
-            // btn_Bevestigen
-            // 
-            this.btn_Bevestigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btn_Bevestigen.ForeColor = System.Drawing.Color.Black;
-            this.btn_Bevestigen.Location = new System.Drawing.Point(343, 46);
-            this.btn_Bevestigen.Name = "btn_Bevestigen";
-            this.btn_Bevestigen.Size = new System.Drawing.Size(140, 37);
-            this.btn_Bevestigen.TabIndex = 13;
-            this.btn_Bevestigen.Text = "Bevestigen";
-            this.btn_Bevestigen.UseVisualStyleBackColor = true;
-            this.btn_Bevestigen.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form_QuestionDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +344,7 @@
             this.Name = "Form_QuestionDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vraagdetails";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_QuestionDetails_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbox_Question.ResumeLayout(false);
             this.gbox_Question.PerformLayout();
@@ -394,6 +385,5 @@
         private System.Windows.Forms.Button btn_AddMeeting;
         private System.Windows.Forms.GroupBox gbox_NoAnswer;
         private System.Windows.Forms.Label lbl_NoAnswer;
-        private System.Windows.Forms.Button btn_Bevestigen;
     }
 }
