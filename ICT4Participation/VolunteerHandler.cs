@@ -13,16 +13,24 @@ namespace ICT4Participation
 
         QuestionHandler questions;
 
+        Client client;
+
 
         // Properties
 
         // Constructor
+        public VolunteerHandler()
+        {
+            questions = new QuestionHandler();
+           
 
+        }
         // Methods
         public bool AnswerQuestion(Question question, string answer)
         {
             questions.QuestionList.Find(x => x.Auteur == question.Auteur).Answer = answer;
             return true;
+
         }
 
         public bool UpdateProfile(bool driverslisence, string biography, string pathtophoto)
@@ -40,7 +48,8 @@ namespace ICT4Participation
 
         public List<Question> GetQuestions()
         {
-            return questions.QuestionList;
+
+            return questions.GetAllQuestions();
         }
 
         public Schedule GetSchedule()

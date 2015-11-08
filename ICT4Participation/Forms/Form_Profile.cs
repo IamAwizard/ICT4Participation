@@ -15,7 +15,7 @@ namespace ICT4Participation
         Volunteer volunteer;
         public Form_Profile(Volunteer user)
         {
-            int leeftijd = 2015 - user.DateOfBirth.Year;
+            int leeftijd = DateTime.Now.Year - user.DateOfBirth.Year;
             InitializeComponent();
             volunteer = user;
             lbl_namevolunteer.Text = user.Name;
@@ -41,6 +41,14 @@ namespace ICT4Participation
         private void btn_uploadavatar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_backprofile_Click(object sender, EventArgs e)
+        {
+            Form_MainVolunteer dialog = new Form_MainVolunteer(volunteer);
+            this.Hide();
+            dialog.ShowDialog();
+            this.Show();
         }
     }
 }

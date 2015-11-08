@@ -58,7 +58,7 @@ namespace ICT4Participation
             {
                 var foo = lbox_MyQuestions.SelectedItem;
                 Question question = foo as Question;
-                Form_QuestionDetails dialog = new Form_QuestionDetails(question);
+                Form_Question dialog = new Form_Question();
                 this.Hide();
                 dialog.ShowDialog();
                 this.Show();

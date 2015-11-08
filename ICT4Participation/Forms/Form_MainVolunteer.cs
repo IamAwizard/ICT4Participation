@@ -13,11 +13,14 @@ namespace ICT4Participation
     public partial class Form_MainVolunteer : Form
     {
         Volunteer currentuser;
+        VolunteerHandler volunteerhandler;
         public Form_MainVolunteer(User loggedinasuser)
         {
             InitializeComponent();
             currentuser = loggedinasuser as Volunteer;
             lbl_UserName.Text = currentuser.Name;
+            volunteerhandler = new VolunteerHandler();
+            RefreshInterface();
         }
 
         private void Form_Volunteer_Load(object sender, EventArgs e)
@@ -31,6 +34,42 @@ namespace ICT4Participation
             this.Hide();
             profiledialog.ShowDialog();
             this.Show();
+        }
+
+        public void RefreshInterface()
+        {
+            lbox_Questions.Items.Clear();
+            try
+            {
+                List<Question> questions = new List<Question>();
+                lbox_Questions.Items.AddRange(volunteerhandler.GetQuestions().ToArray());
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("er zijn geen questions");
+            }
+        }
+
+        private void btn_Respond_Click(object sender, EventArgs e)
+        {
+            if (lbox_Questions.SelectedIndex != -1)
+            {
+                var foo = lbox_Questions.SelectedItem;
+                Question question = foo as Question;
+                Form_QuestionDetails dialog = new Form_QuestionDetails(question);
+                this.Hide();
+                dialog.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("U heeft geen vraag gekozen");
+            }
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            RefreshInterface();
         }
     }
 }
