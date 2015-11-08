@@ -58,9 +58,6 @@ namespace ICT4Participation
             return QuestionList;
         }
 
-        public List<Question> currentquestion()
-        {
-            return 
-        }
+
     }
 }
