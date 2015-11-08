@@ -371,7 +371,7 @@ namespace ICT4Participation
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText =
-                   "ALTER TABLE TQUESTION(LOCATIE, AFSTAND, VERVOER) VALUES (:NewLOCATIE, :NewAFSTAND, :NewVERVOER";
+                   "UPDATE TABLE TQUESTION SET (LOCATIE, AFSTAND, VERVOER) VALUES (:NewLOCATIE, :NewAFSTAND, :NewVERVOER");
                 cmd.Parameters.Add("NewLOCATIE", OracleDbType.Varchar2).Value = question.Location;
                 cmd.Parameters.Add("NewAFSTAND", OracleDbType.Varchar2).Value = question.Distance;
                 cmd.Parameters.Add("NewVERVOER", OracleDbType.Varchar2).Value = question.Transport;
