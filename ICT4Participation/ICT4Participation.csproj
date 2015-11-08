@@ -94,12 +94,6 @@
     <Compile Include="Forms\Form_AcceptAssignment.Designer.cs">
       <DependentUpon>Form_AcceptAssignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Question.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Question.Designer.cs">
-      <DependentUpon>Form_Question.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Form_Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_AcceptAssignment.resx">
       <DependentUpon>Form_AcceptAssignment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Question.resx">
-      <DependentUpon>Form_Question.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_QuestionDetails.resx">
       <DependentUpon>Form_QuestionDetails.cs</DependentUpon>

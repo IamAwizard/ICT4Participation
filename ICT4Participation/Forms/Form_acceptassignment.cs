@@ -30,7 +30,7 @@ namespace ICT4Participation
             tb_afstand.Text = (currentquestion.Distance == string.Empty ? "Niet opgegeven" : currentquestion.Distance);
 
             tb_specialty.Text = (currentquestion.Discrepancy == string.Empty ? "Niet opgegeven" : currentquestion.Discrepancy);
-           
+            tb_assignment.Text = (currentquestion.Content == string.Empty ? "Niet opgegeven" : currentquestion.Content);
           
             tb_vervoer.Text = (currentquestion.Transport == string.Empty ? "Niet opgegeven" : currentquestion.Transport);
             

@@ -37,8 +37,9 @@
             this.tb_reistijd = new System.Windows.Forms.TextBox();
             this.tb_vervoer = new System.Windows.Forms.TextBox();
             this.tb_afstand = new System.Windows.Forms.TextBox();
-            this.btn_backassignment = new System.Windows.Forms.Button();
             this.btn_acceptassignment = new System.Windows.Forms.Button();
+            this.tb_assignment = new System.Windows.Forms.TextBox();
+            this.btn_chat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(176, 29);
+            this.label1.Location = new System.Drawing.Point(576, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 24);
@@ -141,20 +142,6 @@
             this.tb_afstand.Size = new System.Drawing.Size(206, 41);
             this.tb_afstand.TabIndex = 10;
             // 
-            // btn_backassignment
-            // 
-            this.btn_backassignment.BackColor = System.Drawing.Color.White;
-            this.btn_backassignment.FlatAppearance.BorderSize = 0;
-            this.btn_backassignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_backassignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_backassignment.Location = new System.Drawing.Point(30, 363);
-            this.btn_backassignment.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_backassignment.Name = "btn_backassignment";
-            this.btn_backassignment.Size = new System.Drawing.Size(148, 33);
-            this.btn_backassignment.TabIndex = 16;
-            this.btn_backassignment.Text = "Back";
-            this.btn_backassignment.UseVisualStyleBackColor = false;
-            // 
             // btn_acceptassignment
             // 
             this.btn_acceptassignment.BackColor = System.Drawing.Color.White;
@@ -170,14 +157,39 @@
             this.btn_acceptassignment.UseVisualStyleBackColor = false;
             this.btn_acceptassignment.Click += new System.EventHandler(this.btn_acceptassignment_Click);
             // 
+            // tb_assignment
+            // 
+            this.tb_assignment.Location = new System.Drawing.Point(448, 42);
+            this.tb_assignment.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_assignment.Multiline = true;
+            this.tb_assignment.Name = "tb_assignment";
+            this.tb_assignment.ReadOnly = true;
+            this.tb_assignment.Size = new System.Drawing.Size(362, 362);
+            this.tb_assignment.TabIndex = 18;
+            // 
+            // btn_chat
+            // 
+            this.btn_chat.BackColor = System.Drawing.Color.White;
+            this.btn_chat.FlatAppearance.BorderSize = 0;
+            this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_chat.Location = new System.Drawing.Point(36, 363);
+            this.btn_chat.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_chat.Name = "btn_chat";
+            this.btn_chat.Size = new System.Drawing.Size(131, 33);
+            this.btn_chat.TabIndex = 19;
+            this.btn_chat.Text = "Chat";
+            this.btn_chat.UseVisualStyleBackColor = false;
+            // 
             // Form_AcceptAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(548, 415);
+            this.ClientSize = new System.Drawing.Size(850, 415);
+            this.Controls.Add(this.btn_chat);
+            this.Controls.Add(this.tb_assignment);
             this.Controls.Add(this.btn_acceptassignment);
-            this.Controls.Add(this.btn_backassignment);
             this.Controls.Add(this.tb_afstand);
             this.Controls.Add(this.tb_vervoer);
             this.Controls.Add(this.tb_reistijd);
@@ -207,7 +219,8 @@
         private System.Windows.Forms.TextBox tb_reistijd;
         private System.Windows.Forms.TextBox tb_vervoer;
         private System.Windows.Forms.TextBox tb_afstand;
-        private System.Windows.Forms.Button btn_backassignment;
         private System.Windows.Forms.Button btn_acceptassignment;
+        private System.Windows.Forms.TextBox tb_assignment;
+        private System.Windows.Forms.Button btn_chat;
     }
 }
