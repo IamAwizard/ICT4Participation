@@ -54,7 +54,7 @@
             this.lbl_QuestionAnswered = new System.Windows.Forms.Label();
             this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
             this.lbl_NoAnswer = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Bevestigen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbox_Question.SuspendLayout();
             this.gbox_Answer.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             // gbox_Question
             // 
-            this.gbox_Question.Controls.Add(this.button1);
+            this.gbox_Question.Controls.Add(this.btn_Bevestigen);
             this.gbox_Question.Controls.Add(this.tbox_Distance);
             this.gbox_Question.Controls.Add(this.label3);
             this.gbox_Question.Controls.Add(this.tbox_Transport);
@@ -325,17 +325,17 @@
             this.lbl_NoAnswer.TabIndex = 5;
             this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
             // 
-            // button1
+            // btn_Bevestigen
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(343, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 37);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Bevestigen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Bevestigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btn_Bevestigen.ForeColor = System.Drawing.Color.Black;
+            this.btn_Bevestigen.Location = new System.Drawing.Point(343, 46);
+            this.btn_Bevestigen.Name = "btn_Bevestigen";
+            this.btn_Bevestigen.Size = new System.Drawing.Size(140, 37);
+            this.btn_Bevestigen.TabIndex = 13;
+            this.btn_Bevestigen.Text = "Bevestigen";
+            this.btn_Bevestigen.UseVisualStyleBackColor = true;
+            this.btn_Bevestigen.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_QuestionDetails
             // 
@@ -394,6 +394,6 @@
         private System.Windows.Forms.Button btn_AddMeeting;
         private System.Windows.Forms.GroupBox gbox_NoAnswer;
         private System.Windows.Forms.Label lbl_NoAnswer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Bevestigen;
     }
 }

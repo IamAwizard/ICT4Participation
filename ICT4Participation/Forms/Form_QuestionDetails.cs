@@ -62,7 +62,11 @@ namespace ICT4Participation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            currentquestion.Distance = tbox_Distance.Text;
+            currentquestion.Transport = tbox_Transport.Text;
+            currentquestion.Location = tbox_Location.Text;
+            currentquestion.Discrepancy = tbox_Discrepancy.Text;
+            RefreshInterface();
         }
     }
 }
