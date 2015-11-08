@@ -25,6 +25,14 @@ namespace ICT4Participation
            
 
         }
+        public bool UpdateQuestion(Question questiontoupdate)
+        {
+            if (questions.UpdateQuestion(questiontoupdate))
+                return true;
+            else
+                return false;
+        }
+
         // Methods
         public bool AnswerQuestion(Question question, string answer)
         {

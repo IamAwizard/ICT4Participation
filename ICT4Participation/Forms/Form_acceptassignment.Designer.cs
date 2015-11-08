@@ -168,6 +168,7 @@
             this.btn_acceptassignment.TabIndex = 17;
             this.btn_acceptassignment.Text = "Accepteer opdracht";
             this.btn_acceptassignment.UseVisualStyleBackColor = false;
+            this.btn_acceptassignment.Click += new System.EventHandler(this.btn_acceptassignment_Click);
             // 
             // Form_AcceptAssignment
             // 

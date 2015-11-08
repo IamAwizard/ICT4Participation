@@ -13,8 +13,11 @@ namespace ICT4Participation
     public partial class Form_AcceptAssignment : Form
     {
         Question currentquestion;
+        VolunteerHandler volunteerhandler;
         public Form_AcceptAssignment(Question question)
         {
+           
+            volunteerhandler = new VolunteerHandler();
             currentquestion = question;
             InitializeComponent();
             RefreshInterface();
@@ -32,6 +35,14 @@ namespace ICT4Participation
             tb_vervoer.Text = (currentquestion.Transport == string.Empty ? "Niet opgegeven" : currentquestion.Transport);
             
             
+            
+        }
+
+        private void btn_acceptassignment_Click(object sender, EventArgs e)
+        {
+            
+            currentquestion.Solved = "JA";
+            volunteerhandler.UpdateQuestion(currentquestion);
             
         }
     }
