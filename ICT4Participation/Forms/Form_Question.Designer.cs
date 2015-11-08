@@ -65,18 +65,20 @@
             // tb_assignment
             // 
             this.tb_assignment.Location = new System.Drawing.Point(100, 10);
-            this.tb_assignment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_assignment.Margin = new System.Windows.Forms.Padding(2);
             this.tb_assignment.Multiline = true;
             this.tb_assignment.Name = "tb_assignment";
+            this.tb_assignment.ReadOnly = true;
             this.tb_assignment.Size = new System.Drawing.Size(362, 187);
             this.tb_assignment.TabIndex = 4;
             // 
             // tb_specialty
             // 
             this.tb_specialty.Location = new System.Drawing.Point(12, 237);
-            this.tb_specialty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_specialty.Margin = new System.Windows.Forms.Padding(2);
             this.tb_specialty.Multiline = true;
             this.tb_specialty.Name = "tb_specialty";
+            this.tb_specialty.ReadOnly = true;
             this.tb_specialty.Size = new System.Drawing.Size(230, 130);
             this.tb_specialty.TabIndex = 5;
             // 
@@ -87,7 +89,7 @@
             this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_chat.Location = new System.Drawing.Point(309, 237);
-            this.btn_chat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_chat.Margin = new System.Windows.Forms.Padding(2);
             this.btn_chat.Name = "btn_chat";
             this.btn_chat.Size = new System.Drawing.Size(131, 41);
             this.btn_chat.TabIndex = 6;
@@ -101,12 +103,13 @@
             this.btn_accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_accept.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_accept.Location = new System.Drawing.Point(309, 306);
-            this.btn_accept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_accept.Margin = new System.Windows.Forms.Padding(2);
             this.btn_accept.Name = "btn_accept";
             this.btn_accept.Size = new System.Drawing.Size(131, 41);
             this.btn_accept.TabIndex = 7;
             this.btn_accept.Text = "Accepteren";
             this.btn_accept.UseVisualStyleBackColor = false;
+            this.btn_accept.Click += new System.EventHandler(this.btn_accept_Click);
             // 
             // Form_Question
             // 
@@ -120,7 +123,7 @@
             this.Controls.Add(this.tb_assignment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Question";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Question";

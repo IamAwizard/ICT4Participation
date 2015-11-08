@@ -12,9 +12,24 @@ namespace ICT4Participation
 {
     public partial class Form_Question : Form
     {
-        public Form_Question()
+        Question currentquestion;
+        ClientHandler clienthandler;
+        public Form_Question(Question questiontoshow)
         {
+            currentquestion = questiontoshow;
             InitializeComponent();
+            RefreshInterface();
+        }
+
+
+        public void RefreshInterface()
+        {
+            tb_assignment.Text = currentquestion.Content;
+            tb_specialty.Text = (currentquestion.Discrepancy == string.Empty ? "Niet opgegeven" : currentquestion.Discrepancy);
+        }
+        private void btn_accept_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
