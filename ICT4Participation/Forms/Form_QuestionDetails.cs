@@ -14,6 +14,7 @@ namespace ICT4Participation
     {
         // Fields
         Question currentquestion;
+        ClientHandler clienthandler;
 
         // Constructor
         public Form_QuestionDetails(Question questiontoshow)
@@ -61,7 +62,7 @@ namespace ICT4Participation
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

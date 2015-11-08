@@ -57,5 +57,10 @@ namespace ICT4Participation
             Synchronize();
             return QuestionList;
         }
+
+        public List<Question> currentquestion()
+        {
+            return 
+        }
     }
 }
