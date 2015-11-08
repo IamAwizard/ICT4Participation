@@ -67,9 +67,14 @@ namespace ICT4Participation
             }
         }
 
-        private void btn_refresh_Click(object sender, EventArgs e)
+        private void btn_DeleteUser_Click(object sender, EventArgs e)
         {
-            RefreshInterface();
+            if (DialogResult.Yes == MessageBox.Show("Weet je zeker dat u het account wil verwijderen?", "Let op!", MessageBoxButtons.YesNo))
+            {
+                volunteerhandler.DeleteVolunteer(currentuser as Volunteer);
+                MessageBox.Show("Account en data verwijderd. De applicatie sluit nu.");
+                this.Close();
+            }
         }
     }
 }

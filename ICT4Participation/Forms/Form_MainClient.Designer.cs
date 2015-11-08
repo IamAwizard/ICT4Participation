@@ -245,7 +245,7 @@
             // btn_DeleteUser
             // 
             this.btn_DeleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_DeleteUser.BackColor = System.Drawing.Color.White;
+            this.btn_DeleteUser.BackColor = System.Drawing.Color.IndianRed;
             this.btn_DeleteUser.FlatAppearance.BorderSize = 0;
             this.btn_DeleteUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_DeleteUser.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;

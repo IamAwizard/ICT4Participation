@@ -12,6 +12,7 @@ namespace ICT4Participation
         Volunteer currentuser;
 
         QuestionHandler questions;
+        UserHandler userhandler;
 
         Client client;
 
@@ -22,6 +23,7 @@ namespace ICT4Participation
         public VolunteerHandler()
         {
             questions = new QuestionHandler();
+            userhandler = new UserHandler();
            
 
         }
@@ -63,6 +65,14 @@ namespace ICT4Participation
         public Schedule GetSchedule()
         {
             return currentuser.GetSchedule();
+        }
+
+        public bool DeleteVolunteer(Volunteer volunteer)
+        {
+            if (userhandler.DeleteUser(volunteer))
+                return true;
+            else
+                return false;
         }
     }
 }

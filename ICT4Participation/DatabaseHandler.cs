@@ -250,6 +250,7 @@ namespace ICT4Participation
                             toadd = null;
                             Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "", "", "");
                             toadd = newUser;
+                            toadd.UserID = id;
                             break;
                         case "ADMIN":
                             Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
@@ -412,6 +413,30 @@ namespace ICT4Participation
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText =
+                   "DELETE FROM TAFSPRAAK WHERE VOLUNTEER = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TAFSPRAAK WHERE CLIENT = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TCLIENT WHERE CLIENTID = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
                    "DELETE FROM TQUESTION WHERE AUTEUR = :deleteIDvalue";
 
                 cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
@@ -425,6 +450,29 @@ namespace ICT4Participation
                 cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
                 cmd.ExecuteNonQuery();
 
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TREVIEW WHERE VOLUNTEER = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TROOSTER WHERE VOLUNTEERID = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TVOLUNTEER WHERE VOLUNTEERID = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)
