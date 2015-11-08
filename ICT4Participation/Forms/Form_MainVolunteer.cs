@@ -44,6 +44,7 @@ namespace ICT4Participation
             {
                 MessageBox.Show("er zijn geen questions");
             }
+
         }
 
         private void btn_Respond_Click(object sender, EventArgs e)
