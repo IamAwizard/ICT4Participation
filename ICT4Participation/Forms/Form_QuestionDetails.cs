@@ -15,6 +15,7 @@ namespace ICT4Participation
         // Fields
         Question currentquestion;
         User currentuser;
+        User volunteer;
         ClientHandler clienthandler;
         bool isChanged;
 
@@ -22,7 +23,6 @@ namespace ICT4Participation
         public Form_QuestionDetails(Question questiontoshow, Client currentuser)
         {
             InitializeComponent();
-
             this.currentuser = currentuser;
             clienthandler = new ClientHandler(this.currentuser as Client);
             currentquestion = questiontoshow;
@@ -63,6 +63,8 @@ namespace ICT4Participation
                 gbox_Answer.Visible = false;
                 gbox_NoAnswer.Visible = true;
             }
+         
+           
 
         }
 

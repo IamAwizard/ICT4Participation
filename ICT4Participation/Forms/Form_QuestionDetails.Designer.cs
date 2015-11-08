@@ -213,6 +213,7 @@
             // 
             // gbox_Answer
             // 
+            this.gbox_Answer.Controls.Add(this.gbox_NoAnswer);
             this.gbox_Answer.Controls.Add(this.btn_AddMeeting);
             this.gbox_Answer.Controls.Add(this.lbl_Info6);
             this.gbox_Answer.Controls.Add(this.lbl_AnswerAuthorName);
@@ -311,7 +312,7 @@
             this.gbox_NoAnswer.Controls.Add(this.lbl_NoAnswer);
             this.gbox_NoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.gbox_NoAnswer.ForeColor = System.Drawing.Color.White;
-            this.gbox_NoAnswer.Location = new System.Drawing.Point(541, 124);
+            this.gbox_NoAnswer.Location = new System.Drawing.Point(0, 0);
             this.gbox_NoAnswer.Name = "gbox_NoAnswer";
             this.gbox_NoAnswer.Size = new System.Drawing.Size(511, 407);
             this.gbox_NoAnswer.TabIndex = 8;
@@ -333,7 +334,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1064, 543);
-            this.Controls.Add(this.gbox_NoAnswer);
             this.Controls.Add(this.lbl_QuestionAnswered);
             this.Controls.Add(this.lbl_Info7);
             this.Controls.Add(this.pictureBox2);

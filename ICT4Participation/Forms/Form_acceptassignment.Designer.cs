@@ -154,6 +154,7 @@
             this.btn_backassignment.TabIndex = 16;
             this.btn_backassignment.Text = "Back";
             this.btn_backassignment.UseVisualStyleBackColor = false;
+            this.btn_backassignment.Click += new System.EventHandler(this.btn_backassignment_Click);
             // 
             // btn_acceptassignment
             // 

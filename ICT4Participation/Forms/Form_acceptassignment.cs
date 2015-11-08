@@ -40,10 +40,22 @@ namespace ICT4Participation
 
         private void btn_acceptassignment_Click(object sender, EventArgs e)
         {
-            
+            Form_Answer answer = new Form_Answer();
+            this.Hide();
+            answer.ShowDialog();
+            this.Show();
             currentquestion.Solved = "JA";
+           
             volunteerhandler.UpdateQuestion(currentquestion);
             
+        }
+
+        private void btn_backassignment_Click(object sender, EventArgs e)
+        {
+            //Form_Question questiondialog = new Form_Question(question);
+            //this.Hide();
+            //question.ShowDialog();
+            //this.Show();
         }
     }
 }
