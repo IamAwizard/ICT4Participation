@@ -52,6 +52,7 @@ namespace ICT4Participation
                     gbox_NoAnswer.Visible = false;
                     tbox_Answer.Text = currentquestion.Answer;
                     lbl_AnswerAuthorName.Text = currentquestion.Volunteer.Name;
+                    lbl_s
                 }
                 catch (NullReferenceException ex)
                 {
