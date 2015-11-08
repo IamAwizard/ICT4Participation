@@ -362,5 +362,29 @@ namespace ICT4Participation
             }
 
         }
+
+        public static bool bevestigen(Question question)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "Insert into TQUESTION(LOCATIE, AFSTAND, VERVOER) VALUES (:NewLOCATIE, :NewAFSTAND, :NewVERVOER";
+                cmd.Parameters.Add("NewLOCATIE", OracleDbType.Varchar2).Value = question.Location;
+                cmd.Parameters.Add("NewAFSTAND", OracleDbType.Varchar2).Value = question.Distance;
+                cmd.Parameters.Add("NewVERVOER", OracleDbType.Varchar2).Value = question.Transport;
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return true;
+                
+            }     
+        }
     }
 }

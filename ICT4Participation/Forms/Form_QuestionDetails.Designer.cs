@@ -33,27 +33,28 @@
             this.tbox_Question = new System.Windows.Forms.TextBox();
             this.lbl_ClientName = new System.Windows.Forms.Label();
             this.gbox_Question = new System.Windows.Forms.GroupBox();
-            this.lbl_Info1 = new System.Windows.Forms.Label();
-            this.lbl_Date = new System.Windows.Forms.Label();
-            this.lbl_Info2 = new System.Windows.Forms.Label();
-            this.lbl_Info3 = new System.Windows.Forms.Label();
-            this.lbl_Info4 = new System.Windows.Forms.Label();
-            this.tbox_Location = new System.Windows.Forms.TextBox();
-            this.tbox_Discrepancy = new System.Windows.Forms.TextBox();
-            this.tbox_Transport = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbox_Distance = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tbox_Transport = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbox_Discrepancy = new System.Windows.Forms.TextBox();
+            this.tbox_Location = new System.Windows.Forms.TextBox();
+            this.lbl_Info4 = new System.Windows.Forms.Label();
+            this.lbl_Info3 = new System.Windows.Forms.Label();
+            this.lbl_Info2 = new System.Windows.Forms.Label();
+            this.lbl_Date = new System.Windows.Forms.Label();
+            this.lbl_Info1 = new System.Windows.Forms.Label();
             this.gbox_Answer = new System.Windows.Forms.GroupBox();
+            this.btn_AddMeeting = new System.Windows.Forms.Button();
             this.lbl_Info6 = new System.Windows.Forms.Label();
             this.lbl_AnswerAuthorName = new System.Windows.Forms.Label();
             this.tbox_Answer = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_Info7 = new System.Windows.Forms.Label();
             this.lbl_QuestionAnswered = new System.Windows.Forms.Label();
-            this.btn_AddMeeting = new System.Windows.Forms.Button();
             this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
             this.lbl_NoAnswer = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbox_Question.SuspendLayout();
             this.gbox_Answer.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // gbox_Question
             // 
+            this.gbox_Question.Controls.Add(this.button1);
             this.gbox_Question.Controls.Add(this.tbox_Distance);
             this.gbox_Question.Controls.Add(this.label3);
             this.gbox_Question.Controls.Add(this.tbox_Transport);
@@ -116,72 +118,26 @@
             this.gbox_Question.TabStop = false;
             this.gbox_Question.Text = "Vraag";
             // 
-            // lbl_Info1
+            // tbox_Distance
             // 
-            this.lbl_Info1.AutoSize = true;
-            this.lbl_Info1.Location = new System.Drawing.Point(28, 37);
-            this.lbl_Info1.Name = "lbl_Info1";
-            this.lbl_Info1.Size = new System.Drawing.Size(30, 20);
-            this.lbl_Info1.TabIndex = 3;
-            this.lbl_Info1.Text = "Op";
+            this.tbox_Distance.Location = new System.Drawing.Point(143, 365);
+            this.tbox_Distance.Name = "tbox_Distance";
+            this.tbox_Distance.Size = new System.Drawing.Size(353, 26);
+            this.tbox_Distance.TabIndex = 12;
             // 
-            // lbl_Date
+            // label3
             // 
-            this.lbl_Date.AutoSize = true;
-            this.lbl_Date.Location = new System.Drawing.Point(86, 37);
-            this.lbl_Date.Name = "lbl_Date";
-            this.lbl_Date.Size = new System.Drawing.Size(72, 20);
-            this.lbl_Date.TabIndex = 4;
-            this.lbl_Date.Text = "<datum>";
-            // 
-            // lbl_Info2
-            // 
-            this.lbl_Info2.AutoSize = true;
-            this.lbl_Info2.Location = new System.Drawing.Point(28, 57);
-            this.lbl_Info2.Name = "lbl_Info2";
-            this.lbl_Info2.Size = new System.Drawing.Size(52, 20);
-            this.lbl_Info2.TabIndex = 5;
-            this.lbl_Info2.Text = "Vroeg";
-            // 
-            // lbl_Info3
-            // 
-            this.lbl_Info3.AutoSize = true;
-            this.lbl_Info3.Location = new System.Drawing.Point(28, 272);
-            this.lbl_Info3.Name = "lbl_Info3";
-            this.lbl_Info3.Size = new System.Drawing.Size(65, 20);
-            this.lbl_Info3.TabIndex = 6;
-            this.lbl_Info3.Text = "Locatie:";
-            // 
-            // lbl_Info4
-            // 
-            this.lbl_Info4.AutoSize = true;
-            this.lbl_Info4.Location = new System.Drawing.Point(27, 304);
-            this.lbl_Info4.Name = "lbl_Info4";
-            this.lbl_Info4.Size = new System.Drawing.Size(109, 20);
-            this.lbl_Info4.TabIndex = 7;
-            this.lbl_Info4.Text = "Bijzonderheid:";
-            // 
-            // tbox_Location
-            // 
-            this.tbox_Location.Location = new System.Drawing.Point(143, 269);
-            this.tbox_Location.Name = "tbox_Location";
-            this.tbox_Location.ReadOnly = true;
-            this.tbox_Location.Size = new System.Drawing.Size(353, 26);
-            this.tbox_Location.TabIndex = 4;
-            // 
-            // tbox_Discrepancy
-            // 
-            this.tbox_Discrepancy.Location = new System.Drawing.Point(143, 301);
-            this.tbox_Discrepancy.Name = "tbox_Discrepancy";
-            this.tbox_Discrepancy.ReadOnly = true;
-            this.tbox_Discrepancy.Size = new System.Drawing.Size(353, 26);
-            this.tbox_Discrepancy.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 368);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Afstand:";
             // 
             // tbox_Transport
             // 
             this.tbox_Transport.Location = new System.Drawing.Point(143, 333);
             this.tbox_Transport.Name = "tbox_Transport";
-            this.tbox_Transport.ReadOnly = true;
             this.tbox_Transport.Size = new System.Drawing.Size(353, 26);
             this.tbox_Transport.TabIndex = 10;
             // 
@@ -194,22 +150,64 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Vervoermiddel:";
             // 
-            // tbox_Distance
+            // tbox_Discrepancy
             // 
-            this.tbox_Distance.Location = new System.Drawing.Point(143, 365);
-            this.tbox_Distance.Name = "tbox_Distance";
-            this.tbox_Distance.ReadOnly = true;
-            this.tbox_Distance.Size = new System.Drawing.Size(353, 26);
-            this.tbox_Distance.TabIndex = 12;
+            this.tbox_Discrepancy.Location = new System.Drawing.Point(143, 301);
+            this.tbox_Discrepancy.Name = "tbox_Discrepancy";
+            this.tbox_Discrepancy.Size = new System.Drawing.Size(353, 26);
+            this.tbox_Discrepancy.TabIndex = 8;
             // 
-            // label3
+            // tbox_Location
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 368);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Afstand:";
+            this.tbox_Location.Location = new System.Drawing.Point(143, 269);
+            this.tbox_Location.Name = "tbox_Location";
+            this.tbox_Location.Size = new System.Drawing.Size(353, 26);
+            this.tbox_Location.TabIndex = 4;
+            // 
+            // lbl_Info4
+            // 
+            this.lbl_Info4.AutoSize = true;
+            this.lbl_Info4.Location = new System.Drawing.Point(27, 304);
+            this.lbl_Info4.Name = "lbl_Info4";
+            this.lbl_Info4.Size = new System.Drawing.Size(109, 20);
+            this.lbl_Info4.TabIndex = 7;
+            this.lbl_Info4.Text = "Bijzonderheid:";
+            // 
+            // lbl_Info3
+            // 
+            this.lbl_Info3.AutoSize = true;
+            this.lbl_Info3.Location = new System.Drawing.Point(28, 272);
+            this.lbl_Info3.Name = "lbl_Info3";
+            this.lbl_Info3.Size = new System.Drawing.Size(65, 20);
+            this.lbl_Info3.TabIndex = 6;
+            this.lbl_Info3.Text = "Locatie:";
+            // 
+            // lbl_Info2
+            // 
+            this.lbl_Info2.AutoSize = true;
+            this.lbl_Info2.Location = new System.Drawing.Point(28, 57);
+            this.lbl_Info2.Name = "lbl_Info2";
+            this.lbl_Info2.Size = new System.Drawing.Size(52, 20);
+            this.lbl_Info2.TabIndex = 5;
+            this.lbl_Info2.Text = "Vroeg";
+            // 
+            // lbl_Date
+            // 
+            this.lbl_Date.AutoSize = true;
+            this.lbl_Date.Location = new System.Drawing.Point(86, 37);
+            this.lbl_Date.Name = "lbl_Date";
+            this.lbl_Date.Size = new System.Drawing.Size(72, 20);
+            this.lbl_Date.TabIndex = 4;
+            this.lbl_Date.Text = "<datum>";
+            // 
+            // lbl_Info1
+            // 
+            this.lbl_Info1.AutoSize = true;
+            this.lbl_Info1.Location = new System.Drawing.Point(28, 37);
+            this.lbl_Info1.Name = "lbl_Info1";
+            this.lbl_Info1.Size = new System.Drawing.Size(30, 20);
+            this.lbl_Info1.TabIndex = 3;
+            this.lbl_Info1.Text = "Op";
             // 
             // gbox_Answer
             // 
@@ -225,6 +223,24 @@
             this.gbox_Answer.TabIndex = 4;
             this.gbox_Answer.TabStop = false;
             this.gbox_Answer.Text = "Antwoord";
+            // 
+            // btn_AddMeeting
+            // 
+            this.btn_AddMeeting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AddMeeting.BackColor = System.Drawing.Color.White;
+            this.btn_AddMeeting.FlatAppearance.BorderSize = 0;
+            this.btn_AddMeeting.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_AddMeeting.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_AddMeeting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddMeeting.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_AddMeeting.Location = new System.Drawing.Point(115, 361);
+            this.btn_AddMeeting.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AddMeeting.Name = "btn_AddMeeting";
+            this.btn_AddMeeting.Size = new System.Drawing.Size(290, 35);
+            this.btn_AddMeeting.TabIndex = 6;
+            this.btn_AddMeeting.Text = "Afspraak plannen!";
+            this.btn_AddMeeting.UseVisualStyleBackColor = false;
             // 
             // lbl_Info6
             // 
@@ -288,24 +304,6 @@
             this.lbl_QuestionAnswered.TabIndex = 7;
             this.lbl_QuestionAnswered.Text = "Onbeantwoord";
             // 
-            // btn_AddMeeting
-            // 
-            this.btn_AddMeeting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_AddMeeting.BackColor = System.Drawing.Color.White;
-            this.btn_AddMeeting.FlatAppearance.BorderSize = 0;
-            this.btn_AddMeeting.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_AddMeeting.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_AddMeeting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddMeeting.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_AddMeeting.Location = new System.Drawing.Point(115, 361);
-            this.btn_AddMeeting.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_AddMeeting.Name = "btn_AddMeeting";
-            this.btn_AddMeeting.Size = new System.Drawing.Size(290, 35);
-            this.btn_AddMeeting.TabIndex = 6;
-            this.btn_AddMeeting.Text = "Afspraak plannen!";
-            this.btn_AddMeeting.UseVisualStyleBackColor = false;
-            // 
             // gbox_NoAnswer
             // 
             this.gbox_NoAnswer.Controls.Add(this.lbl_NoAnswer);
@@ -326,6 +324,18 @@
             this.lbl_NoAnswer.Size = new System.Drawing.Size(311, 20);
             this.lbl_NoAnswer.TabIndex = 5;
             this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(343, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 37);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Bevestigen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_QuestionDetails
             // 
@@ -384,5 +394,6 @@
         private System.Windows.Forms.Button btn_AddMeeting;
         private System.Windows.Forms.GroupBox gbox_NoAnswer;
         private System.Windows.Forms.Label lbl_NoAnswer;
+        private System.Windows.Forms.Button button1;
     }
 }

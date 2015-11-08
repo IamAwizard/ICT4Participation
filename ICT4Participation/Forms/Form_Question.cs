@@ -13,7 +13,7 @@ namespace ICT4Participation
     public partial class Form_Question : Form
     {
         Question currentquestion;
-        ClientHandler clienthandler;
+   
         public Form_Question(Question questiontoshow)
         {
             currentquestion = questiontoshow;
@@ -29,7 +29,10 @@ namespace ICT4Participation
         }
         private void btn_accept_Click(object sender, EventArgs e)
         {
-
+            Form_AcceptAssignment  assignmentdialog = new Form_AcceptAssignment(currentquestion);
+            this.Hide();
+            assignmentdialog.ShowDialog();
+            this.Show();
         }
     }
 }

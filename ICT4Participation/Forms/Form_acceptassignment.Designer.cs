@@ -34,9 +34,9 @@
             this.lbl_assignment = new System.Windows.Forms.Label();
             this.lbl_distance = new System.Windows.Forms.Label();
             this.tb_specialty = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_reistijd = new System.Windows.Forms.TextBox();
+            this.tb_vervoer = new System.Windows.Forms.TextBox();
+            this.tb_afstand = new System.Windows.Forms.TextBox();
             this.btn_backassignment = new System.Windows.Forms.Button();
             this.btn_acceptassignment = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -107,35 +107,39 @@
             this.tb_specialty.Margin = new System.Windows.Forms.Padding(2);
             this.tb_specialty.Multiline = true;
             this.tb_specialty.Name = "tb_specialty";
+            this.tb_specialty.ReadOnly = true;
             this.tb_specialty.Size = new System.Drawing.Size(206, 41);
             this.tb_specialty.TabIndex = 7;
             // 
-            // textBox1
+            // tb_reistijd
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 144);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 41);
-            this.textBox1.TabIndex = 8;
+            this.tb_reistijd.Location = new System.Drawing.Point(130, 144);
+            this.tb_reistijd.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_reistijd.Multiline = true;
+            this.tb_reistijd.Name = "tb_reistijd";
+            this.tb_reistijd.ReadOnly = true;
+            this.tb_reistijd.Size = new System.Drawing.Size(206, 41);
+            this.tb_reistijd.TabIndex = 8;
             // 
-            // textBox2
+            // tb_vervoer
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 205);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 41);
-            this.textBox2.TabIndex = 9;
+            this.tb_vervoer.Location = new System.Drawing.Point(130, 205);
+            this.tb_vervoer.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_vervoer.Multiline = true;
+            this.tb_vervoer.Name = "tb_vervoer";
+            this.tb_vervoer.ReadOnly = true;
+            this.tb_vervoer.Size = new System.Drawing.Size(206, 41);
+            this.tb_vervoer.TabIndex = 9;
             // 
-            // textBox3
+            // tb_afstand
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 266);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 41);
-            this.textBox3.TabIndex = 10;
+            this.tb_afstand.Location = new System.Drawing.Point(130, 266);
+            this.tb_afstand.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_afstand.Multiline = true;
+            this.tb_afstand.Name = "tb_afstand";
+            this.tb_afstand.ReadOnly = true;
+            this.tb_afstand.Size = new System.Drawing.Size(206, 41);
+            this.tb_afstand.TabIndex = 10;
             // 
             // btn_backassignment
             // 
@@ -173,9 +177,9 @@
             this.ClientSize = new System.Drawing.Size(548, 415);
             this.Controls.Add(this.btn_acceptassignment);
             this.Controls.Add(this.btn_backassignment);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_afstand);
+            this.Controls.Add(this.tb_vervoer);
+            this.Controls.Add(this.tb_reistijd);
             this.Controls.Add(this.tb_specialty);
             this.Controls.Add(this.lbl_distance);
             this.Controls.Add(this.lbl_assignment);
@@ -199,9 +203,9 @@
         private System.Windows.Forms.Label lbl_assignment;
         private System.Windows.Forms.Label lbl_distance;
         private System.Windows.Forms.TextBox tb_specialty;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_reistijd;
+        private System.Windows.Forms.TextBox tb_vervoer;
+        private System.Windows.Forms.TextBox tb_afstand;
         private System.Windows.Forms.Button btn_backassignment;
         private System.Windows.Forms.Button btn_acceptassignment;
     }
