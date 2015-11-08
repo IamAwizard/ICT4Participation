@@ -43,6 +43,7 @@
             this.gbox_MyQuestions = new System.Windows.Forms.GroupBox();
             this.btn_QuestionDetails = new System.Windows.Forms.Button();
             this.sstrip_Bottom = new System.Windows.Forms.StatusStrip();
+            this.btn_DeleteUser = new System.Windows.Forms.Button();
             this.gbox_NewQuestion.SuspendLayout();
             this.gbox_MyQuestions.SuspendLayout();
             this.SuspendLayout();
@@ -241,12 +242,32 @@
             this.sstrip_Bottom.TabIndex = 14;
             this.sstrip_Bottom.Text = "statusStrip1";
             // 
+            // btn_DeleteUser
+            // 
+            this.btn_DeleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DeleteUser.BackColor = System.Drawing.Color.White;
+            this.btn_DeleteUser.FlatAppearance.BorderSize = 0;
+            this.btn_DeleteUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_DeleteUser.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_DeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteUser.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_DeleteUser.Location = new System.Drawing.Point(350, 9);
+            this.btn_DeleteUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_DeleteUser.Name = "btn_DeleteUser";
+            this.btn_DeleteUser.Size = new System.Drawing.Size(177, 35);
+            this.btn_DeleteUser.TabIndex = 15;
+            this.btn_DeleteUser.Text = "Account Verwijderen";
+            this.btn_DeleteUser.UseVisualStyleBackColor = false;
+            this.btn_DeleteUser.Click += new System.EventHandler(this.btn_DeleteUser_Click);
+            // 
             // Form_MainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(538, 561);
+            this.Controls.Add(this.btn_DeleteUser);
             this.Controls.Add(this.sstrip_Bottom);
             this.Controls.Add(this.gbox_MyQuestions);
             this.Controls.Add(this.gbox_NewQuestion);
@@ -282,5 +303,6 @@
         private System.Windows.Forms.GroupBox gbox_MyQuestions;
         private System.Windows.Forms.Button btn_QuestionDetails;
         private System.Windows.Forms.StatusStrip sstrip_Bottom;
+        private System.Windows.Forms.Button btn_DeleteUser;
     }
 }

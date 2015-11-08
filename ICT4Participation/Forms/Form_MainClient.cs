@@ -68,5 +68,15 @@ namespace ICT4Participation
                 MessageBox.Show("U heeft geen vraag gekozen");
             }
         }
+
+        private void btn_DeleteUser_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Weet je zeker dat u het account wil verwijderen?", "Let op!", MessageBoxButtons.YesNo))
+            {
+                clienthandler.DeleteClient(currentuser as Client);
+                MessageBox.Show("Account en data verwijderd. De applicatie sluit nu.");
+                this.Close();
+            }
+        }
     }
 }

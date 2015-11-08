@@ -78,5 +78,13 @@ namespace ICT4Participation
         {
             return questionhandler.GetQuestionsByAuthor(CurrentUser);
         }
+
+        public bool DeleteClient(Client client)
+        {
+            if (userhandler.DeleteUser(client))
+                return true;
+            else
+                return false;
+        }
     }
 }

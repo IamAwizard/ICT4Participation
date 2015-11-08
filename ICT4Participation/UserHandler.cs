@@ -10,11 +10,13 @@ namespace ICT4Participation
     {
         // Fields
         private List<User> users;
-        
+
         // Properties
-        public List<User>Users
-        { get { return users; }
-        set { users = value; } }
+        public List<User> Users
+        {
+            get { return users; }
+            set { users = value; }
+        }
 
         // Constructor
         public UserHandler()
@@ -42,16 +44,29 @@ namespace ICT4Participation
                 DatabaseHandler.AddUser(user);
                 return true;
             }
-            catch(NullReferenceException ex)
+            catch (NullReferenceException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
                 return false;
             }
         }
 
+        public bool DeleteUser(User user)
+        {
+            try
+            {
+                DatabaseHandler.DeleteUser(user);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public void Synchronize()
         {
-          users =   DatabaseHandler.GetAllUsers();
+            users = DatabaseHandler.GetAllUsers();
         }
     }
 }

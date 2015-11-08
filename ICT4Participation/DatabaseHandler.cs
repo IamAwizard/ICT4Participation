@@ -325,7 +325,7 @@ namespace ICT4Participation
             }
         }
 
-        public static void addavatar()
+        public static void AddAvatar()
         {
 
         }
@@ -394,6 +394,45 @@ namespace ICT4Participation
                 return true;
                 
             }     
+        }
+
+        public static bool DeleteUser(User usertodelete)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TUSER WHERE USERID = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TQUESTION WHERE AUTEUR = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TREVIEW WHERE CLIENT = :deleteIDvalue";
+
+                cmd.Parameters.Add("deleteIDvalue", OracleDbType.Varchar2).Value = usertodelete.UserID;
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return true;
+
+            }
         }
     }
 }
