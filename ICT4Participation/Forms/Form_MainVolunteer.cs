@@ -21,11 +21,7 @@ namespace ICT4Participation
             lbl_UserName.Text = currentuser.Name;
             volunteerhandler = new VolunteerHandler();
             RefreshInterface();
-        }
-
-        private void Form_Volunteer_Load(object sender, EventArgs e)
-        {
-
+            timer_Refresh.Start();
         }
 
         private void btn_profile_Click(object sender, EventArgs e)
@@ -75,6 +71,16 @@ namespace ICT4Participation
                 MessageBox.Show("Account en data verwijderd. De applicatie sluit nu.");
                 this.Close();
             }
+        }
+
+        private void timer_Refresh_Tick(object sender, EventArgs e)
+        {
+            RefreshInterface();
+        }
+
+        private void Form_MainVolunteer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer_Refresh.Stop();
         }
     }
 }

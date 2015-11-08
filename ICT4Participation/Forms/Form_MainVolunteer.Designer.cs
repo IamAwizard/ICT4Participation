@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MainVolunteer));
             this.lbox_Questions = new System.Windows.Forms.ListBox();
             this.lbl_LoggedinInfo = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.btn_Respond = new System.Windows.Forms.Button();
             this.gbox_Questions = new System.Windows.Forms.GroupBox();
             this.btn_DeleteUser = new System.Windows.Forms.Button();
+            this.timer_Refresh = new System.Windows.Forms.Timer(this.components);
             this.gbox_Questions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,6 +144,11 @@
             this.btn_DeleteUser.UseVisualStyleBackColor = false;
             this.btn_DeleteUser.Click += new System.EventHandler(this.btn_DeleteUser_Click);
             // 
+            // timer_Refresh
+            // 
+            this.timer_Refresh.Interval = 30000;
+            this.timer_Refresh.Tick += new System.EventHandler(this.timer_Refresh_Tick);
+            // 
             // Form_MainVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,7 +166,7 @@
             this.Name = "Form_MainVolunteer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vrijwilligerssysteem";
-            this.Load += new System.EventHandler(this.Form_Volunteer_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_MainVolunteer_FormClosing);
             this.gbox_Questions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,5 +182,6 @@
         private System.Windows.Forms.Button btn_Respond;
         private System.Windows.Forms.GroupBox gbox_Questions;
         private System.Windows.Forms.Button btn_DeleteUser;
+        private System.Windows.Forms.Timer timer_Refresh;
     }
 }
