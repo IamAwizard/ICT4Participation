@@ -57,5 +57,10 @@ namespace ICT4Participation
         {
             return DatabaseHandler.AddMessage(message);
         }
+
+        public List<Message> GetNewMessages(int ChatID, int MessageID)
+        {
+            return DatabaseHandler.GetNewMessages(ChatID, MessageID);
+        }
     }
 }
