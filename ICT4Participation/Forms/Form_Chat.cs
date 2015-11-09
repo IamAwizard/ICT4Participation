@@ -13,13 +13,15 @@ namespace ICT4Participation
     public partial class Form_Chat : Form
     {
         // Fields
-        Question activequestion;
+        User currentUser;
+        User otherUser;
         // Constructor
-        public Form_Chat(Question question)
+        public Form_Chat(User currentuser, User otheruser)
         {
             InitializeComponent();
 
-            activequestion = question;
+            currentUser = currentuser;
+            otherUser = otheruser;
         }
     }
 }

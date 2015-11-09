@@ -86,5 +86,21 @@ namespace ICT4Participation
             else
                 return false;
         }
+
+        public List<User> GetVolunteers()
+        {
+            List<User> returnlist = new List<User>();
+
+            userhandler.Synchronize();
+            foreach (User u in userhandler.Users)
+            {
+                if (u is Volunteer)
+                {
+                    returnlist.Add(u);
+                }
+            }
+
+            return returnlist.OrderBy(x => x.Name).ToList();
+        }
     }
 }

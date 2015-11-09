@@ -21,10 +21,12 @@ namespace ICT4Participation
             lbl_UserName.Text = currentuser.Name;
             clienthandler = new ClientHandler(currentuser as Client);
             RefreshInterface();
+            timer_Refresh.Start();
         }
 
         public void RefreshInterface()
         {
+            lbox_Volunteers.Items.Clear();
             lbox_MyQuestions.Items.Clear();
             try
             {
@@ -34,20 +36,22 @@ namespace ICT4Participation
             {
                 MessageBox.Show(ex.Message);
             }
+
+            try
+            {
+                lbox_Volunteers.Items.AddRange(clienthandler.GetVolunteers().ToArray());
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_AddQuestion_Click(object sender, EventArgs e)
         {
-            if (tbox_Question.Text != string.Empty || tbox_Location.Text != string.Empty)
+            if (tbox_Question.Text != string.Empty)
             {
-                if (!string.IsNullOrWhiteSpace(tbox_Discrepancy.Text))
-                {
-                    clienthandler.AddQuestion(currentuser.UserID, tbox_Location.Text, tbox_Discrepancy.Text, tbox_Question.Text);
-                }
-                else
-                {
-                    clienthandler.AddQuestion(currentuser.UserID, tbox_Location.Text, tbox_Question.Text);
-                }
+                    clienthandler.AddQuestion(currentuser.UserID, "Niet opgegeven", tbox_Question.Text);
             }
             RefreshInterface();
         }
@@ -77,6 +81,16 @@ namespace ICT4Participation
                 MessageBox.Show("Account en data verwijderd. De applicatie sluit nu.");
                 this.Close();
             }
+        }
+
+        private void timer_Refresh_Tick(object sender, EventArgs e)
+        {
+            RefreshInterface();
+        }
+
+        private void Form_MainClient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer_Refresh.Stop();
         }
     }
 }

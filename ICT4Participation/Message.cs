@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Chat
+    class Message
     {
         // Fields
         private User author;
@@ -35,7 +35,7 @@ namespace ICT4Participation
         }
 
         // Constructor
-        public Chat(User author, DateTime date,string content)
+        public Message(User author, DateTime date,string content)
         {
             this.Author = this.author;
             this.Content = this.content;

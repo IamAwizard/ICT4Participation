@@ -34,15 +34,24 @@ namespace ICT4Participation
 
         public void RefreshInterface()
         {
+            lbox_Clients.Items.Clear();
             lbox_Questions.Items.Clear();
             try
-            {
-                List<Question> questions = new List<Question>();
+            { 
                 lbox_Questions.Items.AddRange(volunteerhandler.GetQuestions().ToArray());
             }
-            catch (NullReferenceException ex)
+            catch
             {
                 MessageBox.Show("er zijn geen questions");
+            }
+
+            try
+            {
+                lbox_Clients.Items.AddRange(volunteerhandler.GetClients().ToArray());
+            }
+            catch
+            {
+                MessageBox.Show("er zijn geen clients");
             }
 
         }

@@ -9,14 +9,14 @@ namespace ICT4Participation
     class Chats
     {
         // Fields
-        private List<Chat> chats;
+        private List<Message> messages;
 
         // Properties
-        public List<Chat> ChatList
+        public List<Message> Messages
         
         {
-            get { return chats; }
-            set { chats = value; }
+            get { return messages; }
+            set { messages = value; }
         }
 
         public int BerichtID

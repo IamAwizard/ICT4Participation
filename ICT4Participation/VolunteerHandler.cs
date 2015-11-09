@@ -62,6 +62,22 @@ namespace ICT4Participation
             return questions.GetAllQuestions();
         }
 
+        public List<User> GetClients()
+        {
+            List<User> returnlist = new List<User>();
+
+            userhandler.Synchronize();
+            foreach (User u in userhandler.Users)
+            {
+                if (u is Client)
+                {
+                    returnlist.Add(u);
+                }
+            }
+            
+                return returnlist.OrderBy(x => x.Name).ToList();
+        }
+
         public Schedule GetSchedule()
         {
             return currentuser.GetSchedule();

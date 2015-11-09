@@ -49,11 +49,13 @@
             // 
             this.lbox_Questions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbox_Questions.FormattingEnabled = true;
+            this.lbox_Questions.IntegralHeight = false;
             this.lbox_Questions.ItemHeight = 18;
             this.lbox_Questions.Location = new System.Drawing.Point(3, 20);
             this.lbox_Questions.Margin = new System.Windows.Forms.Padding(2);
             this.lbox_Questions.Name = "lbox_Questions";
-            this.lbox_Questions.Size = new System.Drawing.Size(294, 272);
+            this.lbox_Questions.ScrollAlwaysVisible = true;
+            this.lbox_Questions.Size = new System.Drawing.Size(274, 272);
             this.lbox_Questions.TabIndex = 0;
             // 
             // lbl_LoggedinInfo
@@ -107,7 +109,7 @@
             this.btn_Respond.Location = new System.Drawing.Point(3, 292);
             this.btn_Respond.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Respond.Name = "btn_Respond";
-            this.btn_Respond.Size = new System.Drawing.Size(294, 30);
+            this.btn_Respond.Size = new System.Drawing.Size(274, 30);
             this.btn_Respond.TabIndex = 4;
             this.btn_Respond.Text = "Reageer";
             this.btn_Respond.UseVisualStyleBackColor = false;
@@ -124,7 +126,7 @@
             this.gbox_Questions.ForeColor = System.Drawing.Color.White;
             this.gbox_Questions.Location = new System.Drawing.Point(14, 74);
             this.gbox_Questions.Name = "gbox_Questions";
-            this.gbox_Questions.Size = new System.Drawing.Size(300, 325);
+            this.gbox_Questions.Size = new System.Drawing.Size(280, 325);
             this.gbox_Questions.TabIndex = 6;
             this.gbox_Questions.TabStop = false;
             this.gbox_Questions.Text = "Vragen";
@@ -156,10 +158,12 @@
             this.lbox_Clients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbox_Clients.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbox_Clients.FormattingEnabled = true;
+            this.lbox_Clients.IntegralHeight = false;
             this.lbox_Clients.ItemHeight = 18;
             this.lbox_Clients.Location = new System.Drawing.Point(3, 20);
             this.lbox_Clients.Name = "lbox_Clients";
-            this.lbox_Clients.Size = new System.Drawing.Size(167, 272);
+            this.lbox_Clients.ScrollAlwaysVisible = true;
+            this.lbox_Clients.Size = new System.Drawing.Size(194, 272);
             this.lbox_Clients.TabIndex = 8;
             // 
             // btn_Chat
@@ -173,7 +177,7 @@
             this.btn_Chat.Location = new System.Drawing.Point(3, 292);
             this.btn_Chat.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Chat.Name = "btn_Chat";
-            this.btn_Chat.Size = new System.Drawing.Size(167, 30);
+            this.btn_Chat.Size = new System.Drawing.Size(194, 30);
             this.btn_Chat.TabIndex = 9;
             this.btn_Chat.Text = "Chatten";
             this.btn_Chat.UseVisualStyleBackColor = false;
@@ -186,9 +190,9 @@
             this.gbox_Chat.Controls.Add(this.btn_Chat);
             this.gbox_Chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gbox_Chat.ForeColor = System.Drawing.Color.White;
-            this.gbox_Chat.Location = new System.Drawing.Point(329, 74);
+            this.gbox_Chat.Location = new System.Drawing.Point(302, 74);
             this.gbox_Chat.Name = "gbox_Chat";
-            this.gbox_Chat.Size = new System.Drawing.Size(173, 325);
+            this.gbox_Chat.Size = new System.Drawing.Size(200, 325);
             this.gbox_Chat.TabIndex = 10;
             this.gbox_Chat.TabStop = false;
             this.gbox_Chat.Text = "Chatten";

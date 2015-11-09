@@ -45,8 +45,7 @@ namespace ICT4Participation
 
         public override string ToString()
         {
-            return base.ToString() + " drivinglicense " + DrivingLicense.ToString() + " biography " + Biogragphy + " path to VOG" + PathToVOG + " path to photo " + PathToPhoto;
-        }
+            return Name;        }
 
         public Schedule GetSchedule()
         {

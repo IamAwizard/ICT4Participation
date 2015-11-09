@@ -387,7 +387,6 @@ namespace ICT4Participation
 
         }
         
-
         public static bool UpdateQuestion(Question question)
         {
             try
