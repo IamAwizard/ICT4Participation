@@ -121,7 +121,7 @@
 	GesprekID				number(8)		not null,
 	Afzender				number(8)		not null,
 	Bericht					varchar2(255)	not null,
-	Datum					varchar2(255)	not null,
+	Datum					DATE			not null,
 
 	constraint fk_TCHATBERICHT_Gesprek foreign key(GesprekID)REFERENCES TGESPREK(GesprekID) on delete cascade,
 	constraint fk_TCHATBERICHT_Afzender foreign key(Afzender)REFERENCES TUSER(UserID) on delete cascade
