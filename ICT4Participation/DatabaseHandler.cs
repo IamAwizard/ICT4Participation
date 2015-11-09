@@ -577,7 +577,7 @@ namespace ICT4Participation
                 Connect();
                 cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT GESPREKID, BERICHTID, AFZENDER, DATUM, BERICHT FROM TCHATBERICHT WHERE GESPREKID = " + chatid;
+                cmd.CommandText = "SELECT GESPREKID, BERICHTID, AFZENDER, DATUM, BERICHT FROM (SELECT GESPREKID, BERICHTID, AFZENDER, DATUM, BERICHT FROM TCHATBERICHT WHERE GESPREKID = " + chatid + " ORDER BY BERICHTID DESC) WHERE ROWNUM <= 10" ;
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
