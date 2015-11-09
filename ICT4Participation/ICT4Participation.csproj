@@ -88,11 +88,11 @@
     <Compile Include="Forms\Form_Profile.Designer.cs">
       <DependentUpon>Form_Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_AcceptAssignment.cs">
+    <Compile Include="Forms\Form_AcceptQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_AcceptAssignment.Designer.cs">
-      <DependentUpon>Form_AcceptAssignment.cs</DependentUpon>
+    <Compile Include="Forms\Form_AcceptQuestion.Designer.cs">
+      <DependentUpon>Form_AcceptQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Register.cs">
       <SubType>Form</SubType>
@@ -117,6 +117,12 @@
     </Compile>
     <Compile Include="Forms\Form_QuestionDetails.Designer.cs">
       <DependentUpon>Form_QuestionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Chat.Designer.cs">
+      <DependentUpon>Form_Chat.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginHandler.cs" />
     <Compile Include="Program.cs" />
@@ -145,8 +151,8 @@
     <EmbeddedResource Include="Forms\Form_Profile.resx">
       <DependentUpon>Form_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_AcceptAssignment.resx">
-      <DependentUpon>Form_AcceptAssignment.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_AcceptQuestion.resx">
+      <DependentUpon>Form_AcceptQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_QuestionDetails.resx">
       <DependentUpon>Form_QuestionDetails.cs</DependentUpon>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_MainVolunteer.resx">
       <DependentUpon>Form_MainVolunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Chat.resx">
+      <DependentUpon>Form_Chat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

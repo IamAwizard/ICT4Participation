@@ -45,6 +45,8 @@
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Info1 = new System.Windows.Forms.Label();
             this.gbox_Answer = new System.Windows.Forms.GroupBox();
+            this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
+            this.lbl_NoAnswer = new System.Windows.Forms.Label();
             this.btn_AddMeeting = new System.Windows.Forms.Button();
             this.lbl_Info6 = new System.Windows.Forms.Label();
             this.lbl_AnswerAuthorName = new System.Windows.Forms.Label();
@@ -52,13 +54,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_Info7 = new System.Windows.Forms.Label();
             this.lbl_QuestionAnswered = new System.Windows.Forms.Label();
-            this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
-            this.lbl_NoAnswer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbox_Question.SuspendLayout();
             this.gbox_Answer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gbox_NoAnswer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -213,7 +213,6 @@
             // 
             // gbox_Answer
             // 
-            this.gbox_Answer.Controls.Add(this.gbox_NoAnswer);
             this.gbox_Answer.Controls.Add(this.btn_AddMeeting);
             this.gbox_Answer.Controls.Add(this.lbl_Info6);
             this.gbox_Answer.Controls.Add(this.lbl_AnswerAuthorName);
@@ -227,6 +226,27 @@
             this.gbox_Answer.TabStop = false;
             this.gbox_Answer.Text = "Antwoord";
             // 
+            // gbox_NoAnswer
+            // 
+            this.gbox_NoAnswer.Controls.Add(this.lbl_NoAnswer);
+            this.gbox_NoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.gbox_NoAnswer.ForeColor = System.Drawing.Color.White;
+            this.gbox_NoAnswer.Location = new System.Drawing.Point(541, 124);
+            this.gbox_NoAnswer.Name = "gbox_NoAnswer";
+            this.gbox_NoAnswer.Size = new System.Drawing.Size(511, 407);
+            this.gbox_NoAnswer.TabIndex = 8;
+            this.gbox_NoAnswer.TabStop = false;
+            this.gbox_NoAnswer.Text = "Antwoord";
+            // 
+            // lbl_NoAnswer
+            // 
+            this.lbl_NoAnswer.AutoSize = true;
+            this.lbl_NoAnswer.Location = new System.Drawing.Point(102, 194);
+            this.lbl_NoAnswer.Name = "lbl_NoAnswer";
+            this.lbl_NoAnswer.Size = new System.Drawing.Size(311, 20);
+            this.lbl_NoAnswer.TabIndex = 5;
+            this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
+            // 
             // btn_AddMeeting
             // 
             this.btn_AddMeeting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,10 +257,10 @@
             this.btn_AddMeeting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddMeeting.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_AddMeeting.Location = new System.Drawing.Point(115, 361);
+            this.btn_AddMeeting.Location = new System.Drawing.Point(158, 361);
             this.btn_AddMeeting.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddMeeting.Name = "btn_AddMeeting";
-            this.btn_AddMeeting.Size = new System.Drawing.Size(290, 35);
+            this.btn_AddMeeting.Size = new System.Drawing.Size(210, 35);
             this.btn_AddMeeting.TabIndex = 6;
             this.btn_AddMeeting.Text = "Afspraak plannen!";
             this.btn_AddMeeting.UseVisualStyleBackColor = false;
@@ -307,40 +327,21 @@
             this.lbl_QuestionAnswered.TabIndex = 7;
             this.lbl_QuestionAnswered.Text = "Onbeantwoord";
             // 
-            // gbox_NoAnswer
-            // 
-            this.gbox_NoAnswer.Controls.Add(this.lbl_NoAnswer);
-            this.gbox_NoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gbox_NoAnswer.ForeColor = System.Drawing.Color.White;
-            this.gbox_NoAnswer.Location = new System.Drawing.Point(0, 0);
-            this.gbox_NoAnswer.Name = "gbox_NoAnswer";
-            this.gbox_NoAnswer.Size = new System.Drawing.Size(511, 407);
-            this.gbox_NoAnswer.TabIndex = 8;
-            this.gbox_NoAnswer.TabStop = false;
-            this.gbox_NoAnswer.Text = "Antwoord";
-            // 
-            // lbl_NoAnswer
-            // 
-            this.lbl_NoAnswer.AutoSize = true;
-            this.lbl_NoAnswer.Location = new System.Drawing.Point(102, 194);
-            this.lbl_NoAnswer.Name = "lbl_NoAnswer";
-            this.lbl_NoAnswer.Size = new System.Drawing.Size(311, 20);
-            this.lbl_NoAnswer.TabIndex = 5;
-            this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
-            // 
             // Form_QuestionDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(1064, 543);
+            this.ClientSize = new System.Drawing.Size(1064, 541);
+            this.Controls.Add(this.gbox_Answer);
+            this.Controls.Add(this.gbox_NoAnswer);
             this.Controls.Add(this.lbl_QuestionAnswered);
             this.Controls.Add(this.lbl_Info7);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.gbox_Answer);
             this.Controls.Add(this.gbox_Question);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1080, 580);
             this.Name = "Form_QuestionDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vraagdetails";
@@ -350,9 +351,9 @@
             this.gbox_Question.PerformLayout();
             this.gbox_Answer.ResumeLayout(false);
             this.gbox_Answer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gbox_NoAnswer.ResumeLayout(false);
             this.gbox_NoAnswer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

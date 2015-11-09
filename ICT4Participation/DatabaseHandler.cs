@@ -70,13 +70,23 @@ namespace ICT4Participation
         /// <param name="odr"></param>
         /// <param name="ColIndex"></param>
         /// <returns></returns>
-        static string SafeGetValue(OracleDataReader odr, int ColIndex)
+        static string SafeReadString(OracleDataReader odr, int ColIndex)
         {
             {
                 if (!odr.IsDBNull(ColIndex))
                     return odr.GetString(ColIndex);
                 else
                     return string.Empty;
+            }
+        }
+
+        static int SafeReadInt(OracleDataReader odr, int ColIndex)
+        {
+            {
+                if (!odr.IsDBNull(ColIndex))
+                    return odr.GetInt32(ColIndex);
+                else
+                    return -1;
             }
         }
 
@@ -88,7 +98,7 @@ namespace ICT4Participation
             {
                 cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT QUESTIONID, AUTEUR, VRAAG , BIJZONDERHEID, LOCATIE, AFSTAND , VERVOER , DATUM , OPGELOST FROM TQUESTION"; // QUERY
+                cmd.CommandText = "SELECT QUESTIONID, AUTEUR, VRAAG , BIJZONDERHEID, LOCATIE, AFSTAND , VERVOER , DATUM , OPGELOST, ANTWOORD, VOLUNTEERID FROM TQUESTION"; // QUERY
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
             }
@@ -106,22 +116,34 @@ namespace ICT4Participation
                     // Read from DB
                     var questionid = dr.GetInt32(0);
                     var auteur = dr.GetInt32(1);
-                    var vraag = SafeGetValue(dr, 2);
-                    var bijzonderheid = SafeGetValue(dr, 3);
-                    var locatie = SafeGetValue(dr, 4);
-                    var afstand = SafeGetValue(dr, 5);
-                    var vervoer = SafeGetValue(dr, 6);
+                    var vraag = SafeReadString(dr, 2);
+                    var bijzonderheid = SafeReadString(dr, 3);
+                    var locatie = SafeReadString(dr, 4);
+                    var afstand = SafeReadString(dr, 5);
+                    var vervoer = SafeReadString(dr, 6);
                     DateTime datum = dr.GetDateTime(7);
-                    var opgelost = SafeGetValue(dr, 8);
+                    var opgelost = SafeReadString(dr, 8);
+                    var antwoord = SafeReadString(dr, 9);
+                    int volunteerid = SafeReadInt(dr, (10));
 
                     Question toadd;
                     toadd = new Question(null, auteur, locatie, vervoer, afstand, bijzonderheid, vraag, datum, opgelost);
                     toadd.ID = questionid;
+                    toadd.Answer = antwoord;
+                    toadd.VolunteerID = volunteerid;
                     questionlist.Add(toadd);
                 }
                 foreach (Question q in questionlist)
                 {
                     q.Client = (Client)GetUser(q.Auteur);
+                }
+
+                foreach (Question q in questionlist)
+                {
+                    if(q.VolunteerID != -1)
+                    {
+                        q.Volunteer = (Volunteer)GetUser(q.VolunteerID);
+                    }
                 }
                 return questionlist;
             }
@@ -374,7 +396,7 @@ namespace ICT4Participation
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText =
-                   "UPDATE TQUESTION SET VRAAG = :newContent, BIJZONDERHEID =  :newDiscripancy, LOCATIE = :newLocation, AFSTAND = :newDistance, VERVOER = :newTransport, DATUM = :newDate, OPGELOST =:newSolved, ANTWOORD = :newAnswer WHERE QUESTIONID = :newIDvalue";
+                   "UPDATE TQUESTION SET VRAAG = :newContent, BIJZONDERHEID =  :newDiscripancy, LOCATIE = :newLocation, AFSTAND = :newDistance, VERVOER = :newTransport, DATUM = :newDate, OPGELOST =:newSolved, ANTWOORD = :newAnswer, VOLUNTEERID = :newVolunteer WHERE QUESTIONID = :newIDvalue";
 
                 cmd.Parameters.Add("newContent", OracleDbType.Varchar2).Value = question.Content;
                 cmd.Parameters.Add("newDiscripancy", OracleDbType.Varchar2).Value = question.Discrepancy;
@@ -384,6 +406,7 @@ namespace ICT4Participation
                 cmd.Parameters.Add("newDate", OracleDbType.Date).Value = question.Date.ToString("dd-MMM-yy");
                 cmd.Parameters.Add("newSolved", OracleDbType.Varchar2).Value = question.Solved;
                 cmd.Parameters.Add("newAnswer", OracleDbType.Varchar2).Value = question.Answer;
+                cmd.Parameters.Add("newVolunteer", OracleDbType.Int32).Value = question.Volunteer.UserID;
                 cmd.Parameters.Add("newIDvalue", OracleDbType.Int32).Value = question.ID;
 
                 cmd.ExecuteNonQuery();

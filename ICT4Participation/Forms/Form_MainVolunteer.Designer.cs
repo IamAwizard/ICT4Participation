@@ -38,20 +38,22 @@
             this.gbox_Questions = new System.Windows.Forms.GroupBox();
             this.btn_DeleteUser = new System.Windows.Forms.Button();
             this.timer_Refresh = new System.Windows.Forms.Timer(this.components);
+            this.lbox_Clients = new System.Windows.Forms.ListBox();
+            this.btn_Chat = new System.Windows.Forms.Button();
+            this.gbox_Chat = new System.Windows.Forms.GroupBox();
             this.gbox_Questions.SuspendLayout();
+            this.gbox_Chat.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbox_Questions
             // 
-            this.lbox_Questions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbox_Questions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbox_Questions.FormattingEnabled = true;
             this.lbox_Questions.ItemHeight = 18;
-            this.lbox_Questions.Location = new System.Drawing.Point(11, 22);
+            this.lbox_Questions.Location = new System.Drawing.Point(3, 20);
             this.lbox_Questions.Margin = new System.Windows.Forms.Padding(2);
             this.lbox_Questions.Name = "lbox_Questions";
-            this.lbox_Questions.Size = new System.Drawing.Size(333, 202);
+            this.lbox_Questions.Size = new System.Drawing.Size(294, 272);
             this.lbox_Questions.TabIndex = 0;
             // 
             // lbl_LoggedinInfo
@@ -96,16 +98,16 @@
             // 
             // btn_Respond
             // 
-            this.btn_Respond.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Respond.BackColor = System.Drawing.Color.White;
+            this.btn_Respond.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_Respond.FlatAppearance.BorderSize = 0;
             this.btn_Respond.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Respond.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_Respond.ForeColor = System.Drawing.Color.Black;
-            this.btn_Respond.Location = new System.Drawing.Point(84, 238);
+            this.btn_Respond.Location = new System.Drawing.Point(3, 292);
             this.btn_Respond.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Respond.Name = "btn_Respond";
-            this.btn_Respond.Size = new System.Drawing.Size(195, 30);
+            this.btn_Respond.Size = new System.Drawing.Size(294, 30);
             this.btn_Respond.TabIndex = 4;
             this.btn_Respond.Text = "Reageer";
             this.btn_Respond.UseVisualStyleBackColor = false;
@@ -122,7 +124,7 @@
             this.gbox_Questions.ForeColor = System.Drawing.Color.White;
             this.gbox_Questions.Location = new System.Drawing.Point(14, 74);
             this.gbox_Questions.Name = "gbox_Questions";
-            this.gbox_Questions.Size = new System.Drawing.Size(355, 273);
+            this.gbox_Questions.Size = new System.Drawing.Size(300, 325);
             this.gbox_Questions.TabIndex = 6;
             this.gbox_Questions.TabStop = false;
             this.gbox_Questions.Text = "Vragen";
@@ -135,7 +137,7 @@
             this.btn_DeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_DeleteUser.ForeColor = System.Drawing.Color.Black;
-            this.btn_DeleteUser.Location = new System.Drawing.Point(223, 39);
+            this.btn_DeleteUser.Location = new System.Drawing.Point(353, 39);
             this.btn_DeleteUser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DeleteUser.Name = "btn_DeleteUser";
             this.btn_DeleteUser.Size = new System.Drawing.Size(146, 30);
@@ -149,12 +151,55 @@
             this.timer_Refresh.Interval = 30000;
             this.timer_Refresh.Tick += new System.EventHandler(this.timer_Refresh_Tick);
             // 
+            // lbox_Clients
+            // 
+            this.lbox_Clients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbox_Clients.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbox_Clients.FormattingEnabled = true;
+            this.lbox_Clients.ItemHeight = 18;
+            this.lbox_Clients.Location = new System.Drawing.Point(3, 20);
+            this.lbox_Clients.Name = "lbox_Clients";
+            this.lbox_Clients.Size = new System.Drawing.Size(167, 272);
+            this.lbox_Clients.TabIndex = 8;
+            // 
+            // btn_Chat
+            // 
+            this.btn_Chat.BackColor = System.Drawing.Color.White;
+            this.btn_Chat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Chat.FlatAppearance.BorderSize = 0;
+            this.btn_Chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_Chat.ForeColor = System.Drawing.Color.Black;
+            this.btn_Chat.Location = new System.Drawing.Point(3, 292);
+            this.btn_Chat.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Chat.Name = "btn_Chat";
+            this.btn_Chat.Size = new System.Drawing.Size(167, 30);
+            this.btn_Chat.TabIndex = 9;
+            this.btn_Chat.Text = "Chatten";
+            this.btn_Chat.UseVisualStyleBackColor = false;
+            // 
+            // gbox_Chat
+            // 
+            this.gbox_Chat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbox_Chat.Controls.Add(this.lbox_Clients);
+            this.gbox_Chat.Controls.Add(this.btn_Chat);
+            this.gbox_Chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbox_Chat.ForeColor = System.Drawing.Color.White;
+            this.gbox_Chat.Location = new System.Drawing.Point(329, 74);
+            this.gbox_Chat.Name = "gbox_Chat";
+            this.gbox_Chat.Size = new System.Drawing.Size(173, 325);
+            this.gbox_Chat.TabIndex = 10;
+            this.gbox_Chat.TabStop = false;
+            this.gbox_Chat.Text = "Chatten";
+            // 
             // Form_MainVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(514, 411);
+            this.Controls.Add(this.gbox_Chat);
             this.Controls.Add(this.btn_DeleteUser);
             this.Controls.Add(this.gbox_Questions);
             this.Controls.Add(this.btn_profile);
@@ -162,12 +207,13 @@
             this.Controls.Add(this.lbl_LoggedinInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(400, 400);
+            this.MinimumSize = new System.Drawing.Size(530, 450);
             this.Name = "Form_MainVolunteer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vrijwilligerssysteem";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_MainVolunteer_FormClosing);
             this.gbox_Questions.ResumeLayout(false);
+            this.gbox_Chat.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +229,8 @@
         private System.Windows.Forms.GroupBox gbox_Questions;
         private System.Windows.Forms.Button btn_DeleteUser;
         private System.Windows.Forms.Timer timer_Refresh;
+        private System.Windows.Forms.ListBox lbox_Clients;
+        private System.Windows.Forms.Button btn_Chat;
+        private System.Windows.Forms.GroupBox gbox_Chat;
     }
 }

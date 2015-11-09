@@ -25,6 +25,7 @@ namespace ICT4Participation
         public Volunteer Volunteer { get; set; }
         public Client Client { get; set; }
 
+        public int VolunteerID { get; set; }
 
         public int Auteur
         {
