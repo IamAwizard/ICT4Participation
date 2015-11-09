@@ -63,6 +63,7 @@
             this.lbox_Chat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbox_Chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbox_Chat.FormattingEnabled = true;
+            this.lbox_Chat.HorizontalScrollbar = true;
             this.lbox_Chat.IntegralHeight = false;
             this.lbox_Chat.ItemHeight = 20;
             this.lbox_Chat.Location = new System.Drawing.Point(3, 22);
@@ -89,7 +90,7 @@
             this.lbl_User1.AutoSize = true;
             this.lbl_User1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_User1.ForeColor = System.Drawing.Color.White;
-            this.lbl_User1.Location = new System.Drawing.Point(201, 35);
+            this.lbl_User1.Location = new System.Drawing.Point(60, 35);
             this.lbl_User1.Name = "lbl_User1";
             this.lbl_User1.Size = new System.Drawing.Size(82, 20);
             this.lbl_User1.TabIndex = 6;
@@ -101,7 +102,7 @@
             this.lbl_User2.AutoSize = true;
             this.lbl_User2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_User2.ForeColor = System.Drawing.Color.White;
-            this.lbl_User2.Location = new System.Drawing.Point(201, 55);
+            this.lbl_User2.Location = new System.Drawing.Point(60, 55);
             this.lbl_User2.Name = "lbl_User2";
             this.lbl_User2.Size = new System.Drawing.Size(82, 20);
             this.lbl_User2.TabIndex = 7;
@@ -154,6 +155,7 @@
             // 
             // Form_Chat
             // 
+            this.AcceptButton = this.btn_Send;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;

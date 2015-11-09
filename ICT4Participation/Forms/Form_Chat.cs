@@ -85,6 +85,7 @@ namespace ICT4Participation
             {
                 chathandler.SendMessage(new Message(currentchat.ChatID, currentUser, DateTime.Now, tbox_Message.Text));
                 RefreshInterface();
+                tbox_Message.Text = "";
             }
         }
 
