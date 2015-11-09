@@ -17,7 +17,6 @@ namespace ICT4Participation
         // Constructor   
         public ClientHandler(Client activeuser)
         {
-            chathandler = new ChatHandler();
             questionhandler = new QuestionHandler();
             reviewhandler = new ReviewHandler();
             userhandler = new UserHandler();

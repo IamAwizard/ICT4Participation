@@ -140,7 +140,7 @@ namespace ICT4Participation
 
                 foreach (Question q in questionlist)
                 {
-                    if(q.VolunteerID != -1)
+                    if (q.VolunteerID != -1)
                     {
                         q.Volunteer = (Volunteer)GetUser(q.VolunteerID);
                     }
@@ -157,10 +157,10 @@ namespace ICT4Participation
 
         public static User GetUser(int ids)
         {
-            Connect();
             User toadd = null;
             try
             {
+                Connect();
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT USERID, NAAM, GEBOORTEDATUM, GESLACHT, WOONPLAATS, ADRES, EMAIL, WACHTWOORD, TYPE FROM TUSER WHERE USERID = " + ids; // QUERY
@@ -227,10 +227,11 @@ namespace ICT4Participation
 
         public static List<User> GetAllUsers()
         {
-            Connect();
+
             List<User> userList = new List<User>();
             try
             {
+                Connect();
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT USERID, NAAM, GEBOORTEDATUM, GESLACHT, WOONPLAATS, ADRES, EMAIL, WACHTWOORD, TYPE FROM TUSER"; // QUERY
@@ -386,7 +387,7 @@ namespace ICT4Participation
             }
 
         }
-        
+
         public static bool UpdateQuestion(Question question)
         {
             try
@@ -415,8 +416,8 @@ namespace ICT4Participation
             {
                 MessageBox.Show(ex.Message);
                 return true;
-                
-            }     
+
+            }
         }
 
         public static bool DeleteUser(User usertodelete)
@@ -502,6 +503,138 @@ namespace ICT4Participation
                 MessageBox.Show(ex.Message);
                 return true;
 
+            }
+        }
+
+        public static bool CheckIfHaveChat(User someuser, User anotheruser, out int chatid)
+        {
+            chatid = -1;
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT GESPREKID FROM TGESPREK WHERE USERID1 = " + someuser.UserID
+                    + " OR USERID1 = " + anotheruser.UserID
+                    + " AND USERID2 = " + someuser.UserID
+                    + " OR USERID2 = " + anotheruser.UserID;
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        chatid = dr.GetInt32(0);
+                        return true;
+                    }
+                }
+                return false;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool StartChat(User someuser, User anotheruser)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                    "Insert into TGESPREK(USERID1, USERID2) VALUES (:NewUser1, :NewUser2)";
+
+                cmd.Parameters.Add("NewUser1", OracleDbType.Int32).Value = someuser.UserID;
+                cmd.Parameters.Add("NewUser2", OracleDbType.Int32).Value = anotheruser.UserID;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static Chat GetChat(int chatid)
+        {
+            Chat returnchat = new Chat(chatid);
+            List<Message> chatmessages = new List<Message>();
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT GESPREKID, BERICHTID, AFZENDER, DATUM, BERICHT FROM TCHATBERICHT WHERE GESPREKID = " + chatid;
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var id = dr.GetInt32(0);
+                    var messageid = dr.GetInt32(1);
+                    var authorid = dr.GetInt32(2);
+                    var date = dr.GetDateTime(3);
+                    var content = dr.GetString(4);
+
+                    chatmessages.Add(new Message(id, messageid, authorid, date, content));
+                }
+
+                foreach (Message m in chatmessages)
+                {
+                    m.Author = GetUser(m.AuthorID);
+                }
+
+                returnchat.Messages = chatmessages;
+                return returnchat;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool AddMessage(Message msg)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                    "Insert into TCHATBERICHT(GESPREKID, DATUM, AFZENDER, BERICHT) VALUES (:newGesprekID, :newDATUM, :newAFZENDER, newBERICHT)";
+
+                cmd.Parameters.Add("newGesprekID", OracleDbType.Int32).Value = msg.ChatID;
+                cmd.Parameters.Add("newDATUM", OracleDbType.Date).Value = msg.Date.ToString("dd-MMM-yy"); 
+                cmd.Parameters.Add("newAFZENDER", OracleDbType.Int32).Value = msg.AuthorID;
+                cmd.Parameters.Add("newBERICHT", OracleDbType.Varchar2).Value = msg.Content;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
             }
         }
     }

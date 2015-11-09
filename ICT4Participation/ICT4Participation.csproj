@@ -50,12 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminHandler.cs" />
-    <Compile Include="Chat.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="ChatHandler.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="Appointment.cs" />
-    <Compile Include="Chats.cs" />
+    <Compile Include="Chat.cs" />
     <Compile Include="ClientHandler.cs" />
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="Forms\Form_Answer.cs">
