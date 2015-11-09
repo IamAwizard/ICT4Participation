@@ -87,6 +87,7 @@ namespace ICT4Participation
                 {
                     lbox_Chat.Items.AddRange(range.ToArray());
                     lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+                    snd.Play();
                 }
             }
         }
