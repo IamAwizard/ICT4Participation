@@ -100,8 +100,10 @@ namespace ICT4Participation
                 User selecteduser = lbox_Clients.SelectedItem as User;
                 Form_Chat chatdialog = new Form_Chat(currentuser, selecteduser);
                 this.Hide();
+                timer_Refresh.Stop();
                 chatdialog.ShowDialog();
                 this.Show();
+                timer_Refresh.Start();
             }
         }
     }
