@@ -98,7 +98,6 @@ namespace ICT4Participation
                     returnlist.Add(u);
                 }
             }
-
             return returnlist.OrderBy(x => x.Name).ToList();
         }
     }

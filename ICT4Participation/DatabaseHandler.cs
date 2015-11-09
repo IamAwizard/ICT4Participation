@@ -569,7 +569,7 @@ namespace ICT4Participation
         }
 
         public static Chat GetChat(int chatid)
-        {
+         {
             Chat returnchat = new Chat(chatid);
             List<Message> chatmessages = new List<Message>();
             try
@@ -618,7 +618,7 @@ namespace ICT4Participation
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText =
-                    "Insert into TCHATBERICHT(GESPREKID, DATUM, AFZENDER, BERICHT) VALUES (:newGesprekID, :newDATUM, :newAFZENDER, newBERICHT)";
+                    "Insert into TCHATBERICHT(GESPREKID, DATUM, AFZENDER, BERICHT) VALUES (:newGesprekID, :newDATUM, :newAFZENDER, :newBERICHT)";
 
                 cmd.Parameters.Add("newGesprekID", OracleDbType.Int32).Value = msg.ChatID;
                 cmd.Parameters.Add("newDATUM", OracleDbType.Date).Value = msg.Date.ToString("dd-MMM-yy"); 

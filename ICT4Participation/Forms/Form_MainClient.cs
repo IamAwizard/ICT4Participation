@@ -92,5 +92,17 @@ namespace ICT4Participation
         {
             timer_Refresh.Stop();
         }
+
+        private void btn_Chat_Click(object sender, EventArgs e)
+        {
+            if(lbox_Volunteers.SelectedIndex != -1)
+            {
+                User selecteduser = lbox_Volunteers.SelectedItem as User;
+                Form_Chat chatdialog = new Form_Chat(currentuser, selecteduser);
+                this.Hide();
+                chatdialog.ShowDialog();
+                this.Show();
+            }
+        }
     }
 }

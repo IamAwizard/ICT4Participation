@@ -8,16 +8,11 @@ namespace ICT4Participation
 {
     class ChatHandler
     {
-        // Fields
-        User currrentuser;
-        User otheruser;
         // Properties
 
         // Constructor
-        public ChatHandler(User thisuser, User thatuser)
+        public ChatHandler()
         {
-            currrentuser = thisuser;
-            otheruser = thatuser;
         }
 
         public bool CheckIfChatted(User currentuser, User otheruser, out int gesprekid)
@@ -51,6 +46,16 @@ namespace ICT4Participation
         public List<Message> GetMessages(int ChatID)
         {
             return DatabaseHandler.GetChat(ChatID).Messages;
+        }
+
+        public Chat GetChat(int ChatID)
+        {
+            return DatabaseHandler.GetChat(ChatID);
+        }
+
+        public bool SendMessage(Message message)
+        {
+            return DatabaseHandler.AddMessage(message);
         }
     }
 }

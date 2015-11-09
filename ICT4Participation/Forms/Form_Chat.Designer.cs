@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Chat));
             this.gbox_Chathistory = new System.Windows.Forms.GroupBox();
             this.lbox_Chat = new System.Windows.Forms.ListBox();
@@ -35,8 +36,9 @@
             this.lbl_User1 = new System.Windows.Forms.Label();
             this.lbl_User2 = new System.Windows.Forms.Label();
             this.gbox_AddMessage = new System.Windows.Forms.GroupBox();
-            this.btn_Send = new System.Windows.Forms.Button();
             this.tbox_Message = new System.Windows.Forms.TextBox();
+            this.btn_Send = new System.Windows.Forms.Button();
+            this.Timer_Refresh = new System.Windows.Forms.Timer(this.components);
             this.gbox_Chathistory.SuspendLayout();
             this.gbox_AddMessage.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +67,8 @@
             this.lbox_Chat.ItemHeight = 20;
             this.lbox_Chat.Location = new System.Drawing.Point(3, 22);
             this.lbox_Chat.Name = "lbox_Chat";
+            this.lbox_Chat.ScrollAlwaysVisible = true;
+            this.lbox_Chat.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lbox_Chat.Size = new System.Drawing.Size(454, 199);
             this.lbox_Chat.TabIndex = 0;
             // 
@@ -118,6 +122,14 @@
             this.gbox_AddMessage.TabStop = false;
             this.gbox_AddMessage.Text = "Bericht sturen:";
             // 
+            // tbox_Message
+            // 
+            this.tbox_Message.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Message.Location = new System.Drawing.Point(3, 22);
+            this.tbox_Message.Name = "tbox_Message";
+            this.tbox_Message.Size = new System.Drawing.Size(306, 26);
+            this.tbox_Message.TabIndex = 16;
+            // 
             // btn_Send
             // 
             this.btn_Send.BackColor = System.Drawing.Color.White;
@@ -133,14 +145,12 @@
             this.btn_Send.TabIndex = 15;
             this.btn_Send.Text = "Versturen";
             this.btn_Send.UseVisualStyleBackColor = false;
+            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
-            // tbox_Message
+            // Timer_Refresh
             // 
-            this.tbox_Message.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbox_Message.Location = new System.Drawing.Point(3, 22);
-            this.tbox_Message.Name = "tbox_Message";
-            this.tbox_Message.Size = new System.Drawing.Size(306, 26);
-            this.tbox_Message.TabIndex = 16;
+            this.Timer_Refresh.Interval = 5000;
+            this.Timer_Refresh.Tick += new System.EventHandler(this.Timer_Refresh_Tick);
             // 
             // Form_Chat
             // 
@@ -156,7 +166,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "Form_Chat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Chat_FormClosing);
             this.gbox_Chathistory.ResumeLayout(false);
             this.gbox_AddMessage.ResumeLayout(false);
             this.gbox_AddMessage.PerformLayout();
@@ -174,5 +186,6 @@
         private System.Windows.Forms.GroupBox gbox_AddMessage;
         private System.Windows.Forms.TextBox tbox_Message;
         private System.Windows.Forms.Button btn_Send;
+        private System.Windows.Forms.Timer Timer_Refresh;
     }
 }

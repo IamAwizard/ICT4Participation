@@ -11,11 +11,9 @@ namespace ICT4Participation
         // Fields
         Volunteer currentuser;
 
+        ChatHandler chathandler;
         QuestionHandler questions;
         UserHandler userhandler;
-
-        Client client;
-
 
         // Properties
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Chat
+    public class Chat
     {
         // Fields
 

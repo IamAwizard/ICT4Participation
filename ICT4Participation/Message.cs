@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Message
+    public class Message
     {
         // Fields
 
@@ -26,6 +26,7 @@ namespace ICT4Participation
             Author = author;
             Content = content;
             Date = date;
+            AuthorID = author.UserID;
         }
 
         public Message(int chatid, int messageid, int authorid, DateTime date,string content)
@@ -35,6 +36,11 @@ namespace ICT4Participation
             AuthorID = authorid;
             Content = content;
             Date = date;
+        }
+
+        public override string ToString()
+        {
+            return Author.Name + ": " + Content;
         }
 
     }

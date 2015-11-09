@@ -248,6 +248,7 @@
             this.btn_Chat.TabIndex = 9;
             this.btn_Chat.Text = "Chatten";
             this.btn_Chat.UseVisualStyleBackColor = false;
+            this.btn_Chat.Click += new System.EventHandler(this.btn_Chat_Click);
             // 
             // timer_Refresh
             // 
