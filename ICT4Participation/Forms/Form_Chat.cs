@@ -77,25 +77,23 @@ namespace ICT4Participation
             }
         }
 
-        public async void RefreshInterface()
+        public void RefreshInterface()
         {
             if (currentchat != null && lbox_Chat.Items.Count > 0)
             {
                 Message lastmessage = lbox_Chat.Items[lbox_Chat.Items.Count - 1] as Message;
                 List<Message> range = chathandler.GetNewMessages(currentchat.ChatID, lastmessage.MessageID).OrderBy(x=> x.MessageID).ToList();
-                lbox_Chat.Items.AddRange(range.ToArray());
-                lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+                if (range.Count > 0)
+                {
+                    lbox_Chat.Items.AddRange(range.ToArray());
+                    lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+                }
             }
         }
 
         private void Timer_Refresh_Tick(object sender, EventArgs e)
         {
             RefreshInterface();
-            //Timer_Refresh.Stop(); // ASYNC NOT IN USE BECAUSE OF STATIC DATABASEHANDLER
-            //if (currentchat != null)
-            //{
-            //    backgroundWorker.RunWorkerAsync(lbox_Chat.Items.Count);
-            //}
         }
 
         private void btn_Send_Click(object sender, EventArgs e)
@@ -112,39 +110,6 @@ namespace ICT4Participation
         private void Form_Chat_FormClosing(object sender, FormClosingEventArgs e)
         {
             Timer_Refresh.Stop();
-        }
-
-        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e) // ASYNC NOT IN USE BECAUSE OF STATIC DATABASEHANDLER
-        {
-            int currentcount = (int)e.Argument;
-            List<Message> range = chathandler.GetMessages(currentchat.ChatID).OrderBy(x => x.MessageID).ToList();
-            List<Message> newtoadd = new List<Message>();
-            if (range.Count > currentcount)
-            {
-                int a = currentcount;
-                int b = range.Count;
-                for (int i = a; i < b; i++)
-                {
-                    newtoadd.Add(range[i]);
-                }
-                
-            }
-            e.Result = newtoadd;
-        }
-
-        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) // ASYNC NOT IN USE BECAUSE OF STATIC DATABASEHANDLER
-        {
-            List<Message> list = e.Result as List<Message>;
-            if (list != null)
-            {
-                if(list.Count != 0)
-                {
-                    lbox_Chat.Items.AddRange(list.ToArray());
-                    lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
-                    snd.Play();
-                }
-            }
-            Timer_Refresh.Start();
         }
 
         private void Form_Chat_Load(object sender, EventArgs e)

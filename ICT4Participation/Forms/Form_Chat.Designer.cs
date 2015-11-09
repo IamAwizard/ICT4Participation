@@ -39,7 +39,6 @@
             this.tbox_Message = new System.Windows.Forms.TextBox();
             this.btn_Send = new System.Windows.Forms.Button();
             this.Timer_Refresh = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.gbox_Chathistory.SuspendLayout();
             this.gbox_AddMessage.SuspendLayout();
             this.SuspendLayout();
@@ -154,11 +153,6 @@
             this.Timer_Refresh.Interval = 3000;
             this.Timer_Refresh.Tick += new System.EventHandler(this.Timer_Refresh_Tick);
             // 
-            // backgroundWorker
-            // 
-            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
-            // 
             // Form_Chat
             // 
             this.AcceptButton = this.btn_Send;
@@ -196,6 +190,5 @@
         private System.Windows.Forms.TextBox tbox_Message;
         private System.Windows.Forms.Button btn_Send;
         private System.Windows.Forms.Timer Timer_Refresh;
-        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
