@@ -45,15 +45,17 @@
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Info1 = new System.Windows.Forms.Label();
             this.gbox_Answer = new System.Windows.Forms.GroupBox();
-            this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
-            this.lbl_NoAnswer = new System.Windows.Forms.Label();
             this.btn_AddMeeting = new System.Windows.Forms.Button();
             this.lbl_Info6 = new System.Windows.Forms.Label();
             this.lbl_AnswerAuthorName = new System.Windows.Forms.Label();
             this.tbox_Answer = new System.Windows.Forms.TextBox();
+            this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
+            this.lbl_NoAnswer = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_Info7 = new System.Windows.Forms.Label();
             this.lbl_QuestionAnswered = new System.Windows.Forms.Label();
+            this.lbl_volunteerrating = new System.Windows.Forms.Label();
+            this.cb_volunteerrating = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbox_Question.SuspendLayout();
             this.gbox_Answer.SuspendLayout();
@@ -94,6 +96,8 @@
             // 
             // gbox_Question
             // 
+            this.gbox_Question.Controls.Add(this.cb_volunteerrating);
+            this.gbox_Question.Controls.Add(this.lbl_volunteerrating);
             this.gbox_Question.Controls.Add(this.tbox_Distance);
             this.gbox_Question.Controls.Add(this.label3);
             this.gbox_Question.Controls.Add(this.tbox_Transport);
@@ -226,27 +230,6 @@
             this.gbox_Answer.TabStop = false;
             this.gbox_Answer.Text = "Antwoord";
             // 
-            // gbox_NoAnswer
-            // 
-            this.gbox_NoAnswer.Controls.Add(this.lbl_NoAnswer);
-            this.gbox_NoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gbox_NoAnswer.ForeColor = System.Drawing.Color.White;
-            this.gbox_NoAnswer.Location = new System.Drawing.Point(541, 124);
-            this.gbox_NoAnswer.Name = "gbox_NoAnswer";
-            this.gbox_NoAnswer.Size = new System.Drawing.Size(511, 407);
-            this.gbox_NoAnswer.TabIndex = 8;
-            this.gbox_NoAnswer.TabStop = false;
-            this.gbox_NoAnswer.Text = "Antwoord";
-            // 
-            // lbl_NoAnswer
-            // 
-            this.lbl_NoAnswer.AutoSize = true;
-            this.lbl_NoAnswer.Location = new System.Drawing.Point(102, 194);
-            this.lbl_NoAnswer.Name = "lbl_NoAnswer";
-            this.lbl_NoAnswer.Size = new System.Drawing.Size(311, 20);
-            this.lbl_NoAnswer.TabIndex = 5;
-            this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
-            // 
             // btn_AddMeeting
             // 
             this.btn_AddMeeting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -295,6 +278,27 @@
             this.tbox_Answer.Size = new System.Drawing.Size(465, 267);
             this.tbox_Answer.TabIndex = 1;
             // 
+            // gbox_NoAnswer
+            // 
+            this.gbox_NoAnswer.Controls.Add(this.lbl_NoAnswer);
+            this.gbox_NoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.gbox_NoAnswer.ForeColor = System.Drawing.Color.White;
+            this.gbox_NoAnswer.Location = new System.Drawing.Point(541, 124);
+            this.gbox_NoAnswer.Name = "gbox_NoAnswer";
+            this.gbox_NoAnswer.Size = new System.Drawing.Size(511, 407);
+            this.gbox_NoAnswer.TabIndex = 8;
+            this.gbox_NoAnswer.TabStop = false;
+            this.gbox_NoAnswer.Text = "Antwoord";
+            // 
+            // lbl_NoAnswer
+            // 
+            this.lbl_NoAnswer.AutoSize = true;
+            this.lbl_NoAnswer.Location = new System.Drawing.Point(102, 194);
+            this.lbl_NoAnswer.Name = "lbl_NoAnswer";
+            this.lbl_NoAnswer.Size = new System.Drawing.Size(311, 20);
+            this.lbl_NoAnswer.TabIndex = 5;
+            this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ICT4Participation.Properties.Resources.IMG_Volunteerblack;
@@ -326,6 +330,32 @@
             this.lbl_QuestionAnswered.Size = new System.Drawing.Size(164, 25);
             this.lbl_QuestionAnswered.TabIndex = 7;
             this.lbl_QuestionAnswered.Text = "Onbeantwoord";
+            // 
+            // lbl_volunteerrating
+            // 
+            this.lbl_volunteerrating.AutoSize = true;
+            this.lbl_volunteerrating.Location = new System.Drawing.Point(255, 46);
+            this.lbl_volunteerrating.Name = "lbl_volunteerrating";
+            this.lbl_volunteerrating.Size = new System.Drawing.Size(201, 20);
+            this.lbl_volunteerrating.TabIndex = 13;
+            this.lbl_volunteerrating.Text = "Vrijwilliger beoordeling cijfer";
+            this.lbl_volunteerrating.Visible = false;
+            // 
+            // cb_volunteerrating
+            // 
+            this.cb_volunteerrating.FormattingEnabled = true;
+            this.cb_volunteerrating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cb_volunteerrating.Location = new System.Drawing.Point(462, 43);
+            this.cb_volunteerrating.Name = "cb_volunteerrating";
+            this.cb_volunteerrating.Size = new System.Drawing.Size(43, 28);
+            this.cb_volunteerrating.TabIndex = 14;
+            this.cb_volunteerrating.Visible = false;
+            this.cb_volunteerrating.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form_QuestionDetails
             // 
@@ -386,5 +416,7 @@
         private System.Windows.Forms.Button btn_AddMeeting;
         private System.Windows.Forms.GroupBox gbox_NoAnswer;
         private System.Windows.Forms.Label lbl_NoAnswer;
+        private System.Windows.Forms.ComboBox cb_volunteerrating;
+        private System.Windows.Forms.Label lbl_volunteerrating;
     }
 }

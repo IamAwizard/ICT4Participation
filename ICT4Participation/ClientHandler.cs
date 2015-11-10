@@ -56,13 +56,15 @@ namespace ICT4Participation
                 return false;
         }
 
+      
+
         public bool AddReview(string volunteername, int rating, string content)
         {
-            //Volunteer target = (Volunteer)users.FindUser(volunteername);
-            //if (reviews.AddReview(currentuser, target, rating, content))
-            //{
-            //    return true;
-            //}
+            Volunteer target = (Volunteer)userhandler.FindUserByName(volunteername);
+            if (reviewhandler.AddReview(CurrentUser, target, rating, content))
+            {
+                return true;
+            }
             return false;
         }
 

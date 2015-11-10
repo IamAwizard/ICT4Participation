@@ -419,6 +419,36 @@ namespace ICT4Participation
 
             }
         }
+        public static bool MakeReview(Review newreview)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                    "Insert into TREVIEW(DATUM, VOLUNTEER, CLIENT, RATING, TEKST) VALUES (:NewDATUM, :NewVOLUNTEER, :NewCLIENT, :NewRATING, :NewTEKST)";
+
+                cmd.Parameters.Add("NewDATUM", OracleDbType.Varchar2).Value = newreview.Date.ToString("dd-MMM-yy");
+                cmd.Parameters.Add("NewVOLUNTEER", OracleDbType.Int32).Value = newreview.Targetuser;
+                cmd.Parameters.Add("NewCLIENT", OracleDbType.Varchar2).Value = newreview.Client;
+                cmd.Parameters.Add("NewRATING", OracleDbType.Varchar2).Value = newreview.Rating;
+                cmd.Parameters.Add("NewTEKST", OracleDbType.Varchar2).Value = newreview.Content;
+           
+                
+                
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+      
+
+        }
 
         public static bool DeleteUser(User usertodelete)
         {

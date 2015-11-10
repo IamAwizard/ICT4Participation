@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ICT4Participation
 {
     public partial class Form_QuestionDetails : Form
@@ -18,13 +19,20 @@ namespace ICT4Participation
         User volunteer;
         ClientHandler clienthandler;
         bool isChanged;
-
+        Review currentreview;
         // Constructor
-        public Form_QuestionDetails(Question questiontoshow, Client currentuser)
+        public Form_QuestionDetails(Question questiontoshow, Client currentuser,Review reviewtoshow)
         {
+            
             InitializeComponent();
             this.currentuser = currentuser;
+            reviewtoshow = new Review(DateTime.Now, currentuser, null, currentreview.Rating, currentreview.Content);
+            this.currentreview = reviewtoshow;
+            
+            
+
             clienthandler = new ClientHandler(this.currentuser as Client);
+            
             currentquestion = questiontoshow;
             RefreshInterface();
             this.ActiveControl = lbl_Info1;
@@ -43,6 +51,9 @@ namespace ICT4Participation
             tbox_Discrepancy.Text = (currentquestion.Discrepancy == string.Empty ? "Niet opgegeven" : currentquestion.Discrepancy);
             tbox_Transport.Text = (currentquestion.Transport == string.Empty ? "Niet opgegeven" : currentquestion.Transport);
             tbox_Distance.Text = (currentquestion.Distance == string.Empty ? "Niet opgegeven" : currentquestion.Distance);
+            cb_volunteerrating.Text = Convert.ToString(currentreview.Rating);
+           
+            
 
             if (!string.IsNullOrWhiteSpace(currentquestion.Answer))
             {
@@ -63,8 +74,33 @@ namespace ICT4Participation
                 gbox_Answer.Visible = false;
                 gbox_NoAnswer.Visible = true;
             }
-         
-           
+            if(currentquestion.Solved == "JA")
+            {
+                lbl_volunteerrating.Visible = true;
+                cb_volunteerrating.Visible = true;
+            }
+            else if(currentquestion.Solved == "NEE")
+            {
+                currentreview.Rating = 0;
+                lbl_volunteerrating.Visible = false;
+                cb_volunteerrating.Visible = false;
+            }
+            if(cb_volunteerrating.Text != null)
+            {
+                cb_volunteerrating.Enabled = false;
+            }
+           else if(cb_volunteerrating.Text == null)
+            {
+                cb_volunteerrating.Enabled = true;
+            }
+
+            if (currentreview.Rating == 1)
+            {
+                cb_volunteerrating.Text = "1";
+            }
+
+
+
 
         }
 
@@ -82,9 +118,16 @@ namespace ICT4Participation
                 currentquestion.Discrepancy = tbox_Discrepancy.Text;
                 currentquestion.Transport = tbox_Transport.Text;
                 currentquestion.Distance = tbox_Distance.Text;
+                currentreview.Rating = Convert.ToInt32(cb_volunteerrating.Text);
 
+                clienthandler.AddReview(volunteer.Name,Convert.ToInt32(cb_volunteerrating.Text),null);
                 clienthandler.UpdateQuestion(currentquestion);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

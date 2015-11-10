@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
+    
     class ReviewHandler
     {
         // Fields
         private List<Review> Reviews;
+        ReviewHandler reviewhandler;
         // TODO NEEDS DATABASE HANDLER
 
         // Constructor
         public ReviewHandler()
         {
-
+            
         }
         // Properties
         public List<Review> ReviewList
@@ -33,9 +35,13 @@ namespace ICT4Participation
         public bool AddReview(Client reviewer, Volunteer reviewed, int rating, string content)
         {
             Review newReview = new Review(DateTime.Now, reviewer, reviewed, rating, content);
-            Reviews.Add(newReview);
-            return false;
+            if (DatabaseHandler.MakeReview(newReview))
+                return true;
+            else
+                return false;
         }
+
+      
 
         public void Synchronize()
         {

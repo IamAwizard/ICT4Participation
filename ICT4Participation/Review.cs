@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Review
+    public class Review
     {
         // Fields
         private DateTime date;
@@ -54,6 +54,7 @@ namespace ICT4Participation
             this.Content = this.content;
             this.Date = this.date;
         }
+
 
         // Methods
         public override string ToString()
