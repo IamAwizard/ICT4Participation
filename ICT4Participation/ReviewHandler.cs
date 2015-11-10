@@ -10,9 +10,6 @@ namespace ICT4Participation
     class ReviewHandler
     {
         // Fields
-        private List<Review> Reviews;
-        ReviewHandler reviewhandler;
-        // TODO NEEDS DATABASE HANDLER
 
         // Constructor
         public ReviewHandler()
@@ -20,32 +17,33 @@ namespace ICT4Participation
             
         }
         // Properties
-        public List<Review> ReviewList
-        {
-            get
-            {
-                return Reviews;
-            }
-            set
-            {
-                Reviews = value;
-            }
-        }
+        public List<Review> ReviewList { get; set; }
         // Methodes
-        public bool AddReview(Client reviewer, Volunteer reviewed, int rating, string content)
+        public bool AddReview(Review review)
         {
-            Review newReview = new Review(DateTime.Now, reviewer, reviewed, rating, content);
-            if (DatabaseHandler.MakeReview(newReview))
+            if (DatabaseHandler.AddReview(review))
                 return true;
             else
                 return false;
         }
 
-      
-
-        public void Synchronize()
+        public bool DeleteReview(Review review)
         {
+            if (DatabaseHandler.DeleteReview(review.ReviewID))
+                return true;
+            else
+                return false;
+        }
 
+        public List<Review> GetAllReviews()
+        {
+            Synchronize();
+            return ReviewList;
+        }
+
+        private void Synchronize()
+        {
+            ReviewList = DatabaseHandler.GetAllReviews();
         }
     }
 }

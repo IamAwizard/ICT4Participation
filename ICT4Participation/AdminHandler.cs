@@ -9,7 +9,6 @@ namespace ICT4Participation
     class AdminHandler
     {
         // Fields
-        Admin currentuser;
         QuestionHandler questionhandler;
         ReviewHandler reviewhandler;
         // Constructor   
@@ -24,25 +23,21 @@ namespace ICT4Participation
         // Methods
         public bool DeleteQuestion(Question helprequest)
         {
-            /// TODO: IMPLEMENT
-            return false;
+            return questionhandler.DeleteQuestion(helprequest);
         }
 
         public bool DeleteReview(Review review)
         {
-            // TODO: IMPLEMENT
-            return false;
+            return reviewhandler.DeleteReview(review);
         }
 
         public List<Review> GetReviews()
         {
-            // TODO: IMPLEMENT
-            return null;
+            return reviewhandler.GetAllReviews();
         }
 
         public List<Question> GetQuestions()
         {
-            // TODO: IMPLEMENT
             return questionhandler.GetAllQuestions();
         }
     }

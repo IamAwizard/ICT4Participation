@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminHandler.cs" />
+    <Compile Include="Forms\Form_Review.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Review.Designer.cs">
+      <DependentUpon>Form_Review.cs</DependentUpon>
+    </Compile>
     <Compile Include="Message.cs" />
     <Compile Include="ChatHandler.cs" />
     <Compile Include="Client.cs" />
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Register.resx">
       <DependentUpon>Form_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Review.resx">
+      <DependentUpon>Form_Review.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Shedule.resx">
       <DependentUpon>Form_Shedule.cs</DependentUpon>

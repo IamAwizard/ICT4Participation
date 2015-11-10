@@ -36,7 +36,14 @@ namespace ICT4Participation
                 return true;
             else
                 return false;
+        }
 
+        public bool DeleteQuestion(Question question)
+        {
+            if (DatabaseHandler.DeleteQuestion(question.ID))
+                return true;
+            else
+                return false;
         }
 
         public bool UpdateQuestion(Question questiontoupdate)

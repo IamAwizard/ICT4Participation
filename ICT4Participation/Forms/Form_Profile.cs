@@ -45,10 +45,7 @@ namespace ICT4Participation
 
         private void btn_backprofile_Click(object sender, EventArgs e)
         {
-            Form_MainVolunteer dialog = new Form_MainVolunteer(volunteer);
-            this.Hide();
-            dialog.ShowDialog();
-            this.Show();
+            this.Close();
         }
     }
 }

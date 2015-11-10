@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_QuestionDetails));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbox_Client = new System.Windows.Forms.PictureBox();
             this.tbox_Question = new System.Windows.Forms.TextBox();
             this.lbl_ClientName = new System.Windows.Forms.Label();
             this.gbox_Question = new System.Windows.Forms.GroupBox();
             this.tbox_Distance = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_Distance = new System.Windows.Forms.Label();
             this.tbox_Transport = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Transport = new System.Windows.Forms.Label();
             this.tbox_Discrepancy = new System.Windows.Forms.TextBox();
             this.tbox_Location = new System.Windows.Forms.TextBox();
             this.lbl_Info4 = new System.Windows.Forms.Label();
@@ -45,33 +45,32 @@
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Info1 = new System.Windows.Forms.Label();
             this.gbox_Answer = new System.Windows.Forms.GroupBox();
+            this.btn_AddReview = new System.Windows.Forms.Button();
             this.btn_AddMeeting = new System.Windows.Forms.Button();
             this.lbl_Info6 = new System.Windows.Forms.Label();
             this.lbl_AnswerAuthorName = new System.Windows.Forms.Label();
             this.tbox_Answer = new System.Windows.Forms.TextBox();
             this.gbox_NoAnswer = new System.Windows.Forms.GroupBox();
             this.lbl_NoAnswer = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbox_Volunteer = new System.Windows.Forms.PictureBox();
             this.lbl_Info7 = new System.Windows.Forms.Label();
             this.lbl_QuestionAnswered = new System.Windows.Forms.Label();
-            this.lbl_volunteerrating = new System.Windows.Forms.Label();
-            this.cb_volunteerrating = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Client)).BeginInit();
             this.gbox_Question.SuspendLayout();
             this.gbox_Answer.SuspendLayout();
             this.gbox_NoAnswer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Volunteer)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbox_Client
             // 
-            this.pictureBox1.Image = global::ICT4Participation.Properties.Resources.IMG_Questionblack;
-            this.pictureBox1.Location = new System.Drawing.Point(209, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbox_Client.Image = global::ICT4Participation.Properties.Resources.IMG_Questionblack;
+            this.pbox_Client.Location = new System.Drawing.Point(209, 2);
+            this.pbox_Client.Name = "pbox_Client";
+            this.pbox_Client.Size = new System.Drawing.Size(118, 116);
+            this.pbox_Client.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbox_Client.TabIndex = 0;
+            this.pbox_Client.TabStop = false;
             // 
             // tbox_Question
             // 
@@ -96,12 +95,10 @@
             // 
             // gbox_Question
             // 
-            this.gbox_Question.Controls.Add(this.cb_volunteerrating);
-            this.gbox_Question.Controls.Add(this.lbl_volunteerrating);
             this.gbox_Question.Controls.Add(this.tbox_Distance);
-            this.gbox_Question.Controls.Add(this.label3);
+            this.gbox_Question.Controls.Add(this.lbl_Distance);
             this.gbox_Question.Controls.Add(this.tbox_Transport);
-            this.gbox_Question.Controls.Add(this.label2);
+            this.gbox_Question.Controls.Add(this.lbl_Transport);
             this.gbox_Question.Controls.Add(this.tbox_Discrepancy);
             this.gbox_Question.Controls.Add(this.tbox_Location);
             this.gbox_Question.Controls.Add(this.lbl_Info4);
@@ -128,14 +125,14 @@
             this.tbox_Distance.TabIndex = 12;
             this.tbox_Distance.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
-            // label3
+            // lbl_Distance
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 368);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Afstand:";
+            this.lbl_Distance.AutoSize = true;
+            this.lbl_Distance.Location = new System.Drawing.Point(27, 368);
+            this.lbl_Distance.Name = "lbl_Distance";
+            this.lbl_Distance.Size = new System.Drawing.Size(69, 20);
+            this.lbl_Distance.TabIndex = 11;
+            this.lbl_Distance.Text = "Afstand:";
             // 
             // tbox_Transport
             // 
@@ -145,14 +142,14 @@
             this.tbox_Transport.TabIndex = 10;
             this.tbox_Transport.TextChanged += new System.EventHandler(this.tbox_Question_TextChanged);
             // 
-            // label2
+            // lbl_Transport
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 336);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Vervoermiddel:";
+            this.lbl_Transport.AutoSize = true;
+            this.lbl_Transport.Location = new System.Drawing.Point(27, 336);
+            this.lbl_Transport.Name = "lbl_Transport";
+            this.lbl_Transport.Size = new System.Drawing.Size(114, 20);
+            this.lbl_Transport.TabIndex = 9;
+            this.lbl_Transport.Text = "Vervoermiddel:";
             // 
             // tbox_Discrepancy
             // 
@@ -217,6 +214,7 @@
             // 
             // gbox_Answer
             // 
+            this.gbox_Answer.Controls.Add(this.btn_AddReview);
             this.gbox_Answer.Controls.Add(this.btn_AddMeeting);
             this.gbox_Answer.Controls.Add(this.lbl_Info6);
             this.gbox_Answer.Controls.Add(this.lbl_AnswerAuthorName);
@@ -230,6 +228,25 @@
             this.gbox_Answer.TabStop = false;
             this.gbox_Answer.Text = "Antwoord";
             // 
+            // btn_AddReview
+            // 
+            this.btn_AddReview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AddReview.BackColor = System.Drawing.Color.White;
+            this.btn_AddReview.FlatAppearance.BorderSize = 0;
+            this.btn_AddReview.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_AddReview.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_AddReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddReview.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_AddReview.Location = new System.Drawing.Point(267, 361);
+            this.btn_AddReview.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AddReview.Name = "btn_AddReview";
+            this.btn_AddReview.Size = new System.Drawing.Size(210, 35);
+            this.btn_AddReview.TabIndex = 7;
+            this.btn_AddReview.Text = "Schrijf Review";
+            this.btn_AddReview.UseVisualStyleBackColor = false;
+            this.btn_AddReview.Click += new System.EventHandler(this.btn_AddReview_Click);
+            // 
             // btn_AddMeeting
             // 
             this.btn_AddMeeting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,7 +257,7 @@
             this.btn_AddMeeting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddMeeting.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_AddMeeting.Location = new System.Drawing.Point(158, 361);
+            this.btn_AddMeeting.Location = new System.Drawing.Point(31, 361);
             this.btn_AddMeeting.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddMeeting.Name = "btn_AddMeeting";
             this.btn_AddMeeting.Size = new System.Drawing.Size(210, 35);
@@ -251,7 +268,7 @@
             // lbl_Info6
             // 
             this.lbl_Info6.AutoSize = true;
-            this.lbl_Info6.Location = new System.Drawing.Point(102, 57);
+            this.lbl_Info6.Location = new System.Drawing.Point(27, 57);
             this.lbl_Info6.Name = "lbl_Info6";
             this.lbl_Info6.Size = new System.Drawing.Size(136, 20);
             this.lbl_Info6.TabIndex = 5;
@@ -262,7 +279,7 @@
             this.lbl_AnswerAuthorName.AutoSize = true;
             this.lbl_AnswerAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_AnswerAuthorName.ForeColor = System.Drawing.Color.White;
-            this.lbl_AnswerAuthorName.Location = new System.Drawing.Point(27, 57);
+            this.lbl_AnswerAuthorName.Location = new System.Drawing.Point(27, 37);
             this.lbl_AnswerAuthorName.Name = "lbl_AnswerAuthorName";
             this.lbl_AnswerAuthorName.Size = new System.Drawing.Size(69, 20);
             this.lbl_AnswerAuthorName.TabIndex = 2;
@@ -275,7 +292,7 @@
             this.tbox_Answer.Name = "tbox_Answer";
             this.tbox_Answer.ReadOnly = true;
             this.tbox_Answer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbox_Answer.Size = new System.Drawing.Size(465, 267);
+            this.tbox_Answer.Size = new System.Drawing.Size(446, 267);
             this.tbox_Answer.TabIndex = 1;
             // 
             // gbox_NoAnswer
@@ -299,15 +316,15 @@
             this.lbl_NoAnswer.TabIndex = 5;
             this.lbl_NoAnswer.Text = "Nog niemand heeft gereageerd op je vraag";
             // 
-            // pictureBox2
+            // pbox_Volunteer
             // 
-            this.pictureBox2.Image = global::ICT4Participation.Properties.Resources.IMG_Volunteerblack;
-            this.pictureBox2.Location = new System.Drawing.Point(736, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(118, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.pbox_Volunteer.Image = global::ICT4Participation.Properties.Resources.IMG_Volunteerblack;
+            this.pbox_Volunteer.Location = new System.Drawing.Point(736, 2);
+            this.pbox_Volunteer.Name = "pbox_Volunteer";
+            this.pbox_Volunteer.Size = new System.Drawing.Size(118, 116);
+            this.pbox_Volunteer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbox_Volunteer.TabIndex = 5;
+            this.pbox_Volunteer.TabStop = false;
             // 
             // lbl_Info7
             // 
@@ -331,59 +348,34 @@
             this.lbl_QuestionAnswered.TabIndex = 7;
             this.lbl_QuestionAnswered.Text = "Onbeantwoord";
             // 
-            // lbl_volunteerrating
-            // 
-            this.lbl_volunteerrating.AutoSize = true;
-            this.lbl_volunteerrating.Location = new System.Drawing.Point(255, 46);
-            this.lbl_volunteerrating.Name = "lbl_volunteerrating";
-            this.lbl_volunteerrating.Size = new System.Drawing.Size(201, 20);
-            this.lbl_volunteerrating.TabIndex = 13;
-            this.lbl_volunteerrating.Text = "Vrijwilliger beoordeling cijfer";
-            this.lbl_volunteerrating.Visible = false;
-            // 
-            // cb_volunteerrating
-            // 
-            this.cb_volunteerrating.FormattingEnabled = true;
-            this.cb_volunteerrating.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cb_volunteerrating.Location = new System.Drawing.Point(462, 43);
-            this.cb_volunteerrating.Name = "cb_volunteerrating";
-            this.cb_volunteerrating.Size = new System.Drawing.Size(43, 28);
-            this.cb_volunteerrating.TabIndex = 14;
-            this.cb_volunteerrating.Visible = false;
-            this.cb_volunteerrating.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // Form_QuestionDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(1064, 541);
+            this.ClientSize = new System.Drawing.Size(1066, 544);
             this.Controls.Add(this.gbox_Answer);
             this.Controls.Add(this.gbox_NoAnswer);
             this.Controls.Add(this.lbl_QuestionAnswered);
             this.Controls.Add(this.lbl_Info7);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbox_Volunteer);
             this.Controls.Add(this.gbox_Question);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbox_Client);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1080, 580);
             this.Name = "Form_QuestionDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vraagdetails";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_QuestionDetails_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Client)).EndInit();
             this.gbox_Question.ResumeLayout(false);
             this.gbox_Question.PerformLayout();
             this.gbox_Answer.ResumeLayout(false);
             this.gbox_Answer.PerformLayout();
             this.gbox_NoAnswer.ResumeLayout(false);
             this.gbox_NoAnswer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Volunteer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,7 +383,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbox_Client;
         private System.Windows.Forms.TextBox tbox_Question;
         private System.Windows.Forms.Label lbl_ClientName;
         private System.Windows.Forms.GroupBox gbox_Question;
@@ -403,20 +395,19 @@
         private System.Windows.Forms.TextBox tbox_Discrepancy;
         private System.Windows.Forms.TextBox tbox_Location;
         private System.Windows.Forms.TextBox tbox_Distance;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_Distance;
         private System.Windows.Forms.TextBox tbox_Transport;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Transport;
         private System.Windows.Forms.GroupBox gbox_Answer;
-        private System.Windows.Forms.Label lbl_Info6;
         private System.Windows.Forms.Label lbl_AnswerAuthorName;
         private System.Windows.Forms.TextBox tbox_Answer;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbox_Volunteer;
         private System.Windows.Forms.Label lbl_Info7;
         private System.Windows.Forms.Label lbl_QuestionAnswered;
         private System.Windows.Forms.Button btn_AddMeeting;
         private System.Windows.Forms.GroupBox gbox_NoAnswer;
         private System.Windows.Forms.Label lbl_NoAnswer;
-        private System.Windows.Forms.ComboBox cb_volunteerrating;
-        private System.Windows.Forms.Label lbl_volunteerrating;
+        private System.Windows.Forms.Label lbl_Info6;
+        private System.Windows.Forms.Button btn_AddReview;
     }
 }

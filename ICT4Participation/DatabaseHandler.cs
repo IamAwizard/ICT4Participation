@@ -92,10 +92,10 @@ namespace ICT4Participation
 
         public static List<Question> GetAllQuestions()
         {
-            Connect();
             List<Question> questionlist = new List<Question>();
             try
             {
+                Connect();
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT QUESTIONID, AUTEUR, VRAAG , BIJZONDERHEID, LOCATIE, AFSTAND , VERVOER , DATUM , OPGELOST, ANTWOORD, VOLUNTEERID FROM TQUESTION"; // QUERY
@@ -202,6 +202,7 @@ namespace ICT4Participation
                             toadd = null;
                             Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "", "", "");
                             toadd = newUser;
+                            toadd.UserID = id;
                             break;
                         case "ADMIN":
                             Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
@@ -415,11 +416,15 @@ namespace ICT4Participation
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return true;
-
+                return false;
+            }
+            finally
+            {
+                Disconnect();
             }
         }
-        public static bool MakeReview(Review newreview)
+
+        public static bool AddReview(Review newreview)
         {
             try
             {
@@ -429,14 +434,11 @@ namespace ICT4Participation
                 cmd.CommandText =
                     "Insert into TREVIEW(DATUM, VOLUNTEER, CLIENT, RATING, TEKST) VALUES (:NewDATUM, :NewVOLUNTEER, :NewCLIENT, :NewRATING, :NewTEKST)";
 
-                cmd.Parameters.Add("NewDATUM", OracleDbType.Varchar2).Value = newreview.Date.ToString("dd-MMM-yy");
-                cmd.Parameters.Add("NewVOLUNTEER", OracleDbType.Int32).Value = newreview.Targetuser;
-                cmd.Parameters.Add("NewCLIENT", OracleDbType.Varchar2).Value = newreview.Client;
-                cmd.Parameters.Add("NewRATING", OracleDbType.Varchar2).Value = newreview.Rating;
+                cmd.Parameters.Add("NewDATUM", OracleDbType.Date).Value = newreview.Date.ToString("dd-MMM-yy");
+                cmd.Parameters.Add("NewVOLUNTEER", OracleDbType.Int32).Value = newreview.Targetuser.UserID;
+                cmd.Parameters.Add("NewCLIENT", OracleDbType.Int32).Value = newreview.Client.UserID;
+                cmd.Parameters.Add("NewRATING", OracleDbType.Int32).Value = newreview.Rating;
                 cmd.Parameters.Add("NewTEKST", OracleDbType.Varchar2).Value = newreview.Content;
-           
-                
-                
 
                 cmd.ExecuteNonQuery();
                 return true;
@@ -683,7 +685,6 @@ namespace ICT4Participation
 
         }
 
-
         public static bool AddMessage(Message msg)
         {
             try
@@ -698,6 +699,116 @@ namespace ICT4Participation
                 cmd.Parameters.Add("newDATUM", OracleDbType.Date).Value = msg.Date.ToString("dd-MMM-yy");
                 cmd.Parameters.Add("newAFZENDER", OracleDbType.Int32).Value = msg.AuthorID;
                 cmd.Parameters.Add("newBERICHT", OracleDbType.Varchar2).Value = msg.Content;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static List<Review> GetAllReviews()
+        {
+            List<Review> returnlist = new List<Review>();
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT R.REVIEWID, R.RATING, R.TEKST, R.DATUM, C.USERID, C.NAAM, C.GEBOORTEDATUM, C.GESLACHT, C.WOONPLAATS, C.ADRES, C.EMAIL, C.WACHTWOORD, C.TYPE, "
+               + "V.USERID, V.NAAM, V.GEBOORTEDATUM, V.GESLACHT, V.WOONPLAATS, V.ADRES, V.EMAIL, V.WACHTWOORD, V.TYPE FROM TUSER V, TUSER C, TREVIEW R WHERE V.USERID = R.VOLUNTEER AND C.USERID = R.CLIENT";
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var id = dr.GetInt32(0);
+                    var rating = dr.GetInt32(1);
+                    var content = dr.GetString(2);
+                    var date = dr.GetDateTime(3);
+
+                    var clientid = dr.GetInt32(4);
+                    var clientname = dr.GetString(5);
+                    var clientdob = dr.GetDateTime(6);
+                    var clientgender = dr.GetString(7);
+                    var clientcity = dr.GetString(8);
+                    var clientaddress = dr.GetString(9);
+                    var clientemail = dr.GetString(10);
+                    var clientpassword = dr.GetString(11);
+                    var clientype = dr.GetString(12);
+
+                    var volunid = dr.GetInt32(13);
+                    var volunname = dr.GetString(14);
+                    var volundob = dr.GetDateTime(15);
+                    var volungender = dr.GetString(16);
+                    var voluncity = dr.GetString(17);
+                    var volunaddress = dr.GetString(18);
+                    var volunemail = dr.GetString(19);
+                    var volunpassword = dr.GetString(20);
+                    var voluntype = dr.GetString(21);
+
+                    Client someclient = new Client(clientname, clientdob, clientgender, clientcity, clientaddress, clientemail, clientpassword);
+                    someclient.UserID = clientid;
+                    Volunteer somevolun = new Volunteer(volunname, volundob, volungender, voluncity, volunaddress, volunemail, volunpassword, false, "", "", "");
+                    somevolun.UserID = volunid;
+
+                    returnlist.Add(new Review(date, someclient, somevolun, rating, content));
+                
+                    returnlist[returnlist.Count - 1].ReviewID = id;
+                }
+
+                return returnlist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool DeleteReview(int reviewID)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TREVIEW WHERE REVIEWID = " + reviewID;
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+         }
+
+        public static bool DeleteQuestion(int QuestionID)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "DELETE FROM TQUESTION WHERE QUESTIONID = " + QuestionID;
+
                 cmd.ExecuteNonQuery();
                 return true;
             }

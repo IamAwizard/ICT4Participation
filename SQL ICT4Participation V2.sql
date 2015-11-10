@@ -72,7 +72,7 @@
 	
 	create table TREVIEW (
 	ReviewID				number(8)		primary key,
-	Datum					varchar2(255)	not null,
+	Datum					DATE			not null,
 	Volunteer				number(8)		not null,
 	Client					number(8)		not null,
 	Rating 					number(1)		not null,
