@@ -43,7 +43,8 @@
 	create table TQUESTION (
 	QuestionID				number(8)		primary key,
 	Auteur					number(8)		not null,
-	Vraag					varchar2(255)	not null,
+	VolunteerID				number(8),
+	Vraag					varchar2(3072)	not null,
 	Bijzonderheid			varchar2(255)	,
 	Locatie					varchar2(255)	,
 	Afstand					varchar2(255)	,
@@ -53,7 +54,8 @@
 	Antwoord				varchar2(1024)	,
 	
 	
-	constraint fk_TUSER_QuestionID foreign key(Auteur)REFERENCES TUSER(USERID) on delete cascade,
+	constraint fk_TQUESTION_AUTHOR foreign key(Auteur)REFERENCES TUSER(USERID) on delete cascade,
+	constraint fk_TQUESTION_VOLUNTEER foreign key(VolunteerID)REFERENCES TUSER(USERID) on delete cascade,
 	constraint chk_TQUESTION_OPGELOST check(UPPER(Opgelost) in('JA', 'NEE'))
 	);
 	
@@ -92,7 +94,7 @@
 	
 	create table TADMIN (
 	AdminID					number(8)		primary key,
-	UserID					number(8) not null,
+	UserID					number(8) 		not null,
 	
 	contraint fk_TADMIN_UserID foreign key(UserID) REFERENCES TUSER(UserID) on delete cascade 
 	);
@@ -101,7 +103,7 @@
 	VolunteerID				number(8)		primary key,
 	UserID					number(8) 		not null,
 	Rijbewijs				varchar2(3)		,
-	Biografie 				varchar2(255)	,
+	Biografie 				varchar2(1024)	,
 	VOG						varchar2(255)	,
 	Foto					varchar2(255)	,
 	
@@ -129,7 +131,7 @@
 	
 	create table TROOSTER (
 	RoosterID				number(8)		primary key,
-	UserID				number(8)		not null,
+	UserID					number(8)		not null,
 	Maandag					varchar2(32),
 	Dinsdag					varchar2(32),
 	Woensdag				varchar2(32),
