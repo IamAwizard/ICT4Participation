@@ -8,26 +8,19 @@ namespace ICT4Participation
 {
     public class Volunteer : User
     {
-        //Fields
+        // Fields
 
 
-        //properties
+        // Properties
 
-        public Schedule Schedule
-        { get; set; }
-        public bool DrivingLicense
-        { get; set; }
+        public Schedule Schedule { get; set; }
+        public bool DrivingLicense { get; set; }
+        public string Biogragphy { get; set; }
+        public string PathToVOG { get; set; }
+        public string PathToPhoto { get; set; }
+        public decimal Rating { get; set; }
 
-        public string Biogragphy
-        { get; set; }
-
-        public string PathToVOG
-        { get; set; }
-
-        public string PathToPhoto
-        { get; set; }
-
-
+        // Constructor
         public Volunteer(string name, DateTime dateOfBirth, string gender, string city, string adress, string email, string password,
             bool drivingLicense, string biography, string pathToVOG, string pathToPhoto)
             : base(name, dateOfBirth, gender, city, adress, email, password)

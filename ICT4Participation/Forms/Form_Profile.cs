@@ -12,35 +12,40 @@ namespace ICT4Participation
 {
     public partial class Form_Profile : Form
     {
+        // Fields
         Volunteer volunteer;
-        public Form_Profile(Volunteer user)
+        bool isChanged;
+
+        // Constructor
+        public Form_Profile(Volunteer volun)
         {
-            int leeftijd = DateTime.Now.Year - user.DateOfBirth.Year;
             InitializeComponent();
-            volunteer = user;
-            lbl_Name.Text = user.Name;
-            lbl_leeftijd.Text = Convert.ToString(leeftijd);
+            volunteer = volun;
+
+            isChanged = false;
+            InitializeInterface();
         }
-
-        private void pnl_profiel_Paint(object sender, PaintEventArgs e)
+        
+        private void InitializeInterface()
         {
+            lbl_Name.Text = volunteer.Name;
+            lbl_Score.Text = volunteer.Rating.ToString("0.#");
+            lbl_leeftijd.Text = (DateTime.Now.Year - volunteer.DateOfBirth.Year).ToString();
+            cbox_License.Checked = volunteer.DrivingLicense;
+            tbox_Biography.Text = volunteer.Biogragphy;
 
-        }
+            tbox_Monday.Text = volunteer.Schedule.Monday;
+            tbox_Tuesday.Text = volunteer.Schedule.Tuesday;
+            tbox_Wednesday.Text = volunteer.Schedule.Wednesday;
+            tbox_Thursday.Text = volunteer.Schedule.Thursday;
+            tbox_Friday.Text = volunteer.Schedule.Friday;
+            tbox_Saturday.Text = volunteer.Schedule.Saturday;
+            tbox_Sunday.Text = volunteer.Schedule.Sunday;
 
-        private void btn_schedule_Click(object sender, EventArgs e)
-        {
-            var formschedule = new Form_Shedule();
-            formschedule.Show();
-        }
+            pnl_Schedule.Hide();
+            pnl_Profile.Show();
 
-        private void lbl_namevolunteer_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btn_uploadavatar_Click(object sender, EventArgs e)
-        {
-
+            isChanged = false;
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -52,6 +57,36 @@ namespace ICT4Participation
         {
             pnl_Schedule.Hide();
             pnl_Profile.Show();
+        }
+
+        private void btn_Schedule_Click(object sender, EventArgs e)
+        {
+            pnl_Schedule.Show();
+            pnl_Profile.Hide();
+        }
+
+        private void tbox_Biography_TextChanged(object sender, EventArgs e)
+        {
+            isChanged = true;
+        }
+
+        private void Form_Profile_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(isChanged)
+            {
+                volunteer.DrivingLicense = cbox_License.Checked;
+                volunteer.Biogragphy = tbox_Biography.Text;
+
+                volunteer.Schedule.Monday = tbox_Monday.Text;
+                volunteer.Schedule.Tuesday = tbox_Tuesday.Text;
+                volunteer.Schedule.Wednesday = tbox_Wednesday.Text;
+                volunteer.Schedule.Thursday = tbox_Thursday.Text;
+                volunteer.Schedule.Friday = tbox_Friday.Text;
+                volunteer.Schedule.Saturday = tbox_Saturday.Text;
+                volunteer.Schedule.Sunday = tbox_Sunday.Text;
+
+                DatabaseHandler.UpdateVolunteer(volunteer);
+            }
         }
     }
 }

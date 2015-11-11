@@ -26,6 +26,7 @@ namespace ICT4Participation
 
         private void btn_profile_Click(object sender, EventArgs e)
         {
+            currentuser = volunteerhandler.ExtendVolunteer(currentuser);
             Form_Profile profiledialog = new Form_Profile(currentuser);
             this.Hide();
             profiledialog.ShowDialog();

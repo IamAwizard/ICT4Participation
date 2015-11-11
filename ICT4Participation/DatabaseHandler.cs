@@ -90,6 +90,16 @@ namespace ICT4Participation
             }
         }
 
+        static decimal SafeReadDecimal(OracleDataReader odr, int ColIndex)
+        {
+            {
+                if (!odr.IsDBNull(ColIndex))
+                    return odr.GetDecimal(ColIndex);
+                else
+                    return 0;
+            }
+        }
+
         public static List<Question> GetAllQuestions()
         {
             List<Question> questionlist = new List<Question>();
@@ -560,9 +570,9 @@ namespace ICT4Participation
                 cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT GESPREKID FROM TGESPREK WHERE USERID1 = " + someuser.UserID
-                    + " OR USERID1 = " + anotheruser.UserID
-                    + " AND USERID2 = " + someuser.UserID
-                    + " OR USERID2 = " + anotheruser.UserID;
+                    + " AND USERID2 = " + anotheruser.UserID
+                    + " OR USERID2 = " + someuser.UserID
+                    + " AND USERID1 = " + anotheruser.UserID;
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -905,17 +915,17 @@ namespace ICT4Participation
                 while (dr.Read())
                 {
                     // Read from DB
-                    var bio = dr.GetString(0);
-                    var photo = dr.GetString(1);
-                    var vog = dr.GetString(2);
-                    var license = dr.GetString(3);
-                    var monday = dr.GetString(4);
-                    var tuesday = dr.GetString(5);
-                    var wednesday = dr.GetString(6);
-                    var thursday = dr.GetString(7);
-                    var friday = dr.GetString(8);
-                    var saturday = dr.GetString(9);
-                    var sunday = dr.GetString(10);
+                    var bio = SafeReadString(dr, 0);
+                    var photo = SafeReadString(dr, 1);
+                    var vog = SafeReadString(dr, 2);
+                    var license = SafeReadString(dr, 3);
+                    var monday = SafeReadString(dr, 4);
+                    var tuesday = SafeReadString(dr, 5);
+                    var wednesday = SafeReadString(dr, 6);
+                    var thursday = SafeReadString(dr, 7);
+                    var friday = SafeReadString(dr, 8);
+                    var saturday = SafeReadString(dr, 9);
+                    var sunday = SafeReadString(dr, 10);
 
                     // Fill
                     toget.Biogragphy = bio;
@@ -934,12 +944,73 @@ namespace ICT4Participation
                         toget.DrivingLicense = false;
 
                 }
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT ROUND(SUM(RATING)/COUNT(RATING)*2, 1) FROM TREVIEW WHERE VOLUNTEER = " + toget.UserID;
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    // Read from DB
+                    var rating = SafeReadDecimal(dr, 0);
+
+                    // Fill
+                    toget.Rating = rating;
+                }
                 return toget;
             }
             catch (InvalidCastException ex)
             {
                 MessageBox.Show(ex.ToString());
                 return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool UpdateVolunteer(Volunteer volun)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "UPDATE TVOLUNTEER SET RIJBEWIJS = :newRIJBEWIJS, BIOGRAFIE = :newBIOGRAFIE, VOG = :newVOG, FOTO = :newFOTO WHERE USERID = " + volun.UserID;
+
+                if(volun.DrivingLicense)
+                    cmd.Parameters.Add("newRIJBEWIJS", OracleDbType.Varchar2).Value = "JA";
+                else
+                    cmd.Parameters.Add("newRIJBEWIJS", OracleDbType.Varchar2).Value = "NEE";
+
+                cmd.Parameters.Add("newBIOGRAFIE", OracleDbType.Varchar2).Value = volun.Biogragphy;
+                cmd.Parameters.Add("newVOG", OracleDbType.Varchar2).Value = volun.PathToVOG;
+                cmd.Parameters.Add("newFOTO", OracleDbType.Varchar2).Value = volun.PathToPhoto;
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "UPDATE TROOSTER SET MAANDAG = :newMAANDAG, DINSDAG = :newDINSDAG, WOENSDAG = :newWOENSDAG, DONDERDAG = :newDONDERDAG, VRIJDAG = :newVRIJDAG, ZATERDAG = :newZATERDAG, ZONDAG = :newZONDAG WHERE USERID = " + volun.UserID;
+
+                cmd.Parameters.Add("newMAANDAG", OracleDbType.Varchar2).Value = volun.Schedule.Monday;
+                cmd.Parameters.Add("newDINSDAG", OracleDbType.Varchar2).Value = volun.Schedule.Tuesday;
+                cmd.Parameters.Add("newWOENSDAG", OracleDbType.Varchar2).Value = volun.Schedule.Wednesday;
+                cmd.Parameters.Add("newDONDERDAG", OracleDbType.Varchar2).Value = volun.Schedule.Thursday;
+                cmd.Parameters.Add("newVRIJDAG", OracleDbType.Varchar2).Value = volun.Schedule.Friday;
+                cmd.Parameters.Add("newZATERDAG", OracleDbType.Varchar2).Value = volun.Schedule.Saturday;
+                cmd.Parameters.Add("newZONDAG", OracleDbType.Varchar2).Value = volun.Schedule.Sunday;
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {

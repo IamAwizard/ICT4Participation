@@ -88,5 +88,15 @@ namespace ICT4Participation
             else
                 return false;
         }
+
+        public Volunteer ExtendVolunteer(Volunteer volunteer)
+        {
+            return userhandler.ExtendVolunteer(volunteer);
+        }
+
+        public bool UpdateVolunteer(Volunteer volunteer)
+        {
+            return userhandler.UpdateVolunteer(volunteer);
+        }
     }
 }

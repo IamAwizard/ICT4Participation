@@ -103,7 +103,14 @@ namespace ICT4Participation
             {
                 Message newmsg = new Message(currentchat.ChatID, currentUser, DateTime.Now, tbox_Message.Text);
                 chathandler.SendMessage(newmsg);
-                RefreshInterface();
+                if (lbox_Chat.Items.Count < 1)
+                {
+                    InitializeInterface();
+                }
+                else
+                {
+                    RefreshInterface();
+                }
                 tbox_Message.Text = "";
             }
         }

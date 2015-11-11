@@ -68,5 +68,15 @@ namespace ICT4Participation
         {
             users = DatabaseHandler.GetAllUsers();
         }
+
+        public Volunteer ExtendVolunteer(Volunteer volun)
+        {
+            return DatabaseHandler.GetVolunteerDetails(volun);
+        }
+
+        public bool UpdateVolunteer(Volunteer volun)
+        {
+            return DatabaseHandler.UpdateVolunteer(volun);
+        }
     }
 }
