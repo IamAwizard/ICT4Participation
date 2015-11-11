@@ -34,6 +34,7 @@ namespace ICT4Participation
 
                 // Update
                 DatabaseHandler.UpdateQuestion(currentquestion);
+                DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

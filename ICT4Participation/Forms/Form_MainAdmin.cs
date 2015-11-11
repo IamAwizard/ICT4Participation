@@ -83,7 +83,7 @@ namespace ICT4Participation
         {
             if (cbox_NoWarning.Checked)
             {
-                if (DialogResult.OK == MessageBox.Show("Verwijderen levert nu geen pop-ups op\nWeest voorzichtig!", "Let op!", MessageBoxButtons.OKCancel))
+                if (DialogResult.OK == MessageBox.Show("Verwijderen levert nu geen pop-ups op\nWees voorzichtig!", "Let op!", MessageBoxButtons.OKCancel))
                 {
                     ignoreWarnings = true;
                 }

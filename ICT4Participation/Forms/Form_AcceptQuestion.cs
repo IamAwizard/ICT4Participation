@@ -37,8 +37,11 @@ namespace ICT4Participation
         private void btn_acceptassignment_Click(object sender, EventArgs e)
         {
             Form_Answer answer = new Form_Answer(currentuser, currentquestion);
-            answer.ShowDialog();
-            this.Show();
+            if (DialogResult.OK == answer.ShowDialog())
+            {
+                MessageBox.Show("Antwoord verstuurd");
+                this.Close();
+            }
         }
     }
 }

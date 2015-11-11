@@ -74,7 +74,10 @@ namespace ICT4Participation
                 Question question = foo as Question;
                 Review review = foo as Review;
                 Form_QuestionDetails dialog = new Form_QuestionDetails(question, currentuser as Client,review);
+                timer_Refresh.Stop();
                 dialog.ShowDialog();
+                RefreshInterface();
+                timer_Refresh.Start();
             }
             else
             {
