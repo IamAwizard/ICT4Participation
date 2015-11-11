@@ -37,21 +37,8 @@ namespace ICT4Participation
         private void btn_acceptassignment_Click(object sender, EventArgs e)
         {
             Form_Answer answer = new Form_Answer(currentuser, currentquestion);
-            this.Hide();
             answer.ShowDialog();
             this.Show();
-        }
-
-        private void btn_StartChat_Click(object sender, EventArgs e)
-        {
-            if(currentquestion.Solved == "NEE")
-            {
-                MessageBox.Show("U moet de vraag accepteren voordat u een chat kunt beginnen.");
-            }
-            else
-            {
-                // todo: start chat
-            }
         }
     }
 }

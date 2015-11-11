@@ -74,9 +74,7 @@ namespace ICT4Participation
                 Question question = foo as Question;
                 Review review = foo as Review;
                 Form_QuestionDetails dialog = new Form_QuestionDetails(question, currentuser as Client,review);
-                this.Hide();
                 dialog.ShowDialog();
-                this.Show();
             }
             else
             {
@@ -110,10 +108,8 @@ namespace ICT4Participation
             {
                 User selecteduser = lbox_Volunteers.SelectedItem as User;
                 Form_Chat chatdialog = new Form_Chat(currentuser, selecteduser);
-                this.Hide();
                 timer_Refresh.Stop();
                 chatdialog.ShowDialog();
-                this.Show();
                 timer_Refresh.Start();
             }
         }

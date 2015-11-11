@@ -471,8 +471,10 @@ namespace ICT4Participation
                 MessageBox.Show(ex.Message);
                 return false;
             }
-      
-
+            finally
+            {
+                Disconnect();
+            }
         }
 
         public static bool DeleteUser(User usertodelete)
@@ -909,7 +911,7 @@ namespace ICT4Participation
                 Connect();
                 cmd = new OracleCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "select V.BIOGRAFIE, V.FOTO, V.VOG, V.RIJBEWIJS, R.MAANDAG, R.DINSDAG, R.WOENSDAG, R.DONDERDAG, R.VRIJDAG, R.ZATERDAG, R.ZONDAG FROM TVOLUNTEER V, TROOSTER R WHERE V.USERID = " + toget.UserID + " AND R.USERID = " + toget.UserID;
+                cmd.CommandText = "SELECT V.BIOGRAFIE, V.FOTO, V.VOG, V.RIJBEWIJS, R.MAANDAG, R.DINSDAG, R.WOENSDAG, R.DONDERDAG, R.VRIJDAG, R.ZATERDAG, R.ZONDAG FROM TVOLUNTEER V, TROOSTER R WHERE V.USERID = " + toget.UserID + " AND R.USERID = " + toget.UserID;
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -1003,6 +1005,35 @@ namespace ICT4Participation
                 cmd.Parameters.Add("newVRIJDAG", OracleDbType.Varchar2).Value = volun.Schedule.Friday;
                 cmd.Parameters.Add("newZATERDAG", OracleDbType.Varchar2).Value = volun.Schedule.Saturday;
                 cmd.Parameters.Add("newZONDAG", OracleDbType.Varchar2).Value = volun.Schedule.Sunday;
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool AddAppointment(Appointment meeting)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                    "Insert into TAFSPRAAK(CLIENT, VOLUNTEER, DATUMTIJD, LOCATIE) VALUES (:NewCLIENT, :NewVOLUNTEER, :NewDATUMTIJD, :NewLOCATIE)";
+
+                cmd.Parameters.Add("NewCLIENT", OracleDbType.Int32).Value = meeting.Client.UserID;
+                cmd.Parameters.Add("NewVOLUNTEER", OracleDbType.Int32).Value = meeting.Volunteer.UserID;
+                cmd.Parameters.Add("NewDATUMTIJD", OracleDbType.Varchar2).Value = meeting.DateString;
+                cmd.Parameters.Add("NewLOCATIE", OracleDbType.Varchar2).Value = meeting.Location;
 
                 cmd.ExecuteNonQuery();
                 return true;

@@ -90,9 +90,13 @@ namespace ICT4Participation
         private void btn_AddReview_Click(object sender, EventArgs e)
         {
             Form_Review dialog = new Form_Review(currentquestion);
-            this.Hide();
             dialog.ShowDialog();
-            this.Show();
+        }
+
+        private void btn_AddMeeting_Click(object sender, EventArgs e)
+        {
+            Form_Meeting dialog = new Form_Meeting(currentuser, currentquestion.Volunteer);
+            dialog.ShowDialog();
         }
     }
 }

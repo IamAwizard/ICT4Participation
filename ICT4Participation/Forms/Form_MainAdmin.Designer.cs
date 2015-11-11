@@ -33,12 +33,13 @@
             this.btn_DeleteQuestion = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
             this.gbox_Reviews = new System.Windows.Forms.GroupBox();
+            this.lbox_Reviews = new System.Windows.Forms.ListBox();
+            this.btn_DeleteReview = new System.Windows.Forms.Button();
             this.gbox_Questions = new System.Windows.Forms.GroupBox();
             this.lbl_Welcome = new System.Windows.Forms.Label();
-            this.btn_DeleteReview = new System.Windows.Forms.Button();
-            this.lbox_Reviews = new System.Windows.Forms.ListBox();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.splitter_Prettify = new System.Windows.Forms.SplitContainer();
+            this.cbox_NoWarning = new System.Windows.Forms.CheckBox();
             this.gbox_Reviews.SuspendLayout();
             this.gbox_Questions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitter_Prettify)).BeginInit();
@@ -97,6 +98,32 @@
             this.gbox_Reviews.TabStop = false;
             this.gbox_Reviews.Text = "Reviews";
             // 
+            // lbox_Reviews
+            // 
+            this.lbox_Reviews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbox_Reviews.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbox_Reviews.FormattingEnabled = true;
+            this.lbox_Reviews.HorizontalScrollbar = true;
+            this.lbox_Reviews.IntegralHeight = false;
+            this.lbox_Reviews.Location = new System.Drawing.Point(3, 16);
+            this.lbox_Reviews.Name = "lbox_Reviews";
+            this.lbox_Reviews.ScrollAlwaysVisible = true;
+            this.lbox_Reviews.Size = new System.Drawing.Size(395, 288);
+            this.lbox_Reviews.TabIndex = 8;
+            // 
+            // btn_DeleteReview
+            // 
+            this.btn_DeleteReview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_DeleteReview.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_DeleteReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteReview.Location = new System.Drawing.Point(3, 304);
+            this.btn_DeleteReview.Name = "btn_DeleteReview";
+            this.btn_DeleteReview.Size = new System.Drawing.Size(395, 38);
+            this.btn_DeleteReview.TabIndex = 7;
+            this.btn_DeleteReview.Text = "Verwijder geselecteerde item";
+            this.btn_DeleteReview.UseVisualStyleBackColor = true;
+            this.btn_DeleteReview.Click += new System.EventHandler(this.btn_DeleteReview_Click);
+            // 
             // gbox_Questions
             // 
             this.gbox_Questions.Controls.Add(this.lbox_Questions);
@@ -118,32 +145,6 @@
             this.lbl_Welcome.Size = new System.Drawing.Size(178, 24);
             this.lbl_Welcome.TabIndex = 6;
             this.lbl_Welcome.Text = "Welkom, beheerder";
-            // 
-            // btn_DeleteReview
-            // 
-            this.btn_DeleteReview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_DeleteReview.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_DeleteReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteReview.Location = new System.Drawing.Point(3, 304);
-            this.btn_DeleteReview.Name = "btn_DeleteReview";
-            this.btn_DeleteReview.Size = new System.Drawing.Size(395, 38);
-            this.btn_DeleteReview.TabIndex = 7;
-            this.btn_DeleteReview.Text = "Verwijder geselecteerde item";
-            this.btn_DeleteReview.UseVisualStyleBackColor = true;
-            this.btn_DeleteReview.Click += new System.EventHandler(this.btn_DeleteReview_Click);
-            // 
-            // lbox_Reviews
-            // 
-            this.lbox_Reviews.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbox_Reviews.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lbox_Reviews.FormattingEnabled = true;
-            this.lbox_Reviews.HorizontalScrollbar = true;
-            this.lbox_Reviews.IntegralHeight = false;
-            this.lbox_Reviews.Location = new System.Drawing.Point(3, 16);
-            this.lbox_Reviews.Name = "lbox_Reviews";
-            this.lbox_Reviews.ScrollAlwaysVisible = true;
-            this.lbox_Reviews.Size = new System.Drawing.Size(395, 288);
-            this.lbox_Reviews.TabIndex = 8;
             // 
             // lbl_Name
             // 
@@ -175,11 +176,24 @@
             this.splitter_Prettify.SplitterDistance = 401;
             this.splitter_Prettify.TabIndex = 8;
             // 
+            // cbox_NoWarning
+            // 
+            this.cbox_NoWarning.AutoSize = true;
+            this.cbox_NoWarning.ForeColor = System.Drawing.Color.Red;
+            this.cbox_NoWarning.Location = new System.Drawing.Point(12, 412);
+            this.cbox_NoWarning.Name = "cbox_NoWarning";
+            this.cbox_NoWarning.Size = new System.Drawing.Size(120, 17);
+            this.cbox_NoWarning.TabIndex = 9;
+            this.cbox_NoWarning.Text = "Schakel pop-ups uit";
+            this.cbox_NoWarning.UseVisualStyleBackColor = true;
+            this.cbox_NoWarning.CheckedChanged += new System.EventHandler(this.cbox_NoWarning_CheckedChanged);
+            // 
             // Form_MainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 441);
+            this.Controls.Add(this.cbox_NoWarning);
             this.Controls.Add(this.splitter_Prettify);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.lbl_Welcome);
@@ -213,5 +227,6 @@
         private System.Windows.Forms.Button btn_DeleteReview;
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.SplitContainer splitter_Prettify;
+        private System.Windows.Forms.CheckBox cbox_NoWarning;
     }
 }

@@ -12,7 +12,8 @@ namespace ICT4Participation
 {
     public partial class Form_MainAdmin : Form
     {
-        //fields
+        // Fields
+        bool ignoreWarnings;
         AdminHandler adminhandler;
         public Form_MainAdmin(User loggedinasuser)
         {
@@ -20,6 +21,7 @@ namespace ICT4Participation
             adminhandler = new AdminHandler();
             lbl_Name.Text = loggedinasuser.Name;
             RefreshScreen();
+            ignoreWarnings = false;
         }
 
         public void RefreshScreen()
@@ -34,13 +36,20 @@ namespace ICT4Participation
 
         private void btn_DeleteReview_Click(object sender, EventArgs e)
         {
-            if(lbox_Reviews.SelectedIndex != -1)
+            if (lbox_Reviews.SelectedIndex != -1)
             {
-                if (DialogResult.OK == MessageBox.Show("Weet je zeker dat je de review wilt verwijderen?\nDeze kan niet meer hersteld worden!", "Let op!", MessageBoxButtons.OKCancel))
-                    {
+                if (ignoreWarnings)
+                {
                     adminhandler.DeleteReview(lbox_Reviews.SelectedItem as Review);
                     lbox_Reviews.Items.Remove(lbox_Reviews.SelectedItem);
-                    MessageBox.Show("Verwijderd.");
+                }
+                else
+                {
+                    if (DialogResult.OK == MessageBox.Show("Weet je zeker dat je de review wilt verwijderen?\nDeze kan niet meer hersteld worden!", "Let op!", MessageBoxButtons.OKCancel))
+                    {
+                        adminhandler.DeleteReview(lbox_Reviews.SelectedItem as Review);
+                        lbox_Reviews.Items.Remove(lbox_Reviews.SelectedItem);
+                    }
                 }
             }
         }
@@ -49,11 +58,18 @@ namespace ICT4Participation
         {
             if (lbox_Questions.SelectedIndex != -1)
             {
-                if (DialogResult.OK == MessageBox.Show("Weet je zeker dat je de vraag wilt verwijderen?\nDeze kan niet meer hersteld worden!", "Let op!", MessageBoxButtons.OKCancel))
+                if (ignoreWarnings)
                 {
                     adminhandler.DeleteQuestion(lbox_Questions.SelectedItem as Question);
                     lbox_Questions.Items.Remove(lbox_Questions.SelectedItem);
-                    MessageBox.Show("Verwijderd.");
+                }
+                else
+                {
+                    if (DialogResult.OK == MessageBox.Show("Weet je zeker dat je de vraag wilt verwijderen?\nDeze kan niet meer hersteld worden!", "Let op!", MessageBoxButtons.OKCancel))
+                    {
+                        adminhandler.DeleteQuestion(lbox_Questions.SelectedItem as Question);
+                        lbox_Questions.Items.Remove(lbox_Questions.SelectedItem);
+                    }
                 }
             }
         }
@@ -61,6 +77,25 @@ namespace ICT4Participation
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbox_NoWarning_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_NoWarning.Checked)
+            {
+                if (DialogResult.OK == MessageBox.Show("Verwijderen levert nu geen pop-ups op\nWeest voorzichtig!", "Let op!", MessageBoxButtons.OKCancel))
+                {
+                    ignoreWarnings = true;
+                }
+                else
+                {
+                    ignoreWarnings = false;
+                }
+            }
+            else
+            {
+                ignoreWarnings = false;
+            }
         }
     }
 }

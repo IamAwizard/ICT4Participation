@@ -28,7 +28,6 @@ namespace ICT4Participation
         {
             currentuser = volunteerhandler.ExtendVolunteer(currentuser);
             Form_Profile profiledialog = new Form_Profile(currentuser);
-            this.Hide();
             profiledialog.ShowDialog();
             this.Show();
         }

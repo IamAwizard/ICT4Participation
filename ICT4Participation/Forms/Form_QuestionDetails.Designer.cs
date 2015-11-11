@@ -264,6 +264,7 @@
             this.btn_AddMeeting.TabIndex = 6;
             this.btn_AddMeeting.Text = "Afspraak plannen!";
             this.btn_AddMeeting.UseVisualStyleBackColor = false;
+            this.btn_AddMeeting.Click += new System.EventHandler(this.btn_AddMeeting_Click);
             // 
             // lbl_Info6
             // 
