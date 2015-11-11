@@ -96,7 +96,7 @@
 	AdminID					number(8)		primary key,
 	UserID					number(8) 		not null,
 	
-	contraint fk_TADMIN_UserID foreign key(UserID) REFERENCES TUSER(UserID) on delete cascade 
+	constraint fk_TADMIN_UserID foreign key(UserID) REFERENCES TUSER(UserID) on delete cascade 
 	);
 	
 	create table TVOLUNTEER (
@@ -115,7 +115,7 @@
 	ClientID				number(8)		primary key,
 	UserID					number(8) not null,
 	
-	contraint fk_TCLIENT_UserID foreign key(UserID) REFERENCES TUSER(UserID) on delete cascade
+	constraint fk_TCLIENT_UserID foreign key(UserID) REFERENCES TUSER(UserID) on delete cascade
 	);
 	
 	create table TCHATBERICHT (
@@ -154,21 +154,6 @@
 	for each row
 	begin
 	select seq_QUESTION.nextval into :new.QuestionID from dual;
-	end;
-	/
-	
-	--ANTWOORD
-	CREATE Sequence seq_ANTWOORD
-	minvalue 1
-	start with 1
-	increment by 1
-	cache 10;
-
-	CREATE Trigger trigger_ANTWOORD
-	before insert on TANTWOORD
-	for each row
-	begin
-	select seq_ANTWOORD.nextval into :new.AntwoordID from dual;
 	end;
 	/
 	
