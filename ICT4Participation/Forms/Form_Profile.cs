@@ -148,6 +148,8 @@ namespace ICT4Participation
                     string filetype = fileName.Substring(fileName.LastIndexOf('.'), fileName.Length - fileName.LastIndexOf('.'));
                     string tempcopy = "IMG" + volun.UserID + filetype;
                     string destination = uriString + @"/" + tempcopy;
+                    if (hasPicture)
+                        File.Delete(imgpath);
                     File.Copy(fileName, tempcopy);
 
                     WebClient myWebClient = new WebClient();
