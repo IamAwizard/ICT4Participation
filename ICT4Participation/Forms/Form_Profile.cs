@@ -36,7 +36,13 @@ namespace ICT4Participation
         {
             lbl_Name.Text = volunteer.Name;
             lbl_Score.Text = volunteer.Rating.ToString("0.#");
-            lbl_leeftijd.Text = (DateTime.Now.Year - volunteer.DateOfBirth.Year).ToString();
+            var today = DateTime.Today;
+
+            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
+            var b = (volunteer.DateOfBirth.Year * 100 + volunteer.DateOfBirth.Month) * 100 + volunteer.DateOfBirth.Day;
+
+            int i = (a - b) / 10000;
+            lbl_leeftijd.Text = Convert.ToString(i);
             cbox_License.Checked = volunteer.DrivingLicense;
             tbox_Biography.Text = volunteer.Biogragphy;
 
@@ -200,6 +206,11 @@ namespace ICT4Participation
                 pbox_ProfilePicture.ImageLocation = imgpath;
                 hasPicture = true;
             }
+        }
+
+        private void lbl_leeftijd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

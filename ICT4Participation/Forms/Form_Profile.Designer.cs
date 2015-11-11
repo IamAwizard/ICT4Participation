@@ -406,6 +406,7 @@
             this.lbl_leeftijd.Size = new System.Drawing.Size(50, 18);
             this.lbl_leeftijd.TabIndex = 12;
             this.lbl_leeftijd.Text = "<age>";
+            this.lbl_leeftijd.Click += new System.EventHandler(this.lbl_leeftijd_Click);
             // 
             // lbl_InfoLicense
             // 
