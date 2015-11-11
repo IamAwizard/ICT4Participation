@@ -873,6 +873,36 @@ namespace ICT4Participation
             }
         }
 
+        public static int GetUserIDbyMail(string email)
+        {
+            int returnvalue = -1;
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT USERID FROM TUSER WHERE EMAIL = :findEmail";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("findEmail", OracleDbType.Varchar2).Value = email;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var id = dr.GetInt32(0);
+                    returnvalue = id;
+                }
+                return returnvalue;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
         static bool ExtendVolunteer(int volun)
         {
             try
@@ -1035,6 +1065,56 @@ namespace ICT4Participation
                 cmd.Parameters.Add("NewDATUMTIJD", OracleDbType.Varchar2).Value = meeting.DateString;
                 cmd.Parameters.Add("NewLOCATIE", OracleDbType.Varchar2).Value = meeting.Location;
 
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool UpdateVOG(string vogpath, int userid)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "UPDATE TVOLUNTEER SET VOG = :newVOG WHERE USERID = :someID";
+                cmd.Parameters.Add("newVOG", OracleDbType.Varchar2).Value = vogpath;
+                cmd.Parameters.Add("someID", OracleDbType.Int32).Value = userid;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static bool UpdatePhoto(string imgpath, int userid)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "UPDATE TVOLUNTEER SET FOTO = :newFOTO WHERE USERID = :someID";
+                cmd.Parameters.Add("newVOG", OracleDbType.Varchar2).Value = imgpath;
+                cmd.Parameters.Add("someID", OracleDbType.Int32).Value = userid;
                 cmd.ExecuteNonQuery();
                 return true;
             }

@@ -315,6 +315,7 @@
             this.btn_UploadPhoto.TabIndex = 19;
             this.btn_UploadPhoto.Text = "Foto Uploaden...";
             this.btn_UploadPhoto.UseVisualStyleBackColor = false;
+            this.btn_UploadPhoto.Click += new System.EventHandler(this.btn_UploadPhoto_Click);
             // 
             // groupBox1
             // 
@@ -349,6 +350,7 @@
             this.link_VOG.TabIndex = 17;
             this.link_VOG.TabStop = true;
             this.link_VOG.Text = "V.O.G.";
+            this.link_VOG.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_VOG_LinkClicked);
             // 
             // btn_Cancel
             // 
@@ -480,7 +482,7 @@
             // 
             // pbox_ProfilePicture
             // 
-            this.pbox_ProfilePicture.Image = global::ICT4Participation.Properties.Resources.IMG_adminblack;
+            this.pbox_ProfilePicture.Image = global::ICT4Participation.Properties.Resources.Unknown;
             this.pbox_ProfilePicture.Location = new System.Drawing.Point(8, 8);
             this.pbox_ProfilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.pbox_ProfilePicture.Name = "pbox_ProfilePicture";
@@ -489,9 +491,16 @@
             this.pbox_ProfilePicture.TabIndex = 0;
             this.pbox_ProfilePicture.TabStop = false;
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "VOG";
+            this.saveFileDialog.Filter = "\"PDF file|*.pdf|All Files|*.*\"";
+            // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.FileName = "photo";
+            this.openFileDialog.Filter = "\"Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif" +
+    "; *.png\"";
             // 
             // Form_Profile
             // 
@@ -508,6 +517,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uw Gegevens";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Profile_FormClosing);
+            this.Load += new System.EventHandler(this.Form_Profile_Load);
             this.pnl_Schedule.ResumeLayout(false);
             this.pnl_Schedule.PerformLayout();
             this.pnl_Profile.ResumeLayout(false);

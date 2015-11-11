@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace ICT4Participation
@@ -8,9 +9,12 @@ namespace ICT4Participation
     public partial class Form_Register : Form
     {
         // Fields
+        String uriString = @"ftp://i259530@athena.fhict.nl/VOG";
+
         Form_Login formsender;
         string vogpath;
         bool voguploaded;
+        bool vogpending;
 
         // Constructor
         public Form_Register(Form_Login sender)
@@ -20,7 +24,8 @@ namespace ICT4Participation
             this.formsender = sender;
             cbox_Gender.SelectedIndex = 0;
             vogpath = "";
-            bool voguploaded = false;
+            voguploaded = false;
+            vogpending = false;
         }
 
 
@@ -86,7 +91,7 @@ namespace ICT4Participation
             dateofbirth = dtp_DateOfBirth.Value;
             if(rbtn_Volunteer.Checked)
             {
-                if (voguploaded)
+                if (vogpending)
                 {
                     Volunteer newVolunteer = new Volunteer(name, dateofbirth, gender, city, address, email, password, false, "", vogpath, "");
                     return newVolunteer;
@@ -116,10 +121,8 @@ namespace ICT4Participation
                 if (DialogResult.OK == OpenFileDialog.ShowDialog())
                 {
                     lbl_VOGPath.Text = OpenFileDialog.FileName;
-                    string destination = @"pdf.pdf";
-                    File.Copy(lbl_VOGPath.Text, destination);
-                    vogpath = destination;
-                    voguploaded = true;
+                    vogpath = lbl_VOGPath.Text;
+                    vogpending = true;
                 }
             }
             catch (IOException ex)
@@ -136,13 +139,17 @@ namespace ICT4Participation
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            
-                User newUser = CheckAndReadEverything();
+            User newUser = CheckAndReadEverything();
             if (newUser != null)
             {
                 try
                 {
                     DatabaseHandler.AddUser(newUser);
+                    if(newUser is Volunteer)
+                    {
+                        int userid = DatabaseHandler.GetUserIDbyMail(newUser.Email);
+                        UploadVOG(userid);
+                    }
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Account aanmaken gelukt!");
                     formsender.tbox_Username.Text = newUser.Email;
@@ -154,8 +161,29 @@ namespace ICT4Participation
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
 
-         
+        private bool UploadVOG(int id)
+        {
+            try {
+                // Create a new WebClient instance.
+                string fileName = id + @".pdf";
+                string destination = uriString + @"/VOG" + fileName;
+                File.Copy(vogpath, fileName);
+
+                WebClient myWebClient = new WebClient();
+                myWebClient.Credentials = new NetworkCredential("i259530", "temppass1");
+                byte[] responseArray = myWebClient.UploadFile(destination, fileName);
+
+                DatabaseHandler.UpdateVOG(destination, id);
+                File.Delete(fileName);
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("Upload Failed.");
+                return false;
+            }
         }
 
         private void Form_Register_FormClosing(object sender, FormClosingEventArgs e)

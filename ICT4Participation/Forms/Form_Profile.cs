@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +17,9 @@ namespace ICT4Participation
         // Fields
         Volunteer volunteer;
         bool isChanged;
+        bool hasPicture;
+        String uriString = @"ftp://i259530@athena.fhict.nl/PROFILE";
+        string imgpath;
 
         // Constructor
         public Form_Profile(Volunteer volun)
@@ -22,6 +27,7 @@ namespace ICT4Participation
             InitializeComponent();
             volunteer = volun;
 
+            hasPicture = false;
             isChanged = false;
             InitializeInterface();
         }
@@ -86,6 +92,111 @@ namespace ICT4Participation
                 volunteer.Schedule.Sunday = tbox_Sunday.Text;
 
                 DatabaseHandler.UpdateVolunteer(volunteer);
+            }
+            if(hasPicture)
+            {
+                File.Delete(imgpath);
+            }
+        }
+
+        private void link_VOG_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DownloadVOG(volunteer);
+        }
+
+        private void btn_UploadPhoto_Click(object sender, EventArgs e)
+        {
+            UploadPhoto(volunteer);
+            Form_Profile_Load(null, null);
+        }
+
+        private bool DownloadVOG(Volunteer volun)
+        {
+            try
+            {
+                // Create a new WebClient instance.
+                string serverpath = volun.PathToVOG;
+                string tempfilename = "VOG" + volun.UserID + ".pdf";
+
+                WebClient myWebClient = new WebClient();
+                myWebClient.Credentials = new NetworkCredential("i259530", "temppass1");
+                myWebClient.DownloadFile(serverpath, tempfilename);
+
+                if(DialogResult.OK == saveFileDialog.ShowDialog())
+                {
+                    string newfilename = saveFileDialog.FileName;
+                    File.Copy(tempfilename, newfilename);
+                }
+                File.Delete(tempfilename);
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("Download Failed.");
+                return false;
+            }
+        }
+
+        private bool UploadPhoto(Volunteer volun)
+        {
+            try
+            {
+                // Create a new WebClient instance.
+                if (DialogResult.OK == openFileDialog.ShowDialog())
+                {
+                    string fileName = openFileDialog.FileName;
+                    string filetype = fileName.Substring(fileName.LastIndexOf('.'), fileName.Length - fileName.LastIndexOf('.'));
+                    string tempcopy = "IMG" + volun.UserID + filetype;
+                    string destination = uriString + @"/" + tempcopy;
+                    File.Copy(fileName, tempcopy);
+
+                    WebClient myWebClient = new WebClient();
+                    myWebClient.Credentials = new NetworkCredential("i259530", "temppass1");
+                    byte[] responseArray = myWebClient.UploadFile(destination, tempcopy);
+
+                    DatabaseHandler.UpdatePhoto(destination, volun.UserID);
+                    File.Delete(tempcopy);
+
+                    volun.PathToPhoto = destination;
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                MessageBox.Show("Upload Failed.");
+                return false;
+            }
+        }
+
+        private string DownloadPhoto(Volunteer volun)
+        {
+            try
+            {
+                // Create a new WebClient instance.
+                string serverpath = volun.PathToPhoto;
+                int postslash = volun.PathToPhoto.LastIndexOf('/') + 1;
+                int length = volun.PathToPhoto.Length;
+                string tempfilename = volun.PathToPhoto.Substring(postslash, length - postslash);
+
+                WebClient myWebClient = new WebClient();
+                myWebClient.Credentials = new NetworkCredential("i259530", "temppass1");
+                myWebClient.DownloadFile(serverpath, tempfilename);
+                return tempfilename;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        private void Form_Profile_Load(object sender, EventArgs e)
+        {
+            imgpath = DownloadPhoto(volunteer);
+            if(imgpath != string.Empty)
+            {
+                pbox_ProfilePicture.ImageLocation = imgpath;
+                hasPicture = true;
             }
         }
     }

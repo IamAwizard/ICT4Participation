@@ -28,8 +28,9 @@ namespace ICT4Participation
         {
             currentuser = volunteerhandler.ExtendVolunteer(currentuser);
             Form_Profile profiledialog = new Form_Profile(currentuser);
+            timer_Refresh.Stop();
             profiledialog.ShowDialog();
-            this.Show();
+            timer_Refresh.Start();
         }
 
         public void RefreshInterface()
