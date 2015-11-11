@@ -18,7 +18,7 @@ namespace ICT4Participation
             int leeftijd = DateTime.Now.Year - user.DateOfBirth.Year;
             InitializeComponent();
             volunteer = user;
-            lbl_namevolunteer.Text = user.Name;
+            lbl_Name.Text = user.Name;
             lbl_leeftijd.Text = Convert.ToString(leeftijd);
         }
 
@@ -43,9 +43,15 @@ namespace ICT4Participation
 
         }
 
-        private void btn_backprofile_Click(object sender, EventArgs e)
+        private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            pnl_Schedule.Hide();
+            pnl_Profile.Show();
         }
     }
 }

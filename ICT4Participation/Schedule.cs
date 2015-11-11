@@ -8,8 +8,7 @@ namespace ICT4Participation
 {
    public class Schedule
     {
-
-        //fields
+        // Fields
         private string monday;
         private string tuesday;
         private string wednesday;
@@ -18,13 +17,7 @@ namespace ICT4Participation
         private string saturday;
         private string sunday;
 
-
-        //properties
-        public int DagID
-        {
-            get; set;
-
-        }
+        // Properties
         public string Monday
         {
             get { return monday; }
@@ -61,6 +54,19 @@ namespace ICT4Participation
             get { return sunday; }
             set { sunday = value; }
         }
+
+        // Constructor
+        public Schedule()
+        {
+            this.monday = "Onbekend";
+            this.tuesday = "Onbekend";
+            this.wednesday = "Onbekend";
+            this.thursday = "Onbekend";
+            this.friday = "Onbekend";
+            this.saturday = "Onbekend";
+            this.sunday = "Onbekend";
+        }
+
         public Schedule(string monday, string tuesday, string wednesday, string thursday, string friday, string saturday, string sunday)
         {
             this.monday = monday;

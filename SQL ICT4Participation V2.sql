@@ -10,7 +10,6 @@
 	drop table TVOLUNTEER 	cascade constraints;
 	drop table TCLIENT		cascade constraints;
 	drop table TCHATBERICHT cascade constraints;
-	drop table TDAG			cascade constraints;
 	drop table TROOSTER		cascade constraints;
 	
 	--drop sequence
@@ -23,7 +22,6 @@
 	drop sequence seq_VOLUNTEER;
 	drop sequence seq_CLIENT;
 	drop sequence seq_CHATBERICHT;
-	drop sequence seq_DAG;
 	drop sequence seq_ROOSTER;
 	
 	
@@ -101,11 +99,13 @@
 	
 	create table TVOLUNTEER (
 	VolunteerID				number(8)		primary key,
-	Rijbewijs				varchar2(3)		not null,
+	UserID					number(8) 		not null,
+	Rijbewijs				varchar2(3)		,
 	Biografie 				varchar2(255)	,
-	VOG						varchar2(255)	not null,
-	Foto					varchar2(255)	not null,
+	VOG						varchar2(255)	,
+	Foto					varchar2(255)	,
 	
+	constraint chk_TVOLUNTEER_USER foreign key(UserID) REFERENCES TUSER(UserID) on delete cascade,
 	constraint chk_TVOLUNTEER_RIJBEWIJS check(UPPER(Rijbewijs) in ('JA', 'NEE'))
 	);
 	
@@ -127,22 +127,17 @@
 	constraint fk_TCHATBERICHT_Afzender foreign key(Afzender)REFERENCES TUSER(UserID) on delete cascade
 	);
 	
-	create table TDAG (
-	DagID					number(8)		primary key,
-	Dag						varchar2(255)	not null,
-	Begintijd				varchar2(255)	not null,
-	Eindtijd				varchar2(255)	not null,
-	
-	constraint chk_TDAG_DAG check(UPPER(Dag) in ('MAANDAG', 'DINSDAG', 'WOENSDAG', 'DONDERDAG', 'VRIJDAG', 'ZATERDAG', 'ZONDAG'))
-	);
-	
 	create table TROOSTER (
 	RoosterID				number(8)		primary key,
 	VolunteerID				number(8)		not null,
-	DagID					number(8)		not null,
-	
-	constraint fk_TROOSTER_VolunteerID	foreign key(VolunteerID)REFERENCES TVOLUNTEER(VolunteerID) on delete cascade,
-	constraint fk_TROOSTER_DagID		foreign key(DagID)REFERENCES TDAG(DagID) on delete cascade
+	Maandag					varchar2(32),
+	Dinsdag					varchar2(32),
+	Woensdag				varchar2(32),
+	Donderdag				varchar2(32),
+	Vrijdag					varchar2(32),
+	Zaterdag				varchar2(32),
+	Zondag					varchar2(32),
+	constraint fk_TROOSTER_VolunteerID	foreign key(VolunteerID)REFERENCES TVOLUNTEER(VolunteerID) on delete cascade
 	);
 	
 	--QUESTION
@@ -292,21 +287,6 @@
 	for each row
 	begin
 	select seq_CHATBERICHT.nextval into :new.BerichtID from dual;
-	end;
-	/
-	
-	--TDAG
-	CREATE Sequence seq_DAG
-	minvalue 1
-	start with 1
-	increment by 1
-	cache 10;
-
-	CREATE Trigger trigger_DAG
-	before insert on TDAG
-	for each row
-	begin
-	select seq_DAG.nextval into :new.DagID from dual;
 	end;
 	/
 	

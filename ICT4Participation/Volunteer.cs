@@ -8,12 +8,7 @@ namespace ICT4Participation
 {
     public class Volunteer : User
     {
-        //fields
-        Schedule schedule;
-        private bool drivingLicense;
-        private string biography;
-        private string pathToVOG;
-        private string pathToPhoto;
+        //Fields
 
 
         //properties
@@ -37,10 +32,12 @@ namespace ICT4Participation
             bool drivingLicense, string biography, string pathToVOG, string pathToPhoto)
             : base(name, dateOfBirth, gender, city, adress, email, password)
         {
+            this.Schedule = new Schedule();
             this.DrivingLicense = drivingLicense;
             this.Biogragphy = biography;
             this.PathToVOG = pathToVOG;
             this.PathToPhoto = pathToPhoto;
+
         }
 
         public override string ToString()
@@ -50,7 +47,7 @@ namespace ICT4Participation
         public Schedule GetSchedule()
         {
 
-            return schedule;
+            return Schedule;
         }
 
 

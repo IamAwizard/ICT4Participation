@@ -28,474 +28,532 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnl_opdrachtaanvaard = new System.Windows.Forms.Panel();
-            this.btn_accepteer = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
-            this.tb_vervoersmiddel = new System.Windows.Forms.TextBox();
-            this.tb_afstand = new System.Windows.Forms.TextBox();
-            this.tb_bijzonder = new System.Windows.Forms.TextBox();
-            this.tb_reistijd = new System.Windows.Forms.TextBox();
-            this.lbl_afstand = new System.Windows.Forms.Label();
-            this.lbl_vervoersmiddel = new System.Windows.Forms.Label();
-            this.lbl_bijzonder = new System.Windows.Forms.Label();
-            this.lbl_reistijd = new System.Windows.Forms.Label();
-            this.lbl_opdracht = new System.Windows.Forms.Label();
-            this.pnl_profile = new System.Windows.Forms.Panel();
-            this.btn_uploadavatar = new System.Windows.Forms.Button();
-            this.btn_backprofile = new System.Windows.Forms.Button();
-            this.btn_schedule = new System.Windows.Forms.Button();
-            this.chk_license = new System.Windows.Forms.CheckBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Profile));
+            this.pnl_Schedule = new System.Windows.Forms.Panel();
+            this.btn_Back = new System.Windows.Forms.Button();
+            this.tbox_Monday = new System.Windows.Forms.TextBox();
+            this.lbl_Monday = new System.Windows.Forms.Label();
+            this.lbl_Schedule = new System.Windows.Forms.Label();
+            this.pnl_Profile = new System.Windows.Forms.Panel();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Schedule = new System.Windows.Forms.Button();
+            this.cbox_License = new System.Windows.Forms.CheckBox();
             this.lbl_leeftijd = new System.Windows.Forms.Label();
-            this.tb_bio = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_namevolunteer = new System.Windows.Forms.Label();
+            this.tbox_Biography = new System.Windows.Forms.TextBox();
+            this.lbl_InfoLicense = new System.Windows.Forms.Label();
+            this.lbl_InfoAge = new System.Windows.Forms.Label();
+            this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_naamdonotuse = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_score = new System.Windows.Forms.Label();
-            this.lbl_rating = new System.Windows.Forms.Label();
-            this.lbl_VOG = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnl_opdrachtaanvaard.SuspendLayout();
-            this.pnl_profile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbl_InfoRatingOutOf = new System.Windows.Forms.Label();
+            this.lbl_Score = new System.Windows.Forms.Label();
+            this.lbl_InfoRating = new System.Windows.Forms.Label();
+            this.pbox_ProfilePicture = new System.Windows.Forms.PictureBox();
+            this.link_VOG = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_UploadPhoto = new System.Windows.Forms.Button();
+            this.lbl_Tuesdag = new System.Windows.Forms.Label();
+            this.lbl_Wednesday = new System.Windows.Forms.Label();
+            this.lbl_Thursday = new System.Windows.Forms.Label();
+            this.lbl_Friday = new System.Windows.Forms.Label();
+            this.lbl_Saturday = new System.Windows.Forms.Label();
+            this.lbl_Sunday = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pnl_Schedule.SuspendLayout();
+            this.pnl_Profile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_ProfilePicture)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnl_opdrachtaanvaard
+            // pnl_Schedule
             // 
-            this.pnl_opdrachtaanvaard.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnl_opdrachtaanvaard.Controls.Add(this.btn_accepteer);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.btn_back);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.tb_vervoersmiddel);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.tb_afstand);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.tb_bijzonder);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.tb_reistijd);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_afstand);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_vervoersmiddel);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_bijzonder);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_reistijd);
-            this.pnl_opdrachtaanvaard.Controls.Add(this.lbl_opdracht);
-            this.pnl_opdrachtaanvaard.Location = new System.Drawing.Point(1, 2);
-            this.pnl_opdrachtaanvaard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnl_opdrachtaanvaard.Name = "pnl_opdrachtaanvaard";
-            this.pnl_opdrachtaanvaard.Size = new System.Drawing.Size(421, 424);
-            this.pnl_opdrachtaanvaard.TabIndex = 0;
+            this.pnl_Schedule.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnl_Schedule.Controls.Add(this.textBox6);
+            this.pnl_Schedule.Controls.Add(this.textBox5);
+            this.pnl_Schedule.Controls.Add(this.textBox4);
+            this.pnl_Schedule.Controls.Add(this.textBox3);
+            this.pnl_Schedule.Controls.Add(this.textBox2);
+            this.pnl_Schedule.Controls.Add(this.textBox1);
+            this.pnl_Schedule.Controls.Add(this.lbl_Sunday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Saturday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Friday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Thursday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Wednesday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Tuesdag);
+            this.pnl_Schedule.Controls.Add(this.btn_Back);
+            this.pnl_Schedule.Controls.Add(this.tbox_Monday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Monday);
+            this.pnl_Schedule.Controls.Add(this.lbl_Schedule);
+            this.pnl_Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Schedule.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Schedule.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Schedule.Name = "pnl_Schedule";
+            this.pnl_Schedule.Size = new System.Drawing.Size(384, 372);
+            this.pnl_Schedule.TabIndex = 0;
             // 
-            // btn_accepteer
+            // btn_Back
             // 
-            this.btn_accepteer.BackColor = System.Drawing.Color.White;
-            this.btn_accepteer.FlatAppearance.BorderSize = 0;
-            this.btn_accepteer.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_accepteer.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_accepteer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_accepteer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_accepteer.Location = new System.Drawing.Point(254, 368);
-            this.btn_accepteer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_accepteer.Name = "btn_accepteer";
-            this.btn_accepteer.Size = new System.Drawing.Size(142, 35);
-            this.btn_accepteer.TabIndex = 10;
-            this.btn_accepteer.Text = "Accepteer opdracht";
-            this.btn_accepteer.UseVisualStyleBackColor = false;
+            this.btn_Back.BackColor = System.Drawing.Color.White;
+            this.btn_Back.FlatAppearance.BorderSize = 0;
+            this.btn_Back.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Back.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(193, 317);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(142, 35);
+            this.btn_Back.TabIndex = 9;
+            this.btn_Back.Text = "Terug naar Profiel";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
-            // btn_back
+            // tbox_Monday
             // 
-            this.btn_back.BackColor = System.Drawing.Color.White;
-            this.btn_back.FlatAppearance.BorderSize = 0;
-            this.btn_back.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_back.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(254, 322);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(142, 35);
-            this.btn_back.TabIndex = 9;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = false;
+            this.tbox_Monday.Location = new System.Drawing.Point(147, 71);
+            this.tbox_Monday.Margin = new System.Windows.Forms.Padding(2);
+            this.tbox_Monday.MaxLength = 32;
+            this.tbox_Monday.Name = "tbox_Monday";
+            this.tbox_Monday.Size = new System.Drawing.Size(188, 20);
+            this.tbox_Monday.TabIndex = 5;
             // 
-            // tb_vervoersmiddel
+            // lbl_Monday
             // 
-            this.tb_vervoersmiddel.Location = new System.Drawing.Point(163, 268);
-            this.tb_vervoersmiddel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_vervoersmiddel.Multiline = true;
-            this.tb_vervoersmiddel.Name = "tb_vervoersmiddel";
-            this.tb_vervoersmiddel.Size = new System.Drawing.Size(188, 35);
-            this.tb_vervoersmiddel.TabIndex = 8;
+            this.lbl_Monday.AutoSize = true;
+            this.lbl_Monday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Monday.ForeColor = System.Drawing.Color.White;
+            this.lbl_Monday.Location = new System.Drawing.Point(36, 70);
+            this.lbl_Monday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Monday.Name = "lbl_Monday";
+            this.lbl_Monday.Size = new System.Drawing.Size(73, 18);
+            this.lbl_Monday.TabIndex = 1;
+            this.lbl_Monday.Text = "Maandag:";
             // 
-            // tb_afstand
+            // lbl_Schedule
             // 
-            this.tb_afstand.Location = new System.Drawing.Point(163, 213);
-            this.tb_afstand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_afstand.Multiline = true;
-            this.tb_afstand.Name = "tb_afstand";
-            this.tb_afstand.Size = new System.Drawing.Size(188, 35);
-            this.tb_afstand.TabIndex = 7;
+            this.lbl_Schedule.AutoSize = true;
+            this.lbl_Schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Schedule.ForeColor = System.Drawing.Color.White;
+            this.lbl_Schedule.Location = new System.Drawing.Point(150, 32);
+            this.lbl_Schedule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Schedule.Name = "lbl_Schedule";
+            this.lbl_Schedule.Size = new System.Drawing.Size(75, 24);
+            this.lbl_Schedule.TabIndex = 0;
+            this.lbl_Schedule.Text = "Rooster";
             // 
-            // tb_bijzonder
+            // pnl_Profile
             // 
-            this.tb_bijzonder.Location = new System.Drawing.Point(163, 161);
-            this.tb_bijzonder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_bijzonder.Multiline = true;
-            this.tb_bijzonder.Name = "tb_bijzonder";
-            this.tb_bijzonder.Size = new System.Drawing.Size(188, 35);
-            this.tb_bijzonder.TabIndex = 6;
+            this.pnl_Profile.Controls.Add(this.btn_UploadPhoto);
+            this.pnl_Profile.Controls.Add(this.groupBox1);
+            this.pnl_Profile.Controls.Add(this.link_VOG);
+            this.pnl_Profile.Controls.Add(this.btn_Cancel);
+            this.pnl_Profile.Controls.Add(this.btn_Schedule);
+            this.pnl_Profile.Controls.Add(this.cbox_License);
+            this.pnl_Profile.Controls.Add(this.lbl_leeftijd);
+            this.pnl_Profile.Controls.Add(this.lbl_InfoLicense);
+            this.pnl_Profile.Controls.Add(this.lbl_InfoAge);
+            this.pnl_Profile.Controls.Add(this.lbl_Name);
+            this.pnl_Profile.Controls.Add(this.lbl_naamdonotuse);
+            this.pnl_Profile.Controls.Add(this.lbl_InfoRatingOutOf);
+            this.pnl_Profile.Controls.Add(this.lbl_Score);
+            this.pnl_Profile.Controls.Add(this.lbl_InfoRating);
+            this.pnl_Profile.Controls.Add(this.pbox_ProfilePicture);
+            this.pnl_Profile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Profile.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Profile.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Profile.Name = "pnl_Profile";
+            this.pnl_Profile.Size = new System.Drawing.Size(384, 372);
+            this.pnl_Profile.TabIndex = 0;
+            this.pnl_Profile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_profiel_Paint);
             // 
-            // tb_reistijd
+            // btn_Cancel
             // 
-            this.tb_reistijd.Location = new System.Drawing.Point(163, 101);
-            this.tb_reistijd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_reistijd.Multiline = true;
-            this.tb_reistijd.Name = "tb_reistijd";
-            this.tb_reistijd.Size = new System.Drawing.Size(188, 35);
-            this.tb_reistijd.TabIndex = 5;
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_Cancel.Location = new System.Drawing.Point(228, 331);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(148, 33);
+            this.btn_Cancel.TabIndex = 15;
+            this.btn_Cancel.Text = "Sluiten";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // lbl_afstand
+            // btn_Schedule
             // 
-            this.lbl_afstand.AutoSize = true;
-            this.lbl_afstand.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_afstand.ForeColor = System.Drawing.Color.White;
-            this.lbl_afstand.Location = new System.Drawing.Point(33, 213);
-            this.lbl_afstand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_afstand.Name = "lbl_afstand";
-            this.lbl_afstand.Size = new System.Drawing.Size(57, 18);
-            this.lbl_afstand.TabIndex = 4;
-            this.lbl_afstand.Text = "Afstand";
+            this.btn_Schedule.BackColor = System.Drawing.Color.White;
+            this.btn_Schedule.FlatAppearance.BorderSize = 0;
+            this.btn_Schedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_Schedule.Location = new System.Drawing.Point(241, 151);
+            this.btn_Schedule.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Schedule.Name = "btn_Schedule";
+            this.btn_Schedule.Size = new System.Drawing.Size(135, 38);
+            this.btn_Schedule.TabIndex = 14;
+            this.btn_Schedule.Text = "Rooster";
+            this.btn_Schedule.UseVisualStyleBackColor = false;
+            this.btn_Schedule.Click += new System.EventHandler(this.btn_schedule_Click);
             // 
-            // lbl_vervoersmiddel
+            // cbox_License
             // 
-            this.lbl_vervoersmiddel.AutoSize = true;
-            this.lbl_vervoersmiddel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vervoersmiddel.ForeColor = System.Drawing.Color.White;
-            this.lbl_vervoersmiddel.Location = new System.Drawing.Point(33, 268);
-            this.lbl_vervoersmiddel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_vervoersmiddel.Name = "lbl_vervoersmiddel";
-            this.lbl_vervoersmiddel.Size = new System.Drawing.Size(110, 18);
-            this.lbl_vervoersmiddel.TabIndex = 3;
-            this.lbl_vervoersmiddel.Text = "Vervoersmiddel";
-            // 
-            // lbl_bijzonder
-            // 
-            this.lbl_bijzonder.AutoSize = true;
-            this.lbl_bijzonder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bijzonder.ForeColor = System.Drawing.Color.White;
-            this.lbl_bijzonder.Location = new System.Drawing.Point(33, 161);
-            this.lbl_bijzonder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_bijzonder.Name = "lbl_bijzonder";
-            this.lbl_bijzonder.Size = new System.Drawing.Size(97, 18);
-            this.lbl_bijzonder.TabIndex = 2;
-            this.lbl_bijzonder.Text = "Bijzonderheid";
-            // 
-            // lbl_reistijd
-            // 
-            this.lbl_reistijd.AutoSize = true;
-            this.lbl_reistijd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_reistijd.ForeColor = System.Drawing.Color.White;
-            this.lbl_reistijd.Location = new System.Drawing.Point(33, 108);
-            this.lbl_reistijd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_reistijd.Name = "lbl_reistijd";
-            this.lbl_reistijd.Size = new System.Drawing.Size(56, 18);
-            this.lbl_reistijd.TabIndex = 1;
-            this.lbl_reistijd.Text = "Reistijd";
-            // 
-            // lbl_opdracht
-            // 
-            this.lbl_opdracht.AutoSize = true;
-            this.lbl_opdracht.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_opdracht.Location = new System.Drawing.Point(154, 34);
-            this.lbl_opdracht.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_opdracht.Name = "lbl_opdracht";
-            this.lbl_opdracht.Size = new System.Drawing.Size(88, 24);
-            this.lbl_opdracht.TabIndex = 0;
-            this.lbl_opdracht.Text = "Opdracht";
-            // 
-            // pnl_profile
-            // 
-            this.pnl_profile.Controls.Add(this.btn_uploadavatar);
-            this.pnl_profile.Controls.Add(this.btn_backprofile);
-            this.pnl_profile.Controls.Add(this.btn_schedule);
-            this.pnl_profile.Controls.Add(this.chk_license);
-            this.pnl_profile.Controls.Add(this.lbl_leeftijd);
-            this.pnl_profile.Controls.Add(this.tb_bio);
-            this.pnl_profile.Controls.Add(this.label6);
-            this.pnl_profile.Controls.Add(this.label5);
-            this.pnl_profile.Controls.Add(this.label3);
-            this.pnl_profile.Controls.Add(this.lbl_namevolunteer);
-            this.pnl_profile.Controls.Add(this.lbl_naamdonotuse);
-            this.pnl_profile.Controls.Add(this.label2);
-            this.pnl_profile.Controls.Add(this.label1);
-            this.pnl_profile.Controls.Add(this.lbl_score);
-            this.pnl_profile.Controls.Add(this.lbl_rating);
-            this.pnl_profile.Controls.Add(this.lbl_VOG);
-            this.pnl_profile.Controls.Add(this.pictureBox1);
-            this.pnl_profile.Location = new System.Drawing.Point(1, 2);
-            this.pnl_profile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(421, 422);
-            this.pnl_profile.TabIndex = 0;
-            this.pnl_profile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_profiel_Paint);
-            // 
-            // btn_uploadavatar
-            // 
-            this.btn_uploadavatar.BackColor = System.Drawing.Color.White;
-            this.btn_uploadavatar.FlatAppearance.BorderSize = 0;
-            this.btn_uploadavatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_uploadavatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_uploadavatar.Location = new System.Drawing.Point(8, 188);
-            this.btn_uploadavatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_uploadavatar.Name = "btn_uploadavatar";
-            this.btn_uploadavatar.Size = new System.Drawing.Size(105, 23);
-            this.btn_uploadavatar.TabIndex = 16;
-            this.btn_uploadavatar.Text = "upload foto";
-            this.btn_uploadavatar.UseVisualStyleBackColor = false;
-            this.btn_uploadavatar.Click += new System.EventHandler(this.btn_uploadavatar_Click);
-            // 
-            // btn_backprofile
-            // 
-            this.btn_backprofile.BackColor = System.Drawing.Color.White;
-            this.btn_backprofile.FlatAppearance.BorderSize = 0;
-            this.btn_backprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_backprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_backprofile.Location = new System.Drawing.Point(248, 378);
-            this.btn_backprofile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_backprofile.Name = "btn_backprofile";
-            this.btn_backprofile.Size = new System.Drawing.Size(148, 33);
-            this.btn_backprofile.TabIndex = 15;
-            this.btn_backprofile.Text = "Back";
-            this.btn_backprofile.UseVisualStyleBackColor = false;
-            this.btn_backprofile.Click += new System.EventHandler(this.btn_backprofile_Click);
-            // 
-            // btn_schedule
-            // 
-            this.btn_schedule.BackColor = System.Drawing.Color.White;
-            this.btn_schedule.FlatAppearance.BorderSize = 0;
-            this.btn_schedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_schedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btn_schedule.Location = new System.Drawing.Point(248, 330);
-            this.btn_schedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_schedule.Name = "btn_schedule";
-            this.btn_schedule.Size = new System.Drawing.Size(148, 33);
-            this.btn_schedule.TabIndex = 14;
-            this.btn_schedule.Text = "Rooster";
-            this.btn_schedule.UseVisualStyleBackColor = false;
-            this.btn_schedule.Click += new System.EventHandler(this.btn_schedule_Click);
-            // 
-            // chk_license
-            // 
-            this.chk_license.AutoSize = true;
-            this.chk_license.Location = new System.Drawing.Point(86, 399);
-            this.chk_license.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chk_license.Name = "chk_license";
-            this.chk_license.Size = new System.Drawing.Size(15, 14);
-            this.chk_license.TabIndex = 13;
-            this.chk_license.UseVisualStyleBackColor = true;
+            this.cbox_License.AutoSize = true;
+            this.cbox_License.FlatAppearance.BorderSize = 0;
+            this.cbox_License.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbox_License.Location = new System.Drawing.Point(224, 108);
+            this.cbox_License.Margin = new System.Windows.Forms.Padding(2);
+            this.cbox_License.Name = "cbox_License";
+            this.cbox_License.Size = new System.Drawing.Size(12, 11);
+            this.cbox_License.TabIndex = 13;
+            this.cbox_License.UseVisualStyleBackColor = true;
             // 
             // lbl_leeftijd
             // 
             this.lbl_leeftijd.AutoSize = true;
             this.lbl_leeftijd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbl_leeftijd.ForeColor = System.Drawing.Color.White;
-            this.lbl_leeftijd.Location = new System.Drawing.Point(82, 358);
+            this.lbl_leeftijd.Location = new System.Drawing.Point(221, 85);
             this.lbl_leeftijd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_leeftijd.Name = "lbl_leeftijd";
-            this.lbl_leeftijd.Size = new System.Drawing.Size(0, 18);
+            this.lbl_leeftijd.Size = new System.Drawing.Size(50, 18);
             this.lbl_leeftijd.TabIndex = 12;
+            this.lbl_leeftijd.Text = "<age>";
             // 
-            // tb_bio
+            // tbox_Biography
             // 
-            this.tb_bio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tb_bio.Location = new System.Drawing.Point(70, 213);
-            this.tb_bio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_bio.Multiline = true;
-            this.tb_bio.Name = "tb_bio";
-            this.tb_bio.Size = new System.Drawing.Size(298, 104);
-            this.tb_bio.TabIndex = 11;
+            this.tbox_Biography.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbox_Biography.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbox_Biography.Location = new System.Drawing.Point(3, 20);
+            this.tbox_Biography.Margin = new System.Windows.Forms.Padding(2);
+            this.tbox_Biography.Multiline = true;
+            this.tbox_Biography.Name = "tbox_Biography";
+            this.tbox_Biography.Size = new System.Drawing.Size(362, 110);
+            this.tbox_Biography.TabIndex = 11;
             // 
-            // label6
+            // lbl_InfoLicense
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 394);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 18);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Rijbewijs";
+            this.lbl_InfoLicense.AutoSize = true;
+            this.lbl_InfoLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_InfoLicense.ForeColor = System.Drawing.Color.White;
+            this.lbl_InfoLicense.Location = new System.Drawing.Point(155, 103);
+            this.lbl_InfoLicense.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_InfoLicense.Name = "lbl_InfoLicense";
+            this.lbl_InfoLicense.Size = new System.Drawing.Size(70, 18);
+            this.lbl_InfoLicense.TabIndex = 10;
+            this.lbl_InfoLicense.Text = "Rijbewijs:";
             // 
-            // label5
+            // lbl_InfoAge
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(9, 358);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Leeftijd:";
+            this.lbl_InfoAge.AutoSize = true;
+            this.lbl_InfoAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_InfoAge.ForeColor = System.Drawing.Color.White;
+            this.lbl_InfoAge.Location = new System.Drawing.Point(155, 85);
+            this.lbl_InfoAge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_InfoAge.Name = "lbl_InfoAge";
+            this.lbl_InfoAge.Size = new System.Drawing.Size(58, 18);
+            this.lbl_InfoAge.TabIndex = 9;
+            this.lbl_InfoAge.Text = "Leeftijd:";
             // 
-            // label3
+            // lbl_Name
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(5, 249);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 18);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Bio";
-            // 
-            // lbl_namevolunteer
-            // 
-            this.lbl_namevolunteer.AutoSize = true;
-            this.lbl_namevolunteer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_namevolunteer.ForeColor = System.Drawing.Color.White;
-            this.lbl_namevolunteer.Location = new System.Drawing.Point(224, 117);
-            this.lbl_namevolunteer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_namevolunteer.Name = "lbl_namevolunteer";
-            this.lbl_namevolunteer.Size = new System.Drawing.Size(0, 18);
-            this.lbl_namevolunteer.TabIndex = 7;
-            this.lbl_namevolunteer.Click += new System.EventHandler(this.lbl_namevolunteer_Click);
+            this.lbl_Name.AutoSize = true;
+            this.lbl_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbl_Name.ForeColor = System.Drawing.Color.White;
+            this.lbl_Name.Location = new System.Drawing.Point(154, 32);
+            this.lbl_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Name.Name = "lbl_Name";
+            this.lbl_Name.Size = new System.Drawing.Size(79, 24);
+            this.lbl_Name.TabIndex = 7;
+            this.lbl_Name.Text = "<naam>";
+            this.lbl_Name.Click += new System.EventHandler(this.lbl_namevolunteer_Click);
             // 
             // lbl_naamdonotuse
             // 
             this.lbl_naamdonotuse.AutoSize = true;
-            this.lbl_naamdonotuse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_naamdonotuse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lbl_naamdonotuse.ForeColor = System.Drawing.Color.White;
-            this.lbl_naamdonotuse.Location = new System.Drawing.Point(160, 117);
+            this.lbl_naamdonotuse.Location = new System.Drawing.Point(154, 8);
             this.lbl_naamdonotuse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_naamdonotuse.Name = "lbl_naamdonotuse";
-            this.lbl_naamdonotuse.Size = new System.Drawing.Size(52, 18);
+            this.lbl_naamdonotuse.Size = new System.Drawing.Size(65, 24);
             this.lbl_naamdonotuse.TabIndex = 6;
             this.lbl_naamdonotuse.Text = "Naam:";
             // 
-            // label2
+            // lbl_InfoRatingOutOf
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(172, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "/";
+            this.lbl_InfoRatingOutOf.AutoSize = true;
+            this.lbl_InfoRatingOutOf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_InfoRatingOutOf.ForeColor = System.Drawing.Color.White;
+            this.lbl_InfoRatingOutOf.Location = new System.Drawing.Point(239, 67);
+            this.lbl_InfoRatingOutOf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_InfoRatingOutOf.Name = "lbl_InfoRatingOutOf";
+            this.lbl_InfoRatingOutOf.Size = new System.Drawing.Size(32, 18);
+            this.lbl_InfoRatingOutOf.TabIndex = 4;
+            this.lbl_InfoRatingOutOf.Text = "/ 10";
             // 
-            // label1
+            // lbl_Score
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(184, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "10";
+            this.lbl_Score.AutoSize = true;
+            this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_Score.ForeColor = System.Drawing.Color.White;
+            this.lbl_Score.Location = new System.Drawing.Point(221, 67);
+            this.lbl_Score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Score.Name = "lbl_Score";
+            this.lbl_Score.Size = new System.Drawing.Size(16, 18);
+            this.lbl_Score.TabIndex = 3;
+            this.lbl_Score.Text = "?";
             // 
-            // lbl_score
+            // lbl_InfoRating
             // 
-            this.lbl_score.AutoSize = true;
-            this.lbl_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_score.ForeColor = System.Drawing.Color.White;
-            this.lbl_score.Location = new System.Drawing.Point(160, 58);
-            this.lbl_score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_score.Name = "lbl_score";
-            this.lbl_score.Size = new System.Drawing.Size(16, 18);
-            this.lbl_score.TabIndex = 3;
-            this.lbl_score.Text = "?";
+            this.lbl_InfoRating.AutoSize = true;
+            this.lbl_InfoRating.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_InfoRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_InfoRating.ForeColor = System.Drawing.Color.White;
+            this.lbl_InfoRating.Location = new System.Drawing.Point(155, 67);
+            this.lbl_InfoRating.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_InfoRating.Name = "lbl_InfoRating";
+            this.lbl_InfoRating.Size = new System.Drawing.Size(54, 18);
+            this.lbl_InfoRating.TabIndex = 2;
+            this.lbl_InfoRating.Text = "Rating:";
             // 
-            // lbl_rating
+            // pbox_ProfilePicture
             // 
-            this.lbl_rating.AutoSize = true;
-            this.lbl_rating.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_rating.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_rating.ForeColor = System.Drawing.Color.White;
-            this.lbl_rating.Location = new System.Drawing.Point(160, 34);
-            this.lbl_rating.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_rating.Name = "lbl_rating";
-            this.lbl_rating.Size = new System.Drawing.Size(50, 18);
-            this.lbl_rating.TabIndex = 2;
-            this.lbl_rating.Text = "Rating";
+            this.pbox_ProfilePicture.Image = global::ICT4Participation.Properties.Resources.IMG_adminblack;
+            this.pbox_ProfilePicture.Location = new System.Drawing.Point(8, 8);
+            this.pbox_ProfilePicture.Margin = new System.Windows.Forms.Padding(2);
+            this.pbox_ProfilePicture.Name = "pbox_ProfilePicture";
+            this.pbox_ProfilePicture.Size = new System.Drawing.Size(135, 138);
+            this.pbox_ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbox_ProfilePicture.TabIndex = 0;
+            this.pbox_ProfilePicture.TabStop = false;
             // 
-            // lbl_VOG
+            // link_VOG
             // 
-            this.lbl_VOG.AutoSize = true;
-            this.lbl_VOG.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_VOG.ForeColor = System.Drawing.Color.White;
-            this.lbl_VOG.Location = new System.Drawing.Point(321, 34);
-            this.lbl_VOG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_VOG.Name = "lbl_VOG";
-            this.lbl_VOG.Size = new System.Drawing.Size(49, 18);
-            this.lbl_VOG.TabIndex = 1;
-            this.lbl_VOG.Text = "V.O.G";
+            this.link_VOG.AutoSize = true;
+            this.link_VOG.Location = new System.Drawing.Point(155, 123);
+            this.link_VOG.Name = "link_VOG";
+            this.link_VOG.Size = new System.Drawing.Size(39, 13);
+            this.link_VOG.TabIndex = 17;
+            this.link_VOG.TabStop = true;
+            this.link_VOG.Text = "V.O.G.";
             // 
-            // pictureBox1
+            // groupBox1
             // 
-            this.pictureBox1.Image = global::ICT4Participation.Properties.Resources.IMG_adminblack;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 172);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.groupBox1.Controls.Add(this.tbox_Biography);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(8, 193);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(368, 133);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Biografie";
+            // 
+            // btn_UploadPhoto
+            // 
+            this.btn_UploadPhoto.BackColor = System.Drawing.Color.White;
+            this.btn_UploadPhoto.FlatAppearance.BorderSize = 0;
+            this.btn_UploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_UploadPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btn_UploadPhoto.Location = new System.Drawing.Point(8, 150);
+            this.btn_UploadPhoto.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_UploadPhoto.Name = "btn_UploadPhoto";
+            this.btn_UploadPhoto.Size = new System.Drawing.Size(135, 38);
+            this.btn_UploadPhoto.TabIndex = 19;
+            this.btn_UploadPhoto.Text = "Foto Uploaden...";
+            this.btn_UploadPhoto.UseVisualStyleBackColor = false;
+            // 
+            // lbl_Tuesdag
+            // 
+            this.lbl_Tuesdag.AutoSize = true;
+            this.lbl_Tuesdag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tuesdag.ForeColor = System.Drawing.Color.White;
+            this.lbl_Tuesdag.Location = new System.Drawing.Point(43, 100);
+            this.lbl_Tuesdag.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Tuesdag.Name = "lbl_Tuesdag";
+            this.lbl_Tuesdag.Size = new System.Drawing.Size(66, 18);
+            this.lbl_Tuesdag.TabIndex = 10;
+            this.lbl_Tuesdag.Text = "Dinsdag:";
+            // 
+            // lbl_Wednesday
+            // 
+            this.lbl_Wednesday.AutoSize = true;
+            this.lbl_Wednesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Wednesday.ForeColor = System.Drawing.Color.White;
+            this.lbl_Wednesday.Location = new System.Drawing.Point(25, 130);
+            this.lbl_Wednesday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Wednesday.Name = "lbl_Wednesday";
+            this.lbl_Wednesday.Size = new System.Drawing.Size(84, 18);
+            this.lbl_Wednesday.TabIndex = 11;
+            this.lbl_Wednesday.Text = "Woensdag:";
+            // 
+            // lbl_Thursday
+            // 
+            this.lbl_Thursday.AutoSize = true;
+            this.lbl_Thursday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Thursday.ForeColor = System.Drawing.Color.White;
+            this.lbl_Thursday.Location = new System.Drawing.Point(24, 160);
+            this.lbl_Thursday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Thursday.Name = "lbl_Thursday";
+            this.lbl_Thursday.Size = new System.Drawing.Size(85, 18);
+            this.lbl_Thursday.TabIndex = 12;
+            this.lbl_Thursday.Text = "Donderdag:";
+            // 
+            // lbl_Friday
+            // 
+            this.lbl_Friday.AutoSize = true;
+            this.lbl_Friday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Friday.ForeColor = System.Drawing.Color.White;
+            this.lbl_Friday.Location = new System.Drawing.Point(53, 190);
+            this.lbl_Friday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Friday.Name = "lbl_Friday";
+            this.lbl_Friday.Size = new System.Drawing.Size(56, 18);
+            this.lbl_Friday.TabIndex = 13;
+            this.lbl_Friday.Text = "Vrijdag:";
+            // 
+            // lbl_Saturday
+            // 
+            this.lbl_Saturday.AutoSize = true;
+            this.lbl_Saturday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Saturday.ForeColor = System.Drawing.Color.White;
+            this.lbl_Saturday.Location = new System.Drawing.Point(39, 220);
+            this.lbl_Saturday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Saturday.Name = "lbl_Saturday";
+            this.lbl_Saturday.Size = new System.Drawing.Size(70, 18);
+            this.lbl_Saturday.TabIndex = 14;
+            this.lbl_Saturday.Text = "Zaterdag:";
+            // 
+            // lbl_Sunday
+            // 
+            this.lbl_Sunday.AutoSize = true;
+            this.lbl_Sunday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Sunday.ForeColor = System.Drawing.Color.White;
+            this.lbl_Sunday.Location = new System.Drawing.Point(47, 250);
+            this.lbl_Sunday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Sunday.Name = "lbl_Sunday";
+            this.lbl_Sunday.Size = new System.Drawing.Size(62, 18);
+            this.lbl_Sunday.TabIndex = 15;
+            this.lbl_Sunday.Text = "Zondag:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(147, 101);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.MaxLength = 32;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(147, 131);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.MaxLength = 32;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(188, 20);
+            this.textBox2.TabIndex = 17;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(147, 161);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.MaxLength = 32;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(188, 20);
+            this.textBox3.TabIndex = 18;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(147, 191);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox4.MaxLength = 32;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(188, 20);
+            this.textBox4.TabIndex = 19;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(147, 221);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.MaxLength = 32;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(188, 20);
+            this.textBox5.TabIndex = 20;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(147, 251);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox6.MaxLength = 32;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(188, 20);
+            this.textBox6.TabIndex = 21;
             // 
             // Form_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(425, 422);
-            this.Controls.Add(this.pnl_profile);
-            this.Controls.Add(this.pnl_opdrachtaanvaard);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(384, 372);
+            this.Controls.Add(this.pnl_Profile);
+            this.Controls.Add(this.pnl_Schedule);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_MainVolunteer";
-            this.pnl_opdrachtaanvaard.ResumeLayout(false);
-            this.pnl_opdrachtaanvaard.PerformLayout();
-            this.pnl_profile.ResumeLayout(false);
-            this.pnl_profile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Uw Gegevens";
+            this.pnl_Schedule.ResumeLayout(false);
+            this.pnl_Schedule.PerformLayout();
+            this.pnl_Profile.ResumeLayout(false);
+            this.pnl_Profile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_ProfilePicture)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnl_opdrachtaanvaard;
-        private System.Windows.Forms.Button btn_accepteer;
-        private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.TextBox tb_vervoersmiddel;
-        private System.Windows.Forms.TextBox tb_afstand;
-        private System.Windows.Forms.TextBox tb_bijzonder;
-        private System.Windows.Forms.TextBox tb_reistijd;
-        private System.Windows.Forms.Label lbl_afstand;
-        private System.Windows.Forms.Label lbl_vervoersmiddel;
-        private System.Windows.Forms.Label lbl_bijzonder;
-        private System.Windows.Forms.Label lbl_reistijd;
-        private System.Windows.Forms.Label lbl_opdracht;
-        private System.Windows.Forms.Panel pnl_profile;
-        private System.Windows.Forms.Label lbl_namevolunteer;
+        private System.Windows.Forms.Panel pnl_Schedule;
+        private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.TextBox tbox_Monday;
+        private System.Windows.Forms.Label lbl_Monday;
+        private System.Windows.Forms.Label lbl_Schedule;
+        private System.Windows.Forms.Panel pnl_Profile;
+        private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Label lbl_naamdonotuse;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbl_score;
-        private System.Windows.Forms.Label lbl_rating;
-        private System.Windows.Forms.Label lbl_VOG;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_backprofile;
-        private System.Windows.Forms.Button btn_schedule;
-        private System.Windows.Forms.CheckBox chk_license;
+        private System.Windows.Forms.Label lbl_InfoRatingOutOf;
+        private System.Windows.Forms.Label lbl_Score;
+        private System.Windows.Forms.Label lbl_InfoRating;
+        private System.Windows.Forms.PictureBox pbox_ProfilePicture;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_Schedule;
+        private System.Windows.Forms.CheckBox cbox_License;
         private System.Windows.Forms.Label lbl_leeftijd;
-        private System.Windows.Forms.TextBox tb_bio;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_uploadavatar;
+        private System.Windows.Forms.TextBox tbox_Biography;
+        private System.Windows.Forms.Label lbl_InfoLicense;
+        private System.Windows.Forms.Label lbl_InfoAge;
+        private System.Windows.Forms.LinkLabel link_VOG;
+        private System.Windows.Forms.Button btn_UploadPhoto;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_Sunday;
+        private System.Windows.Forms.Label lbl_Saturday;
+        private System.Windows.Forms.Label lbl_Friday;
+        private System.Windows.Forms.Label lbl_Thursday;
+        private System.Windows.Forms.Label lbl_Wednesday;
+        private System.Windows.Forms.Label lbl_Tuesdag;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

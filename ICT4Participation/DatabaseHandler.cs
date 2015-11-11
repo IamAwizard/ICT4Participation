@@ -200,7 +200,7 @@ namespace ICT4Participation
                             break;
                         case "VOLUNTEER":
                             toadd = null;
-                            Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "", "", "");
+                            Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "Niet Opgegeven", "ONBEKEND", "ONBEKEND");
                             toadd = newUser;
                             toadd.UserID = id;
                             break;
@@ -339,6 +339,11 @@ namespace ICT4Participation
                 if (newuser is Admin)
                     cmd.Parameters.Add("NewTYPE", OracleDbType.Varchar2).Value = "ADMIN";
                 cmd.ExecuteNonQuery();
+
+                if(newuser is Volunteer)
+                {
+                    ExtendVolunteer(GetUserID(newuser.Email));
+                }
             }
             catch (Exception ex)
             {
@@ -824,6 +829,117 @@ namespace ICT4Participation
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        static int GetUserID(string email)
+        {
+            int returnvalue = -1;
+            try
+            {
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT USERID FROM TUSER WHERE EMAIL = :findEmail";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("findEmail", OracleDbType.Varchar2).Value = email;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var id = dr.GetInt32(0);
+                    returnvalue = id;
+                }
+                return returnvalue;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+        }
+
+        static bool ExtendVolunteer(int volun)
+        {
+            try
+            {
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                "Insert into TVOLUNTEER(USERID, RIJBEWIJS, BIOGRAFIE, VOG, FOTO) VALUES (:newUSERID, :newRIJBEWIJS, :newBIOGRAFIE, :newVOG, :newFOTO)";
+                cmd.Parameters.Add("newUSERID", OracleDbType.Int32).Value = volun;
+                cmd.Parameters.Add("newRIJBEWIJS", OracleDbType.Varchar2).Value = "NEE";
+                cmd.Parameters.Add("newBIOGRAFIE", OracleDbType.Varchar2).Value = "Niet opgegeven";
+                cmd.Parameters.Add("newVOG", OracleDbType.Varchar2).Value = "Onbekend";
+                cmd.Parameters.Add("newFOTO", OracleDbType.Varchar2).Value = "Onbekend";
+                cmd.ExecuteNonQuery();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                "Insert into TROOSTER(USERID, MAANDAG, DINSDAG, WOENSDAG, DONDERDAG, VRIJDAG, ZATERDAG, ZONDAG) VALUES (:newUSERID, 'Niet Opgegeven', 'Niet Opgegeven', 'Niet Opgegeven', 'Niet Opgegeven', 'Niet Opgegeven', 'Niet Opgegeven', 'Niet Opgegeven')";
+                cmd.Parameters.Add("newUSERID", OracleDbType.Int32).Value = volun;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public static Volunteer GetVolunteerDetails(Volunteer volun)
+        {
+            Volunteer toget = volun;
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select V.BIOGRAFIE, V.FOTO, V.VOG, V.RIJBEWIJS, R.MAANDAG, R.DINSDAG, R.WOENSDAG, R.DONDERDAG, R.VRIJDAG, R.ZATERDAG, R.ZONDAG FROM TVOLUNTEER V, TROOSTER R WHERE V.USERID = " + toget.UserID + " AND R.USERID = " + toget.UserID;
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    // Read from DB
+                    var bio = dr.GetString(0);
+                    var photo = dr.GetString(1);
+                    var vog = dr.GetString(2);
+                    var license = dr.GetString(3);
+                    var monday = dr.GetString(4);
+                    var tuesday = dr.GetString(5);
+                    var wednesday = dr.GetString(6);
+                    var thursday = dr.GetString(7);
+                    var friday = dr.GetString(8);
+                    var saturday = dr.GetString(9);
+                    var sunday = dr.GetString(10);
+
+                    // Fill
+                    toget.Biogragphy = bio;
+                    toget.PathToPhoto = photo;
+                    toget.PathToVOG = vog;
+                    toget.Schedule.Monday = monday;
+                    toget.Schedule.Tuesday = tuesday;
+                    toget.Schedule.Wednesday = wednesday;
+                    toget.Schedule.Thursday = thursday;
+                    toget.Schedule.Friday = friday;
+                    toget.Schedule.Saturday = saturday;
+                    toget.Schedule.Sunday = sunday;
+                    if (license == "JA")
+                        toget.DrivingLicense = true;
+                    else
+                        toget.DrivingLicense = false;
+
+                }
+                return toget;
+            }
+            catch (InvalidCastException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
             }
             finally
             {
