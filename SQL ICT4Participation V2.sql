@@ -129,7 +129,7 @@
 	
 	create table TROOSTER (
 	RoosterID				number(8)		primary key,
-	VolunteerID				number(8)		not null,
+	UserID				number(8)		not null,
 	Maandag					varchar2(32),
 	Dinsdag					varchar2(32),
 	Woensdag				varchar2(32),
@@ -137,7 +137,7 @@
 	Vrijdag					varchar2(32),
 	Zaterdag				varchar2(32),
 	Zondag					varchar2(32),
-	constraint fk_TROOSTER_VolunteerID	foreign key(VolunteerID)REFERENCES TVOLUNTEER(VolunteerID) on delete cascade
+	constraint fk_TROOSTER_UserID	foreign key(UserID)REFERENCES TUSER(UserID) on delete cascade
 	);
 	
 	--QUESTION
