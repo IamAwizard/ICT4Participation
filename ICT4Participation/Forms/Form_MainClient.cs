@@ -21,6 +21,7 @@ namespace ICT4Participation
             lbl_UserName.Text = currentuser.Name;
             clienthandler = new ClientHandler(currentuser as Client);
             RefreshInterface();
+        
             timer_Refresh.Start();
         }
 
@@ -51,9 +52,18 @@ namespace ICT4Participation
         {
             if (tbox_Question.Text != string.Empty)
             {
+                if (tbox_Question.Text.Length >= 10)
+                {
                     clienthandler.AddQuestion(currentuser.UserID, "Niet opgegeven", tbox_Question.Text);
+                }
+                else
+                {
+                    MessageBox.Show(" de vraag moet minimaal 10 tekens bevatten");
+                
+                }
             }
             RefreshInterface();
+            tbox_Question.Clear();
         }
 
         private void btn_QuestionDetails_Click(object sender, EventArgs e)
