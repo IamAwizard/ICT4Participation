@@ -64,9 +64,7 @@ namespace ICT4Participation
                 var foo = lbox_Questions.SelectedItem;
                 Question question = foo as Question;
                 Form_AcceptQuestion dialog = new Form_AcceptQuestion(currentuser, question);
-                this.Hide();
                 dialog.ShowDialog();
-                this.Show();
             }
             else
             {
