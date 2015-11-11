@@ -407,7 +407,15 @@ namespace ICT4Participation
                 cmd.Parameters.Add("newDate", OracleDbType.Date).Value = question.Date.ToString("dd-MMM-yy");
                 cmd.Parameters.Add("newSolved", OracleDbType.Varchar2).Value = question.Solved;
                 cmd.Parameters.Add("newAnswer", OracleDbType.Varchar2).Value = question.Answer;
-                cmd.Parameters.Add("newVolunteer", OracleDbType.Int32).Value = question.Volunteer.UserID;
+
+                if (question.Volunteer == null)
+                {
+                    cmd.Parameters.Add("newVolunteer", OracleDbType.Int32).Value = null;
+                }
+                else
+                {
+                    cmd.Parameters.Add("newVolunteer", OracleDbType.Int32).Value = question.Volunteer.UserID;
+                }
                 cmd.Parameters.Add("newIDvalue", OracleDbType.Int32).Value = question.ID;
 
                 cmd.ExecuteNonQuery();
