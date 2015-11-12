@@ -54,6 +54,14 @@ namespace ICT4Participation
             {
                 MessageBox.Show(ex.Message);
             }
+            try
+            {
+                lbox_Reviews.Items.AddRange(clienthandler.GetMyReviews(currentuser as Client).ToArray());
+            }
+            catch
+            {
+                // geen reviews
+            }
         }
 
         private void btn_AddQuestion_Click(object sender, EventArgs e)
@@ -146,6 +154,18 @@ namespace ICT4Participation
                 timer_Refresh.Stop();
                 dialog.Show();
                 RefreshInterface();
+                timer_Refresh.Start();
+            }
+        }
+
+        private void lbox_Reviews_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbox_Reviews.SelectedIndex != -1)
+            {
+                Review selectedreview = lbox_Reviews.SelectedItem as Review;
+                Form_Review dialog = new Form_Review(selectedreview);
+                timer_Refresh.Stop();
+                dialog.Show();
                 timer_Refresh.Start();
             }
         }

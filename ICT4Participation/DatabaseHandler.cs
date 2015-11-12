@@ -1262,5 +1262,73 @@ namespace ICT4Participation
                 Disconnect();
             }
         }
+
+        public static List<Review> GetMyReviews(Client client)
+        {
+            List<Review> returnlist = new List<Review>();
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT VOLUNTEER, DATUM, RATING, TEKST FROM TREVIEW WHERE CLIENT = :newUSERID";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("newUSERID", OracleDbType.Varchar2).Value = client.UserID;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var volunid = dr.GetInt32(0);
+                    var datetime = dr.GetDateTime(1);
+                    var rating = dr.GetInt32(2);
+                    var content = dr.GetString(3);
+
+                    returnlist.Add(new Review(datetime, client, GetUserNoConnect(volunid) as Volunteer, rating, content));
+                }
+                return returnlist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return returnlist;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static List<Review> GetMyReviews(Volunteer volun)
+        {
+            List<Review> returnlist = new List<Review>();
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT CLIENT, DATUM, RATING, TEKST FROM TREVIEW WHERE VOLUNTEER = :newUSERID";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("newUSERID", OracleDbType.Varchar2).Value = volun.UserID;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var clientid = dr.GetInt32(0);
+                    var datetime = dr.GetDateTime(1);
+                    var rating = dr.GetInt32(2);
+                    var content = dr.GetString(3);
+
+                    returnlist.Add(new Review(datetime, GetUserNoConnect(clientid) as Client, volun , rating, content));
+                }
+                return returnlist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return returnlist;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
     }
 }

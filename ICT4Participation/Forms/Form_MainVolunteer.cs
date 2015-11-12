@@ -38,6 +38,7 @@ namespace ICT4Participation
             lbox_Clients.Items.Clear();
             lbox_Questions.Items.Clear();
             lbox_Appointments.Items.Clear();
+            lbox_Reviews.Items.Clear();
             try
             { 
                 lbox_Questions.Items.AddRange(volunteerhandler.GetQuestions().ToArray());
@@ -61,7 +62,15 @@ namespace ICT4Participation
             }
             catch
             {
-                MessageBox.Show("U heeft geen afspraken");
+                // geen afspraken
+            }
+            try
+            {
+                lbox_Reviews.Items.AddRange(volunteerhandler.GetMyReviews(currentuser as Volunteer).ToArray());
+            }
+            catch
+            {
+                // geen reviews
             }
         }
 
@@ -120,8 +129,19 @@ namespace ICT4Participation
             {
                 Form_Meeting dialog = new Form_Meeting(lbox_Appointments.SelectedItem as Appointment);
                 timer_Refresh.Stop();
-                    dialog.Show();
-                RefreshInterface();
+                dialog.Show();
+                timer_Refresh.Start();
+            }
+        }
+
+        private void lbox_Reviews_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbox_Reviews.SelectedIndex != -1)
+            {
+                Review selectedreview = lbox_Reviews.SelectedItem as Review;
+                Form_Review dialog = new Form_Review(selectedreview);
+                timer_Refresh.Stop();
+                dialog.Show();
                 timer_Refresh.Start();
             }
         }

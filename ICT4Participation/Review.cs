@@ -44,7 +44,7 @@ namespace ICT4Participation
         // Methods
         public override string ToString()
         {
-            return ReviewID + "::  " + "Client: " + Client.Name + " over " + Targetuser.Name + " op " + Date.ToShortDateString();
+            return string.Format("Review van {0} op {1}", Client.Name, Targetuser.Name);
         }
     }
 }

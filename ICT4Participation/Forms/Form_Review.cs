@@ -22,6 +22,18 @@ namespace ICT4Participation
             currentquestion = question;
         }
 
+        public Form_Review(Review review)
+        {
+            InitializeComponent();
+            cbox_Rating.SelectedIndex = review.Rating - 1;
+            tbox_ReviewContent.Text = review.Content;
+            cbox_Rating.Enabled = false;
+            tbox_ReviewContent.Enabled = false;
+            btn_SendReview.Visible = false;
+            lbl_ReviewUserInfo.Text = string.Format("Review van {0} op {1}", review.Client.Name, review.Targetuser.Name);
+            lbl_ReviewUserInfo.Visible = true;
+        }
+
         private void btn_SendReview_Click(object sender, EventArgs e)
         {
                 if (string.IsNullOrEmpty(cbox_Rating.SelectedText))

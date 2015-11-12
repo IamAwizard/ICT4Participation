@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Review));
             this.gbox_Review = new System.Windows.Forms.GroupBox();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_SendReview = new System.Windows.Forms.Button();
             this.tbox_ReviewContent = new System.Windows.Forms.TextBox();
             this.lbl_ReviewContent = new System.Windows.Forms.Label();
             this.cbox_Rating = new System.Windows.Forms.ComboBox();
             this.lbl_Rating = new System.Windows.Forms.Label();
-            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.lbl_ReviewUserInfo = new System.Windows.Forms.Label();
             this.gbox_Review.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbox_Review
             // 
+            this.gbox_Review.Controls.Add(this.lbl_ReviewUserInfo);
             this.gbox_Review.Controls.Add(this.btn_Cancel);
             this.gbox_Review.Controls.Add(this.btn_SendReview);
             this.gbox_Review.Controls.Add(this.tbox_ReviewContent);
@@ -55,6 +57,26 @@
             this.gbox_Review.TabIndex = 10;
             this.gbox_Review.TabStop = false;
             this.gbox_Review.Text = "Beoordeling";
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btn_Cancel.Location = new System.Drawing.Point(299, 309);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(139, 29);
+            this.btn_Cancel.TabIndex = 19;
+            this.btn_Cancel.Text = "Terug";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_SendReview
             // 
@@ -118,25 +140,16 @@
             this.lbl_Rating.TabIndex = 6;
             this.lbl_Rating.Text = "Hoe beoordeelt u dit antwoord?";
             // 
-            // btn_Cancel
+            // lbl_ReviewUserInfo
             // 
-            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cancel.BackColor = System.Drawing.Color.White;
-            this.btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_Cancel.FlatAppearance.BorderSize = 0;
-            this.btn_Cancel.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_Cancel.Location = new System.Drawing.Point(299, 309);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(139, 29);
-            this.btn_Cancel.TabIndex = 19;
-            this.btn_Cancel.Text = "Terug";
-            this.btn_Cancel.UseVisualStyleBackColor = false;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            this.lbl_ReviewUserInfo.AutoSize = true;
+            this.lbl_ReviewUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_ReviewUserInfo.Location = new System.Drawing.Point(6, 22);
+            this.lbl_ReviewUserInfo.Name = "lbl_ReviewUserInfo";
+            this.lbl_ReviewUserInfo.Size = new System.Drawing.Size(155, 20);
+            this.lbl_ReviewUserInfo.TabIndex = 20;
+            this.lbl_ReviewUserInfo.Text = "Review van <> op <>";
+            this.lbl_ReviewUserInfo.Visible = false;
             // 
             // Form_Review
             // 
@@ -166,5 +179,6 @@
         private System.Windows.Forms.ComboBox cbox_Rating;
         private System.Windows.Forms.Label lbl_Rating;
         private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Label lbl_ReviewUserInfo;
     }
 }

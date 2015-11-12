@@ -103,5 +103,10 @@ namespace ICT4Participation
         {
             return DatabaseHandler.GetMyAppointments(volun);
         }
+
+        public List<Review> GetMyReviews(Volunteer volun)
+        {
+            return DatabaseHandler.GetMyReviews(volun);
+        }
     }
 }
