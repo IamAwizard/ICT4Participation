@@ -98,5 +98,10 @@ namespace ICT4Participation
         {
             return userhandler.UpdateVolunteer(volunteer);
         }
+
+        public List<Appointment> GetMyAppointments(Volunteer volun)
+        {
+            return DatabaseHandler.GetMyAppointments(volun);
+        }
     }
 }

@@ -236,6 +236,74 @@ namespace ICT4Participation
             }
         }
 
+        static User GetUserNoConnect(int ids)
+        {
+            User toadd = null;
+            try
+            {
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT USERID, NAAM, GEBOORTEDATUM, GESLACHT, WOONPLAATS, ADRES, EMAIL, WACHTWOORD, TYPE FROM TUSER WHERE USERID = " + ids; // QUERY
+                cmd.CommandType = CommandType.Text;
+                dr = cmd.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                Disconnect();
+                return null;
+            }
+
+            try
+            {
+                while (dr.Read())
+                {
+                    // Read from DB
+                    var id = dr.GetInt32(0);
+                    var name = dr.GetString(1);
+                    var dateOfBirth = dr.GetDateTime(2);
+                    var gender = dr.GetString(3);
+                    var city = dr.GetString(4);
+                    var adress = dr.GetString(5);
+                    var email = dr.GetString(6);
+                    var password = dr.GetString(7);
+
+                    var type = dr.GetString(8);
+
+
+                    switch (type)
+                    {
+                        case "CLIENT":
+                            Client newClient = new Client(name, dateOfBirth, gender, city, adress, email, password);
+                            toadd = newClient;
+                            toadd.UserID = id;
+                            break;
+                        case "VOLUNTEER":
+                            toadd = null;
+                            Volunteer newUser = new Volunteer(name, dateOfBirth, gender, city, adress, email, password, false, "Niet Opgegeven", "ONBEKEND", "ONBEKEND");
+                            toadd = newUser;
+                            toadd.UserID = id;
+                            break;
+                        case "ADMIN":
+                            Admin newAdmin = new Admin(name, dateOfBirth, gender, city, adress, email, password);
+                            toadd = newAdmin;
+                            toadd.UserID = id;
+                            break;
+                        default:
+                            toadd = null;
+                            break;
+                    }
+
+                }
+                return toadd;
+            }
+            catch (InvalidCastException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
+        }
+
         public static List<User> GetAllUsers()
         {
 
@@ -1122,6 +1190,72 @@ namespace ICT4Participation
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static List<Appointment> GetMyAppointments(Client client)
+        {
+            List<Appointment> returnlist = new List<Appointment>();
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT VOLUNTEER, DATUMTIJD, LOCATIE FROM TAFSPRAAK WHERE CLIENT = :newUSERID";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("newUSERID", OracleDbType.Varchar2).Value = client.UserID;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var volunid = dr.GetInt32(0);
+                    var datetime = dr.GetString(1);
+                    var location = dr.GetString(2);
+
+                    returnlist.Add(new Appointment(client, GetUserNoConnect(volunid) as Volunteer, Convert.ToDateTime(datetime), location));
+                }
+                return returnlist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return returnlist;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public static List<Appointment> GetMyAppointments(Volunteer volun)
+        {
+            List<Appointment> returnlist = new List<Appointment>();
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT CLIENT, DATUMTIJD, LOCATIE FROM TAFSPRAAK WHERE VOLUNTEER = :newUSERID";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("newUSERID", OracleDbType.Varchar2).Value = volun.UserID;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var clientid = dr.GetInt32(0);
+                    var datetime = dr.GetString(1);
+                    var location = dr.GetString(2);
+
+                    returnlist.Add(new Appointment(GetUserNoConnect(clientid) as Client, volun as Volunteer, Convert.ToDateTime(datetime), location));
+                }
+                return returnlist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return returnlist;
             }
             finally
             {

@@ -27,7 +27,7 @@ namespace ICT4Participation
         private void btn_profile_Click(object sender, EventArgs e)
         {
             currentuser = volunteerhandler.ExtendVolunteer(currentuser);
-            Form_Profile profiledialog = new Form_Profile(currentuser);
+            Form_Profile profiledialog = new Form_Profile(currentuser, true);
             timer_Refresh.Stop();
             profiledialog.ShowDialog();
             timer_Refresh.Start();
@@ -37,6 +37,7 @@ namespace ICT4Participation
         {
             lbox_Clients.Items.Clear();
             lbox_Questions.Items.Clear();
+            lbox_Appointments.Items.Clear();
             try
             { 
                 lbox_Questions.Items.AddRange(volunteerhandler.GetQuestions().ToArray());
@@ -54,7 +55,14 @@ namespace ICT4Participation
             {
                 MessageBox.Show("er zijn geen clients");
             }
-
+            try
+            {
+                lbox_Appointments.Items.AddRange(volunteerhandler.GetMyAppointments(currentuser as Volunteer).ToArray());
+            }
+            catch
+            {
+                MessageBox.Show("U heeft geen afspraken");
+            }
         }
 
         private void btn_Respond_Click(object sender, EventArgs e)
@@ -102,6 +110,18 @@ namespace ICT4Participation
                 timer_Refresh.Stop();
                 chatdialog.ShowDialog();
                 this.Show();
+                timer_Refresh.Start();
+            }
+        }
+
+        private void lbox_Appointments_DoubleClick(object sender, EventArgs e)
+        {
+            if(lbox_Appointments.SelectedIndex != -1)
+            {
+                Form_Meeting dialog = new Form_Meeting(lbox_Appointments.SelectedItem as Appointment);
+                timer_Refresh.Stop();
+                    dialog.Show();
+                RefreshInterface();
                 timer_Refresh.Start();
             }
         }

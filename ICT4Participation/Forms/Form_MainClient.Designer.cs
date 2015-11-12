@@ -41,12 +41,16 @@
             this.btn_QuestionDetails = new System.Windows.Forms.Button();
             this.btn_DeleteUser = new System.Windows.Forms.Button();
             this.gbox_Chat = new System.Windows.Forms.GroupBox();
-            this.lbox_Volunteers = new System.Windows.Forms.ListBox();
             this.btn_Chat = new System.Windows.Forms.Button();
             this.timer_Refresh = new System.Windows.Forms.Timer(this.components);
+            this.lbl_InfoProfile = new System.Windows.Forms.Label();
+            this.lbox_Volunteers = new System.Windows.Forms.ListBox();
+            this.gbox_Appointments = new System.Windows.Forms.GroupBox();
+            this.lbox_Appointments = new System.Windows.Forms.ListBox();
             this.gbox_NewQuestion.SuspendLayout();
             this.gbox_MyQuestions.SuspendLayout();
             this.gbox_Chat.SuspendLayout();
+            this.gbox_Appointments.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_AddQuestion
@@ -59,10 +63,10 @@
             this.btn_AddQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddQuestion.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_AddQuestion.Location = new System.Drawing.Point(3, 242);
+            this.btn_AddQuestion.Location = new System.Drawing.Point(3, 108);
             this.btn_AddQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddQuestion.Name = "btn_AddQuestion";
-            this.btn_AddQuestion.Size = new System.Drawing.Size(555, 35);
+            this.btn_AddQuestion.Size = new System.Drawing.Size(582, 35);
             this.btn_AddQuestion.TabIndex = 4;
             this.btn_AddQuestion.Text = "Vraag verzenden";
             this.btn_AddQuestion.UseVisualStyleBackColor = false;
@@ -76,7 +80,7 @@
             this.tbox_Question.Multiline = true;
             this.tbox_Question.Name = "tbox_Question";
             this.tbox_Question.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbox_Question.Size = new System.Drawing.Size(555, 200);
+            this.tbox_Question.Size = new System.Drawing.Size(582, 66);
             this.tbox_Question.TabIndex = 7;
             // 
             // lbl_AskQuestion
@@ -127,7 +131,7 @@
             this.gbox_NewQuestion.ForeColor = System.Drawing.Color.White;
             this.gbox_NewQuestion.Location = new System.Drawing.Point(15, 269);
             this.gbox_NewQuestion.Name = "gbox_NewQuestion";
-            this.gbox_NewQuestion.Size = new System.Drawing.Size(561, 280);
+            this.gbox_NewQuestion.Size = new System.Drawing.Size(588, 146);
             this.gbox_NewQuestion.TabIndex = 12;
             this.gbox_NewQuestion.TabStop = false;
             this.gbox_NewQuestion.Text = "Zoek hulp";
@@ -143,7 +147,7 @@
             this.gbox_MyQuestions.ForeColor = System.Drawing.Color.White;
             this.gbox_MyQuestions.Location = new System.Drawing.Point(15, 44);
             this.gbox_MyQuestions.Name = "gbox_MyQuestions";
-            this.gbox_MyQuestions.Size = new System.Drawing.Size(561, 219);
+            this.gbox_MyQuestions.Size = new System.Drawing.Size(588, 219);
             this.gbox_MyQuestions.TabIndex = 13;
             this.gbox_MyQuestions.TabStop = false;
             this.gbox_MyQuestions.Text = "Mijn Vragen";
@@ -162,7 +166,7 @@
             this.lbox_MyQuestions.Margin = new System.Windows.Forms.Padding(2);
             this.lbox_MyQuestions.Name = "lbox_MyQuestions";
             this.lbox_MyQuestions.ScrollAlwaysVisible = true;
-            this.lbox_MyQuestions.Size = new System.Drawing.Size(555, 164);
+            this.lbox_MyQuestions.Size = new System.Drawing.Size(582, 164);
             this.lbox_MyQuestions.TabIndex = 7;
             // 
             // btn_QuestionDetails
@@ -180,7 +184,7 @@
             this.btn_QuestionDetails.Location = new System.Drawing.Point(3, 186);
             this.btn_QuestionDetails.Margin = new System.Windows.Forms.Padding(2);
             this.btn_QuestionDetails.Name = "btn_QuestionDetails";
-            this.btn_QuestionDetails.Size = new System.Drawing.Size(555, 30);
+            this.btn_QuestionDetails.Size = new System.Drawing.Size(582, 30);
             this.btn_QuestionDetails.TabIndex = 6;
             this.btn_QuestionDetails.Text = "Details van geselecteerde vraag";
             this.btn_QuestionDetails.UseVisualStyleBackColor = false;
@@ -196,7 +200,7 @@
             this.btn_DeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btn_DeleteUser.Location = new System.Drawing.Point(604, 9);
+            this.btn_DeleteUser.Location = new System.Drawing.Point(631, 9);
             this.btn_DeleteUser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DeleteUser.Name = "btn_DeleteUser";
             this.btn_DeleteUser.Size = new System.Drawing.Size(165, 30);
@@ -210,28 +214,16 @@
             this.gbox_Chat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbox_Chat.Controls.Add(this.lbox_Volunteers);
+            this.gbox_Chat.Controls.Add(this.lbl_InfoProfile);
             this.gbox_Chat.Controls.Add(this.btn_Chat);
             this.gbox_Chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gbox_Chat.ForeColor = System.Drawing.Color.White;
-            this.gbox_Chat.Location = new System.Drawing.Point(587, 44);
+            this.gbox_Chat.Location = new System.Drawing.Point(614, 44);
             this.gbox_Chat.Name = "gbox_Chat";
             this.gbox_Chat.Size = new System.Drawing.Size(200, 505);
             this.gbox_Chat.TabIndex = 16;
             this.gbox_Chat.TabStop = false;
             this.gbox_Chat.Text = "Chatten";
-            // 
-            // lbox_Volunteers
-            // 
-            this.lbox_Volunteers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbox_Volunteers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbox_Volunteers.FormattingEnabled = true;
-            this.lbox_Volunteers.IntegralHeight = false;
-            this.lbox_Volunteers.ItemHeight = 20;
-            this.lbox_Volunteers.Location = new System.Drawing.Point(3, 20);
-            this.lbox_Volunteers.Name = "lbox_Volunteers";
-            this.lbox_Volunteers.ScrollAlwaysVisible = true;
-            this.lbox_Volunteers.Size = new System.Drawing.Size(194, 452);
-            this.lbox_Volunteers.TabIndex = 8;
             // 
             // btn_Chat
             // 
@@ -255,12 +247,69 @@
             this.timer_Refresh.Interval = 30000;
             this.timer_Refresh.Tick += new System.EventHandler(this.timer_Refresh_Tick);
             // 
+            // lbl_InfoProfile
+            // 
+            this.lbl_InfoProfile.AutoSize = true;
+            this.lbl_InfoProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_InfoProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_InfoProfile.ForeColor = System.Drawing.Color.White;
+            this.lbl_InfoProfile.Location = new System.Drawing.Point(3, 20);
+            this.lbl_InfoProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_InfoProfile.Name = "lbl_InfoProfile";
+            this.lbl_InfoProfile.Size = new System.Drawing.Size(164, 20);
+            this.lbl_InfoProfile.TabIndex = 17;
+            this.lbl_InfoProfile.Text = "Dubbelklik voor Profiel";
+            // 
+            // lbox_Volunteers
+            // 
+            this.lbox_Volunteers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbox_Volunteers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbox_Volunteers.FormattingEnabled = true;
+            this.lbox_Volunteers.IntegralHeight = false;
+            this.lbox_Volunteers.ItemHeight = 20;
+            this.lbox_Volunteers.Location = new System.Drawing.Point(3, 40);
+            this.lbox_Volunteers.Name = "lbox_Volunteers";
+            this.lbox_Volunteers.ScrollAlwaysVisible = true;
+            this.lbox_Volunteers.Size = new System.Drawing.Size(194, 432);
+            this.lbox_Volunteers.TabIndex = 18;
+            this.lbox_Volunteers.DoubleClick += new System.EventHandler(this.lbox_Volunteers_DoubleClick);
+            // 
+            // gbox_Appointments
+            // 
+            this.gbox_Appointments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbox_Appointments.Controls.Add(this.lbox_Appointments);
+            this.gbox_Appointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbox_Appointments.ForeColor = System.Drawing.Color.White;
+            this.gbox_Appointments.Location = new System.Drawing.Point(15, 421);
+            this.gbox_Appointments.Name = "gbox_Appointments";
+            this.gbox_Appointments.Size = new System.Drawing.Size(588, 128);
+            this.gbox_Appointments.TabIndex = 17;
+            this.gbox_Appointments.TabStop = false;
+            this.gbox_Appointments.Text = "Afspraken";
+            // 
+            // lbox_Appointments
+            // 
+            this.lbox_Appointments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbox_Appointments.FormattingEnabled = true;
+            this.lbox_Appointments.HorizontalScrollbar = true;
+            this.lbox_Appointments.IntegralHeight = false;
+            this.lbox_Appointments.ItemHeight = 18;
+            this.lbox_Appointments.Location = new System.Drawing.Point(3, 20);
+            this.lbox_Appointments.Margin = new System.Windows.Forms.Padding(2);
+            this.lbox_Appointments.Name = "lbox_Appointments";
+            this.lbox_Appointments.ScrollAlwaysVisible = true;
+            this.lbox_Appointments.Size = new System.Drawing.Size(582, 105);
+            this.lbox_Appointments.TabIndex = 0;
+            this.lbox_Appointments.DoubleClick += new System.EventHandler(this.lbox_Appointments_DoubleClick);
+            // 
             // Form_MainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(799, 561);
+            this.ClientSize = new System.Drawing.Size(826, 561);
+            this.Controls.Add(this.gbox_Appointments);
             this.Controls.Add(this.gbox_Chat);
             this.Controls.Add(this.btn_DeleteUser);
             this.Controls.Add(this.gbox_MyQuestions);
@@ -279,6 +328,8 @@
             this.gbox_MyQuestions.ResumeLayout(false);
             this.gbox_MyQuestions.PerformLayout();
             this.gbox_Chat.ResumeLayout(false);
+            this.gbox_Chat.PerformLayout();
+            this.gbox_Appointments.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,8 +347,11 @@
         private System.Windows.Forms.Button btn_DeleteUser;
         private System.Windows.Forms.ListBox lbox_MyQuestions;
         private System.Windows.Forms.GroupBox gbox_Chat;
-        private System.Windows.Forms.ListBox lbox_Volunteers;
         private System.Windows.Forms.Button btn_Chat;
         private System.Windows.Forms.Timer timer_Refresh;
+        private System.Windows.Forms.ListBox lbox_Volunteers;
+        private System.Windows.Forms.Label lbl_InfoProfile;
+        private System.Windows.Forms.GroupBox gbox_Appointments;
+        private System.Windows.Forms.ListBox lbox_Appointments;
     }
 }

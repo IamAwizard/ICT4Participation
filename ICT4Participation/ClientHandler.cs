@@ -99,5 +99,15 @@ namespace ICT4Participation
             }
             return returnlist.OrderBy(x => x.Name).ToList();
         }
+
+        public Volunteer ExtendVolunteer(Volunteer volunteer)
+        {
+            return userhandler.ExtendVolunteer(volunteer);
+        }
+
+        public List<Appointment> GetMyAppointments(Client client)
+        {
+            return DatabaseHandler.GetMyAppointments(client);
+        }
     }
 }

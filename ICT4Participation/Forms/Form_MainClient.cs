@@ -29,6 +29,7 @@ namespace ICT4Participation
         {
             lbox_Volunteers.Items.Clear();
             lbox_MyQuestions.Items.Clear();
+            lbox_Appointments.Items.Clear();
             try
             {
                 lbox_MyQuestions.Items.AddRange(clienthandler.GetMyQuestions().ToArray());
@@ -37,10 +38,17 @@ namespace ICT4Participation
             {
                 MessageBox.Show(ex.Message);
             }
-
             try
             {
                 lbox_Volunteers.Items.AddRange(clienthandler.GetVolunteers().ToArray());
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                lbox_Appointments.Items.AddRange(clienthandler.GetMyAppointments(currentuser as Client).ToArray());
             }
             catch (NullReferenceException ex)
             {
@@ -113,6 +121,31 @@ namespace ICT4Participation
                 Form_Chat chatdialog = new Form_Chat(currentuser, selecteduser);
                 timer_Refresh.Stop();
                 chatdialog.ShowDialog();
+                timer_Refresh.Start();
+            }
+        }
+
+        private void lbox_Volunteers_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbox_Volunteers.SelectedIndex != -1)
+            {
+                Volunteer selecteduser = lbox_Volunteers.SelectedItem as Volunteer;
+                selecteduser = clienthandler.ExtendVolunteer(selecteduser);
+                Form_Profile profiledialog = new Form_Profile(selecteduser, false);
+                timer_Refresh.Stop();
+                profiledialog.ShowDialog();
+                timer_Refresh.Start();
+            }
+        }
+
+        private void lbox_Appointments_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbox_Appointments.SelectedIndex != -1)
+            {
+                Form_Meeting dialog = new Form_Meeting(lbox_Appointments.SelectedItem as Appointment);
+                timer_Refresh.Stop();
+                dialog.Show();
+                RefreshInterface();
                 timer_Refresh.Start();
             }
         }

@@ -27,6 +27,20 @@ namespace ICT4Participation
             lbl_VolunName.Text = targetuser.Name;
         }
 
+        public Form_Meeting(Appointment meeting)
+        {
+            InitializeComponent();
+
+            label1.Text = meeting.Client.Name;
+            lbl_VolunName.Text = "Geholpen door: " + meeting.Volunteer.Name;
+            dtp_Date.Value = meeting.Date;
+            tbox_Location.Text = meeting.Location;
+
+            dtp_Date.Enabled = false;
+            tbox_Location.Enabled = false;
+            btn_AddMeeting.Visible = false;
+        }
+
         private void btn_AddMeeting_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(tbox_Location.Text))

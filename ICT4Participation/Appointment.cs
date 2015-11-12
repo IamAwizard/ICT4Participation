@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Participation
 {
-    class Appointment
+    public class Appointment
     {
         // Fields 
         Client client;
@@ -48,6 +48,12 @@ namespace ICT4Participation
             this.volunteer = volunteer;
             this.date = date;
             this.location = location;
+        }
+
+        // Methodes
+        public override string ToString()
+        {
+            return string.Format("{0} - {1} en {2}", DateString, client.Name, volunteer.Name);
         }
     }
 }

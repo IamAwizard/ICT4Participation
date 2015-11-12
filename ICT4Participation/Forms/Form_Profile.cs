@@ -20,18 +20,20 @@ namespace ICT4Participation
         bool hasPicture;
         String uriString = @"ftp://i259530@athena.fhict.nl/PROFILE";
         string imgpath;
+        bool canEdit;
 
         // Constructor
-        public Form_Profile(Volunteer volun)
+        public Form_Profile(Volunteer volun, bool canedit)
         {
             InitializeComponent();
             volunteer = volun;
 
+            canEdit = canedit;
             hasPicture = false;
             isChanged = false;
             InitializeInterface();
         }
-        
+
         private void InitializeInterface()
         {
             lbl_Name.Text = volunteer.Name;
@@ -53,6 +55,20 @@ namespace ICT4Participation
             tbox_Friday.Text = volunteer.Schedule.Friday;
             tbox_Saturday.Text = volunteer.Schedule.Saturday;
             tbox_Sunday.Text = volunteer.Schedule.Sunday;
+
+            cbox_License.Enabled = canEdit;
+            link_VOG.Visible = canEdit;
+            tbox_Biography.Enabled = canEdit; ;
+
+            Text = volunteer.Name + "'s  Gegevens";
+            tbox_Monday.Enabled = canEdit;
+            tbox_Tuesday.Enabled = canEdit;
+            tbox_Wednesday.Enabled = canEdit;
+            tbox_Thursday.Enabled = canEdit;
+            tbox_Friday.Enabled = canEdit;
+            tbox_Saturday.Enabled = canEdit;
+            tbox_Sunday.Enabled = canEdit;
+            btn_UploadPhoto.Visible = canEdit;
 
             pnl_Schedule.Hide();
             pnl_Profile.Show();
@@ -84,7 +100,7 @@ namespace ICT4Participation
 
         private void Form_Profile_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(isChanged)
+            if (isChanged)
             {
                 volunteer.DrivingLicense = cbox_License.Checked;
                 volunteer.Biogragphy = tbox_Biography.Text;
@@ -99,7 +115,7 @@ namespace ICT4Participation
 
                 DatabaseHandler.UpdateVolunteer(volunteer);
             }
-            if(hasPicture)
+            if (hasPicture)
             {
                 File.Delete(imgpath);
             }
@@ -128,7 +144,7 @@ namespace ICT4Participation
                 myWebClient.Credentials = new NetworkCredential("i259530", "temppass1");
                 myWebClient.DownloadFile(serverpath, tempfilename);
 
-                if(DialogResult.OK == saveFileDialog.ShowDialog())
+                if (DialogResult.OK == saveFileDialog.ShowDialog())
                 {
                     string newfilename = saveFileDialog.FileName;
                     File.Copy(tempfilename, newfilename);
@@ -201,7 +217,7 @@ namespace ICT4Participation
         private void Form_Profile_Load(object sender, EventArgs e)
         {
             imgpath = DownloadPhoto(volunteer);
-            if(imgpath != string.Empty)
+            if (imgpath != string.Empty)
             {
                 pbox_ProfilePicture.ImageLocation = imgpath;
                 hasPicture = true;
